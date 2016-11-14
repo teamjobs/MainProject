@@ -17,7 +17,7 @@ public class StartController {
 	
 	@RequestMapping("/index")
 	public ModelAndView start(){
-		ModelAndView mav = new ModelAndView("/start/login");
+		ModelAndView mav = new ModelAndView("/start/login.jsp");
 		
 		int img = (int)(Math.random()*3);
 		mav.addObject("img",img);
@@ -26,12 +26,12 @@ public class StartController {
 	
 	@RequestMapping("/index/join")
 	public String join(){
-		return "/start/join";
+		return "/start/join.jsp";
 	}
 	
 	@RequestMapping("/member/joinOK")
 	public ModelAndView joinOK(String id, String pass,String name,String phone,String email,String gender){
-		ModelAndView mav = new ModelAndView("/start/joinOK");
+		ModelAndView mav = new ModelAndView("/start/joinOK.jsp");
 		HashMap map = new HashMap<>();
 		map.put("id", id);
 		map.put("pass", pass);

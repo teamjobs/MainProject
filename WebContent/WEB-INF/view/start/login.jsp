@@ -65,7 +65,8 @@ body, html {
 					구직 회원</button>
 				
 				<button type="button" class="btn btn-primary"
-					style="padding: 10px 55px;" >기업 회원</button>
+					style="padding: 10px 55px;" id="login" onclick="location.href='/business/join/'" >
+					기업 회원</button>
 					</div>
 			
 			

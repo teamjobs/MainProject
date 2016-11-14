@@ -30,10 +30,18 @@ public class CompanyData {
 		NAME = name;
 		BOSS = boss;
 		SORT = "company";
+		WEBSITE = "";
+		EMPLOYEE_NUM = 0;
+		INCO = null;
+		FORM = "";
+		SALESACCOUNT = "";
+		INDUSTRY = "";
+		INTRODUCE = "";
 	}
 
 	public CompanyData() {
-		this("","","","","","","");
+		// 기본생성시 전부 비어있는 상태입니다
+		this("","","","","","","");	
 	}
 
 	public String getID() {
