@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="business">
+	<insert id = "join" parameterType = "business.model.CompanyData">
+		insert into company values (#{ID},#{PASS},#{CALLNUM},#{EMAIL},#{CONUMBER},#{NAME},#{BOSS},'',0,'','','','','',#{SORT})
+	</insert>
+	<select id = "idCheck" resultType="business.model.CompanyData" parameterType = "java.lang.String">
+		select * from company where id = #{id}
+	</select>
+</mapper>
