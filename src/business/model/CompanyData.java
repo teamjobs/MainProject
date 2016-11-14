@@ -18,7 +18,6 @@ public class CompanyData {
 	String INDUSTRY;
 	String INTRODUCE;
 	String SORT;
-
 	
 	//가입처리시 사용합니다 (ID/PASS/전화번호/이메일/사업자등록번호/회사명/대표이름)
 	public CompanyData(String id, String pass, String callnum, String email, String conumber, String name, String boss) {

@@ -19,5 +19,4 @@ public class CdataReadService {
 		sql.close();
 		return cd;
 	}
-	
 }

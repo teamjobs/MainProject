@@ -27,8 +27,6 @@ public class CdataInputService {
 		sql.close();
 		return b;
 	}
-	
-	
-	
+
 }
 

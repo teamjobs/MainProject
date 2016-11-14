@@ -32,7 +32,6 @@ public class CdataJoinService {
 		return r;
 	}
 	
-	
 	public boolean idCheck(String id){
 		SqlSession sql = fac.openSession();
 		boolean r = true;

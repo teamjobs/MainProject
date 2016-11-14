@@ -9,7 +9,6 @@ import business.model.CompanyData;
 
 @Component
 public class CPostReadService {
-
 	@Autowired
 	SqlSessionFactory fac;
 	

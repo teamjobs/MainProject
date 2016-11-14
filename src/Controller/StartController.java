@@ -41,7 +41,6 @@ public class StartController {
 		map.put("gender", gender);
 		
 		js.join(map);
-		
 		return mav;
 	}
 	
