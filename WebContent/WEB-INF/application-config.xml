@@ -10,8 +10,9 @@
 	<mvc:default-servlet-handler />
 	<mvc:annotation-driven />
 
-	<context:component-scan base-package="controller" />
-	<context:component-scan base-package="service" />
+	<context:component-scan base-package="Controller" />
+	<context:component-scan base-package="Service" />
+	<context:component-scan base-package="filter" />
 
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
@@ -19,17 +20,18 @@
 		p:suffix=".jsp" />
 
 
-	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds"> 
+  
+	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@121.134.125.131:1521:xe" />
-		<property name="username" value="oh" />
+		<property name="username" value="jobs" />
 		<property name="password" value="oracle" />
 	</bean>
 	<bean class="org.mybatis.spring.SqlSessionFactoryBean">
 		<property name="dataSource" ref="ds" />
 		<property name="mapperLocations">
 			<list>
-				<value>/WEB-INF/mapper/file-mapper.xml</value>
+				  <value>/WEB-INF/mapper/member-mapper.xml</value>
 			</list>
 		</property>
 	</bean>
@@ -43,8 +45,9 @@
 		id="tilesConfigurer">
 		<property name="definitions">
 			<list>
-				<value>/WEB-INF/tile/tiles-config.xml</value>
+				 <!--   <value>/WEB-INF/tiles/tiles-config.xml</value> -->
 			</list>
 		</property>
 	</bean>
+	
 </beans>
