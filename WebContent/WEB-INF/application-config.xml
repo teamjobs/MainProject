@@ -45,7 +45,7 @@
 		id="tilesConfigurer">
 		<property name="definitions">
 			<list>
-				 <!--   <value>/WEB-INF/tiles/tiles-config.xml</value> -->
+				 <value>/WEB-INF/view/tiles/tiles-config.xml</value>
 			</list>
 		</property>
 	</bean>
