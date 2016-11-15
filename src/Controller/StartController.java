@@ -16,9 +16,9 @@ public class StartController {
 	@Autowired
 	joinService js;
 
-	@RequestMapping("/index")
+	@RequestMapping("/")
 	public ModelAndView start() {
-		ModelAndView mav = new ModelAndView("/start/login.jsp");
+		ModelAndView mav = new ModelAndView("/start/index.jsp");
 
 		int img = (int) (Math.random() * 3);
 		mav.addObject("img", img);
@@ -55,5 +55,15 @@ public class StartController {
 			return "NNNNN";
 		}
 
+	}
+	
+	@RequestMapping("/index/agree")
+	public String agree(){
+		return "/start/agree.jsp";
+	}
+	
+	@RequestMapping("/index/agreeOK")
+	public String agreeOK(){
+		return "/start/join.jsp";
 	}
 }

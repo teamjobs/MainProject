@@ -17,7 +17,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+	<div class="alert alert-success" hidden="hidden" id="checkOK">
+    <strong>Success!</strong> 사용 가능한 아이디 입니다.
+  	</div>
+  	
+  	<div class="alert alert-danger" hidden="hidden" id="checkFail">
+    <strong>Fail!</strong> 중복된 아이디 입니다.
+  	</div>
 	<div class="container">
 		<b><h2>회원가입 (구직자)</h2></b>
 		<p>취업을 위한 구직자 분들의 회원가입 입니다!</p>
@@ -62,10 +68,17 @@
 			}).done(function(rst){
 				if(rst=="YYYYY") {
 					$("#submit").fadeIn(1000);
-					window.alert("사용가능합니다.");
+					
+					$("#checkOK").fadeIn(1000);
+					$("#checkFail").fadeOut(100);
+					
+					
 				}else {
-					window.alert("사용불가능합니다.");
+					
 					$("#submit").fadeOut(1000);
+					
+					$("#checkOK").fadeOut(100);
+					$("#checkFail").fadeIn(1000);
 				}
 				
 			});
