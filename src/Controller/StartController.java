@@ -5,33 +5,34 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import Service.joinService;
 
 @Controller
 public class StartController {
-	
+
 	@Autowired
 	joinService js;
-	
-	@RequestMapping("/index")
-	public ModelAndView start(){
-		ModelAndView mav = new ModelAndView("/start/login");
-		
-		int img = (int)(Math.random()*3);
-		mav.addObject("img",img);
+
+	@RequestMapping("/")
+	public ModelAndView start() {
+		ModelAndView mav = new ModelAndView("/start/index.jsp");
+
+		int img = (int) (Math.random() * 3);
+		mav.addObject("img", img);
 		return mav;
 	}
-	
+
 	@RequestMapping("/index/join")
-	public String join(){
-		return "/start/join";
+	public String join() {
+		return "/start/join.jsp";
 	}
-	
+
 	@RequestMapping("/member/joinOK")
-	public ModelAndView joinOK(String id, String pass,String name,String phone,String email,String gender){
-		ModelAndView mav = new ModelAndView("/start/joinOK");
+	public ModelAndView joinOK(String id, String pass, String name, String phone, String email, String gender) {
+		ModelAndView mav = new ModelAndView("/start/joinOK.jsp");
 		HashMap map = new HashMap<>();
 		map.put("id", id);
 		map.put("pass", pass);
@@ -39,10 +40,30 @@ public class StartController {
 		map.put("phone", phone);
 		map.put("email", email);
 		map.put("gender", gender);
-		
+
 		js.join(map);
-		
 		return mav;
 	}
+
+	@RequestMapping("/member/check")
+	@ResponseBody
+	public String check(String id) {
+		ModelAndView mav = new ModelAndView();
+		if (js.check(id)) {   
+			return "YYYYY";
+		} else {
+			return "NNNNN";
+		}
+
+	}
 	
+	@RequestMapping("/index/agree")
+	public String agree(){
+		return "/start/agree.jsp";
+	}
+	
+	@RequestMapping("/index/agreeOK")
+	public String agreeOK(){
+		return "/start/join.jsp";
+	}
 }

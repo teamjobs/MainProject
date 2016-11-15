@@ -3,10 +3,16 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="business">
-	<insert id = "join" parameterType = "business.model.CompanyData">
+	<insert id="join" parameterType = "business.model.CompanyData">
 		insert into company values (#{ID},#{PASS},#{CALLNUM},#{EMAIL},#{CONUMBER},#{NAME},#{BOSS},'',0,'','','','','',#{SORT})
 	</insert>
-	<select id = "idCheck" resultType="business.model.CompanyData" parameterType = "java.lang.String">
+	<select id="idCheck" resultType="business.model.CompanyData" parameterType = "java.lang.String">
+		select * from company where id = #{id}
+	</select>
+	<update id="dataUp" parameterType = "business.model.CompanyData">
+		update company set callnum=#{CALLNUM}, email=#{EMAIL}, boss=#{BOSS}, website=#{WEBSITE},employee_num=#{EMPLOYEE_NUM},inco=#{INCO},form=#{FORM},salesaccount=#{SALESACCOUNT},industry=#{INDUSTRY},introduce=#{INTRODUCE} where id=#{ID}
+	</update>
+	<select id="getCompanyData" resultType="business.model.CompanyData" parameterType = "java.lang.String">
 		select * from company where id = #{id}
 	</select>
 </mapper>
