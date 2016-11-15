@@ -5,6 +5,7 @@ import java.util.HashMap;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import Service.joinService;
@@ -45,4 +46,17 @@ public class StartController {
 		return mav;
 	}
 	
+	@RequestMapping("/member/check")
+	public ModelAndView check(String id){
+		ModelAndView mav = new ModelAndView();
+		if( js.check(id)){
+			mav.setViewName("/member/checkOK");
+		}
+		else{
+			mav.setViewName("/member/checkFail");
+		}
+		
+		
+		return mav;
+	}
 }
