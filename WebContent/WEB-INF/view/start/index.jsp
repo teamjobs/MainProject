@@ -61,7 +61,7 @@ body, html {
 			<!-- join  -->
 			<div class="container" id="joinForm" hidden="hidden" >
 				<button type="button" class="btn btn-default"
-					style="padding: 10px 60px;" id="login" onclick="location.href='/index/join'" >
+					style="padding: 10px 60px;" id="login" onclick="location.href='/index/agree'" >
 					구직 회원</button>
 				
 				<button type="button" class="btn btn-primary"
