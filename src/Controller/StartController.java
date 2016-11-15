@@ -49,7 +49,7 @@ public class StartController {
 	@ResponseBody
 	public String check(String id) {
 		ModelAndView mav = new ModelAndView();
-		if (js.check(id)) {
+		if (js.check(id)) {   
 			return "YYYYY";
 		} else {
 			return "NNNNN";
