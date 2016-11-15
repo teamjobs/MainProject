@@ -13,13 +13,8 @@
 	<context:component-scan base-package="Controller" />
 	<context:component-scan base-package="Service" />
 	<context:component-scan base-package="filter" />
-
-	<bean
-		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
-		id="internalResourceViewResolver" p:order="9" p:prefix="/WEB-INF/view/"
-		p:suffix=".jsp" />
-
-
+	<context:component-scan base-package="business" />
+	<context:component-scan base-package="post" />
   
 	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
@@ -35,6 +30,7 @@
 			</list>
 		</property>
 	</bean>
+	
 
 	<!-- view resolver setting -->
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
@@ -49,5 +45,8 @@
 			</list>
 		</property>
 	</bean>
+	<bean
+		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
+		id="internalResourceViewResolver" p:order="9" p:prefix="/WEB-INF/view/" />
 	
 </beans>

@@ -18,7 +18,6 @@ public class CompanyData {
 	String INDUSTRY;
 	String INTRODUCE;
 	String SORT;
-
 	
 	//가입처리시 사용합니다 (ID/PASS/전화번호/이메일/사업자등록번호/회사명/대표이름)
 	public CompanyData(String id, String pass, String callnum, String email, String conumber, String name, String boss) {
@@ -30,10 +29,18 @@ public class CompanyData {
 		NAME = name;
 		BOSS = boss;
 		SORT = "company";
+		WEBSITE = "";
+		EMPLOYEE_NUM = 0;
+		INCO = null;
+		FORM = "";
+		SALESACCOUNT = "";
+		INDUSTRY = "";
+		INTRODUCE = "";
 	}
 
 	public CompanyData() {
-		this("","","","","","","");
+		// 기본생성시 전부 비어있는 상태입니다
+		this("","","","","","","");	
 	}
 
 	public String getID() {
