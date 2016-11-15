@@ -67,7 +67,6 @@
 					window.alert("사용불가능합니다.");
 					$("#submit").fadeOut(1000);
 				}
-				
 			});
 			
 		});
