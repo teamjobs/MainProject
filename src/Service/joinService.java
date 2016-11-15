@@ -27,7 +27,7 @@ public class joinService {
 		
 		System.out.println(list.toString());
 				
-		if(list != null){
+		if(list.size() == 0){
 			return true;
 		}else{
 			return false;

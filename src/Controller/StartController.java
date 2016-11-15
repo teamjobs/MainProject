@@ -12,26 +12,26 @@ import Service.joinService;
 
 @Controller
 public class StartController {
-	
+
 	@Autowired
 	joinService js;
-	
+
 	@RequestMapping("/index")
-	public ModelAndView start(){
+	public ModelAndView start() {
 		ModelAndView mav = new ModelAndView("/start/login.jsp");
-		
-		int img = (int)(Math.random()*3);
-		mav.addObject("img",img);
+
+		int img = (int) (Math.random() * 3);
+		mav.addObject("img", img);
 		return mav;
 	}
-	
+
 	@RequestMapping("/index/join")
-	public String join(){
+	public String join() {
 		return "/start/join.jsp";
 	}
-	
+
 	@RequestMapping("/member/joinOK")
-	public ModelAndView joinOK(String id, String pass,String name,String phone,String email,String gender){
+	public ModelAndView joinOK(String id, String pass, String name, String phone, String email, String gender) {
 		ModelAndView mav = new ModelAndView("/start/joinOK.jsp");
 		HashMap map = new HashMap<>();
 		map.put("id", id);
@@ -40,22 +40,20 @@ public class StartController {
 		map.put("phone", phone);
 		map.put("email", email);
 		map.put("gender", gender);
-		
+
 		js.join(map);
 		return mav;
 	}
-	
+
 	@RequestMapping("/member/check")
-	public ModelAndView check(String id){
+	@ResponseBody
+	public String check(String id) {
 		ModelAndView mav = new ModelAndView();
-		if( js.check(id)){
-			mav.setViewName("/member/checkOK");
+		if (js.check(id)) {
+			return "YYYYY";
+		} else {
+			return "NNNNN";
 		}
-		else{
-			mav.setViewName("/member/checkFail");
-		}
-		
-		
-		return mav;
+
 	}
 }

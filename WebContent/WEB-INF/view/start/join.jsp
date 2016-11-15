@@ -19,14 +19,16 @@
 <body>
 
 	<div class="container">
-		<h2>회원가입 (구직자)</h2>
+		<b><h2>회원가입 (구직자)</h2></b>
 		<p>취업을 위한 구직자 분들의 회원가입 입니다!</p>
 		<form action="/member/joinOK" method="post">
 			<div class="form-group">
 				<label for="usr">ID:</label> <input type="text" class="form-control"
-					name="id" required="required" id="id">
+					name="id" required="required" id="id"> <br/>
+					
+					<button type="button" class="btn btn-info" id="check">아이디 중복확인</button>
 			</div>
-			<input type="button" id="check" value="아이디 중복확인">
+			
 			<div class="form-group">
 				<label for="pwd">Password:</label> <input type="password"
 					class="form-control" name="pass" required="required">
@@ -46,20 +48,30 @@
 			<input type="radio" name="gender" value="man" required="required">남성
 			<input type="radio" name="gender" value="women" required="required">여성
 			<hr />
-
-			<input type="submit" value="OK">
+			<div id="submit" hidden="hidden">
+			<button type="submit" class="btn btn-info">OK</button>
+			</div>
 		</form>
 	</div>
 	<script>
+		
 		$("#check").click(function() {
 			$.ajax({
 				"method" : "get",
 				"url" : "/member/check?id=" + $("#id").val()
 			}).done(function(rst){
-				window.alert(rst);
+				if(rst=="YYYYY") {
+					$("#submit").fadeIn(1000);
+					window.alert("사용가능합니다.");
+				}else {
+					window.alert("사용불가능합니다.");
+					$("#submit").fadeOut(1000);
+				}
+				
 			});
 			
 		});
+		
 	</script>
 
 </body>
