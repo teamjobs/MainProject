@@ -12,15 +12,16 @@ public class CompanyData {
 	String BOSS;
 	String WEBSITE;
 	int EMPLOYEE_NUM;
-	Date INCO;
+	String INCO;
 	String FORM;
 	String SALESACCOUNT;
 	String INDUSTRY;
 	String INTRODUCE;
 	String SORT;
+	String ADDR;
 	
 	//가입처리시 사용합니다 (ID/PASS/전화번호/이메일/사업자등록번호/회사명/대표이름)
-	public CompanyData(String id, String pass, String callnum, String email, String conumber, String name, String boss) {
+	public CompanyData(String id, String pass, String callnum, String email, String conumber, String name, String boss, String addr) {
 		ID = id;
 		PASS = pass;
 		CALLNUM = callnum;
@@ -28,19 +29,45 @@ public class CompanyData {
 		CONUMBER = conumber;
 		NAME = name;
 		BOSS = boss;
+		ADDR = addr;
 		SORT = "company";
 		WEBSITE = "";
 		EMPLOYEE_NUM = 0;
-		INCO = null;
+		INCO = "";
 		FORM = "";
 		SALESACCOUNT = "";
 		INDUSTRY = "";
 		INTRODUCE = "";
 	}
+	
+
+	@Override
+	public String toString() {
+		return "CompanyData [ID=" + ID + ", PASS=" + PASS + ", NAME=" + NAME + ", BOSS=" + BOSS + ", SORT=" + SORT
+				+ "]";
+	}
+
+
+	// 정보수정시 사용합니다(여타 나머지부분 추가)
+	public void setData(String callnum, 
+							String email, String boss, String addr, String website, String employee_num,
+							String inco, String form,String salesaccount,String industry,String introduce){
+		CALLNUM = callnum;
+		EMAIL = email;
+		BOSS = boss;
+		ADDR = addr;
+		WEBSITE = website;
+		EMPLOYEE_NUM = 0;
+		INCO = inco;
+		FORM = form;
+		SALESACCOUNT = salesaccount;
+		INDUSTRY = industry;
+		INTRODUCE = introduce;
+	}
 
 	public CompanyData() {
 		// 기본생성시 전부 비어있는 상태입니다
-		this("","","","","","","");	
+		this("","","","","","","","");	
 	}
 
 	public String getID() {
@@ -79,7 +106,7 @@ public class CompanyData {
 		return EMPLOYEE_NUM;
 	}
 
-	public Date getINCO() {
+	public String getINCO() {
 		return INCO;
 	}
 
@@ -139,7 +166,7 @@ public class CompanyData {
 		EMPLOYEE_NUM = eMPLOYEE_NUM;
 	}
 
-	public void setINCO(Date iNCO) {
+	public void setINCO(String iNCO) {
 		INCO = iNCO;
 	}
 
@@ -161,6 +188,16 @@ public class CompanyData {
 
 	public void setSORT(String sORT) {
 		SORT = sORT;
+	}
+
+
+	public String getADDR() {
+		return ADDR;
+	}
+
+
+	public void setADDR(String aDDR) {
+		ADDR = aDDR;
 	}
 
 	
