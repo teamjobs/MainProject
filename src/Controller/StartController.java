@@ -99,4 +99,9 @@ public class StartController {
 		
 		
 	}
+	
+	@RequestMapping("/index/introduction")
+	public String qwe(){
+		return "/site/introduction.jsp";
+	}
 }

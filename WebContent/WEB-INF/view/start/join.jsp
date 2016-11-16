@@ -145,7 +145,12 @@
 		$("#email").keyup(function(){
 			var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
 			var tt = regExp.test($("#email").val());
-			console.log(tt);
+			/* if(tt){
+				$("#confirm").prop("disabled", false);
+			}else{
+				$("#confirm").prop("disabled", true);
+			} */
+			consol.log(tt);
 		})
 		
 		
