@@ -50,5 +50,20 @@
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		id="internalResourceViewResolver" p:order="9" p:prefix="/WEB-INF/view/" />
+		
+	<!-- 이메일 전송  -->
+		<bean class="org.springframework.mail.javamail.JavaMailSenderImpl" id="javaMailSender">
+		<property name="host" value="smtp.google.com"/>
+		<property name="port" value="587"/>
+		<property name="username" value="fincessa"/>	<!-- 구글 계정 -->
+		<property name="password" value="js51005023"/>
+		<property name="javaMailProperties">
+			<props>
+				<prop key="mail.smtp.auth">true</prop>
+				<prop key="mail.smtp.starttls">true</prop>
+				<prop key="mail.smtp.timeout">5000</prop>
+			</props>
+		</property>
+	</bean>
 	
 </beans>

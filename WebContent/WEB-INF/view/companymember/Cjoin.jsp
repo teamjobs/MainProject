@@ -17,6 +17,13 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
+	<div class="alert alert-success" hidden="hidden" id="checkOK">
+    <strong>Success!</strong> 사용 가능한 아이디 입니다.
+  	</div>
+  	
+  	<div class="alert alert-danger" hidden="hidden" id="checkFail">
+    <strong>Fail!</strong> 중복된 아이디 입니다.
+  	</div>
 
 	<div class="container">
 	  <h2>회원가입 (기업회원)</h2>
@@ -50,6 +57,10 @@
 		      <input type="text" class="form-control" name="conumber" required="required">
 		    </div>
 		    <div class="form-group">
+		      <label for="pwd">주소:</label>
+		      <input type="text" class="form-control" name="addr" required="required">
+		    </div>
+		    <div class="form-group">
 		      <label for="pwd">대표:</label>
 		      <input type="text" class="form-control" name="boss" required="required">
 		    </div>
@@ -60,6 +71,7 @@
 		</form>
 	</div>
 	<script>
+
 		
 		$("#check").click(function() {
 			$.ajax({
@@ -68,10 +80,12 @@
 			}).done(function(rst){
 				if(rst=="y") {
 					$("#submit").fadeIn(1000);
-					window.alert("사용가능합니다.");
+					$("#checkOK").fadeIn(1000);
+					$("#checkFail").fadeOut(100);
 				}else {
-					window.alert("사용불가능합니다.");
 					$("#submit").fadeOut(1000);
+					$("#checkOK").fadeOut(100);
+					$("#checkFail").fadeIn(1000);
 				}
 			});
 			

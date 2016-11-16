@@ -12,4 +12,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from work w where id=#{id} 
 </select>
 
+<select id="check2" parameterType="java.lang.String" resultType="java.util.HashMap">
+	select * from company w where id=#{id} 
+</select>
+
+<select id="loginW" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	select * from work where id=#{id} and pass=#{pass}
+</select>
+
+<select id="loginC" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+	select * from company where id=#{id} and pass=#{pass}
+</select>
+
 </mapper>

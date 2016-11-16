@@ -1,5 +1,7 @@
 package business.model;
 
+import java.util.HashMap;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,14 +21,29 @@ public class CdataInputService {
 				sql.commit();
 				b = true;
 			}else{
+				System.out.println("000000000!!!");
 				sql.rollback();
 			}
 		}catch(Exception e){
+			System.out.println("exception!!!");
+			e.printStackTrace();
 			sql.rollback();
 		}
 		sql.close();
 		return b;
 	}
 
+	public boolean passCheck(HashMap map){
+		SqlSession sql = fac.openSession();
+		boolean r = true;
+		CompanyData rst = (CompanyData)sql.selectOne("business.passCheck",map);
+		sql.close();
+		if(rst != null){
+			return r;
+		}else{
+			r = false;
+			return r;
+		}
+	}
 }
 
