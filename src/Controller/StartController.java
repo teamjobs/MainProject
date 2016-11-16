@@ -83,10 +83,10 @@ public class StartController {
 	public ModelAndView login(String id, String pass, HttpSession hs){
 		ModelAndView mav = new ModelAndView();
 		if(ls.loginC(id, pass)){
-			mav.setViewName("/business/main");
+			mav.setViewName("redirect:/business/main");
 			hs.setAttribute("id", id);
 		} else if(ls.loginW(id, pass)){
-			mav.setViewName("/work/main");
+			mav.setViewName("redirect:/work/main");
 			hs.setAttribute("id", id);
 		} else if(ls.loginC(id, pass)==false && ls.loginW(id, pass)==false){
 			//hs.setAttribute("error", "true");

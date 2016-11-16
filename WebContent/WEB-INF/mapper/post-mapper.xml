@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="post">
+	<insert id="postUpload" parameterType = "post.model.PostData">
+		insert into post values ( post_seq.nextval,#{WAY},#{COMPANY},#{TITLE},sysdate,#{STARTDATE},
+		#{ENDDATE},#{JOB},#{LOCAL},#{CAREER},#{HIRETYPE},#{BUSINESS},#{QUALIFICATION},#{PROCESS},
+		#{RANK},#{SALARY},#{INCHARGE},#{CALLNUMBER},0,0	)
+	</insert>
+	<update id="postDataUpdate" parameterType = "post.model.PostData">
+		update post set WAY=#{WAY},TITLE=#{TITLE},STARTDATE=#{STARTDATE},
+		ENDDATE=#{ENDDATE},JOB=#{JOB},LOCAL=#{LOCAL},CAREER=#{CAREER},HIRETYPE=#{HIRETYPE},
+		BUSINESS=#{BUSINESS},QUALIFICATION=#{QUALIFICATION},PROCESS=#{PROCESS},
+		RANK=#{RANK},SALARY=#{SALARY},INCHARGE=#{INCHARGE},CALLNUMBER=#{CALLNUMBER}
+		where NUM=#{NUM} 
+	</update>
+	<!-- 포스트 조회(글번호로 불러오기) -->
+	<select id="getPostData" parameterType="java.lang.Integer" resultType="post.model.PostData">
+		select * from post where NUM=#{NUM} 
+	</select>
+	<!-- 지원자수 많은 순서대로 top3 -->
+	<select id="getTopPost" resultType="post.model.PostData">
+		<![CDATA[select * from (select * from post order by VOL desc) where rownum <= 3 ]]>
+	</select>
+	<!-- 해당 회원이 올린 post 전부 불러오기(최신순) -->
+	<select id="getCompanyAllPost" resultType="post.model.PostData" parameterType="java.lang.String">
+		select * from post where company=#{company} order by num desc
+	</select>
+	<!-- 마감임박 Post top 3(조회순) -->
+	<select id="getLatePost" resultType="post.model.PostData">
+		<![CDATA[select * from (select * from post where enddate >= sysdate order by enddate asc, hits asc) where rownum <= 3]]>
+	</select>
+	
+</mapper>

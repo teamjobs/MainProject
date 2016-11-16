@@ -15,7 +15,7 @@ public class CPostUploadService {
 		SqlSession sql = fac.openSession();
 		boolean r = false;
 		try{
-			int r1 = sql.insert("post.Postupload",pd);
+			int r1 = sql.insert("post.postUpload",pd);
 			if(r1 == 1){
 				sql.commit();
 				r = true;
@@ -33,7 +33,7 @@ public class CPostUploadService {
 		boolean b = false;
 		SqlSession sql = fac.openSession();
 		try{
-			int r = sql.update("post.PostdataUpdate", pd);
+			int r = sql.update("post.postDataUpdate", pd);
 			if(r == 1){
 				sql.commit();
 				b = true;

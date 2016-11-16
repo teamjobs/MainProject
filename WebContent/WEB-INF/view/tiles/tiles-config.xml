@@ -3,8 +3,15 @@
 <tiles-definitions>
 	<definition name="default" template="/WEB-INF/view/template.jsp">
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
-		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/head.jsp" />
 		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/body.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
+	
+	<definition name="info" template="/WEB-INF/view/template2.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/view/tiles/setting/sidemenu.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/infoBody.jsp"/>
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
+	
 </tiles-definitions>

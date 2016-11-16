@@ -11,9 +11,14 @@ nav {
 	background-color: #D1E2E2;
 }
 
+p {
+
+}
+
 article {
 	height: 100%;
 	padding-bottom: 100px;
+	margin-left: 22em;
 	
 }
 
@@ -33,6 +38,9 @@ footer {
 		<nav>
 			<tiles:insertAttribute name="menubar" />
 		</nav>
+		<p>
+			<tiles:insertAttribute name="side" />
+		</p>
 		<article>
 			<tiles:insertAttribute name="body" />
 		</article>
