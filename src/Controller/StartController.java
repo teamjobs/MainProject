@@ -93,10 +93,6 @@ public class StartController {
 			mav.addObject("error", true);
 			mav.setViewName("redirect:/");
 		}
-		
 		return mav;
-		
-		
-		
 	}
 }

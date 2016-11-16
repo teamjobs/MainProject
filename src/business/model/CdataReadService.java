@@ -19,4 +19,11 @@ public class CdataReadService {
 		sql.close();
 		return cd;
 	}
+	
+	public String getCompanyName(String id){
+		SqlSession sql = fac.openSession();
+		String co = sql.selectOne("business.getCompanyName",id);
+		sql.close();
+		return co;
+	}
 }
