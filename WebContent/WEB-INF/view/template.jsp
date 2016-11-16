@@ -7,23 +7,29 @@
 <html>
 <head>
 <style>
-
-header{
-	padding: 3em;
-	color: black;
-	background-color: #F5F5F5;
-	text-align: center;
+nav {
+	background-color: #FFFACD;
 }
 
+article {
+	height: 100%;
+	padding-bottom: 100px;
+	
+}
+
+footer {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	color: #2D2D25;
+}
 </style>
 
 
 </head>
 <body>
 	<div class="container">
-		<header>
-			<tiles:insertAttribute name="head"/>
-		</header>
 		<nav>
 			<tiles:insertAttribute name="menubar" />
 		</nav>
