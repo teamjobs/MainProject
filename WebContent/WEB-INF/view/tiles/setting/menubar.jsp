@@ -19,7 +19,7 @@ body {
 }
 </style>
 <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
-
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <body>
 	<!-- Navbar -->
 	<div class="w3-top">
@@ -40,31 +40,22 @@ body {
 				href="javascript:void(0)" class="w3-hover-none w3-padding-large"
 				title="More">☰ </a>
 				<div class="w3-dropdown-content w3-white w3-card-4">
-					<a href="#">스마트 서치</a> <a href="#">마이 페이지</a> <a href="#">로그아웃</a>
+					<a href="#">마이 페이지</a> <a href="#">로그아웃</a>
 				</div></li>
 			<li class="w3-hide-small w3-right"><a href="javascript:void(0)"
 				class="w3-padding-large w3-hover-red" id="opensearch"><i
 					class="fa fa-search"></i></a></li>
-		</ul>
-	</div>
-	<div>
-		<header class="w3-row-padding w3-center"
-			style="margin-top: 40px; padding: 1em; display: none" id="search">
-			<div align="center">
-				<div class="centeringContainer" style="width: 300px; height: 120px;">
-					<form action="form.asp" target="_blank">
-						<br /> <input class="w3-input w3-border w3-left" type="text"
-							placeholder="기업, 채용공고를 검색해보세요." name="Message" required>
-						<button type="submit" class="w3-btn-block w3-padding w3-black">검&nbsp;&nbsp;&nbsp;&nbsp;색</button>
+			<li class="w3-hide-small w3-right" id="search" style="display: none;">
+					<form action="form.asp" target="_blank" style="display: inline;">
+						 <input class="w3-input w3-border w3-left" type="text"
+							placeholder="기업, 채용공고를 검색해보세요." name="Message" required style="width: 280px; vertical-align: middle; padding:11px;">
 					</form>
-				</div>
-			</div>
-		</header>
+			</li>
+		</ul>
 	</div>
 	<script>
 		$("#opensearch").click(function() {
-			console.log("?");
-			$("#search").slideToggle();
+			$("#search").toggle("slide", {"direction":"right"});
 		});
 	</script>
 </body>

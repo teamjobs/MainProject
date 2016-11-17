@@ -5,8 +5,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 public class HomeController {
-
-	
 	@RequestMapping("/test2")
 	public String test() {
 		return "default";
