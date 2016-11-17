@@ -1,5 +1,6 @@
 package post.model;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -41,11 +42,14 @@ public class CPostReadService {
 		return ar;
 	}
 	
-	public List<PostData> AllPost(){
+	public List AllPost(){
 		SqlSession sql = fac.openSession();
-		List<PostData> list = sql.selectList("post.getAllPost");
+		List<HashMap> list = sql.selectList("post.getAllPost");
+		System.out.println(list.size());
 		sql.close();
 		return list;
 	}
+	
+	
 	
 }
