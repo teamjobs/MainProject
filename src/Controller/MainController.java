@@ -14,10 +14,5 @@ public class MainController {
 		ModelAndView mav = new ModelAndView("user_tile");
 		return mav;
 	}
-	
-	@RequestMapping("/work/main/qwer")
-	public ModelAndView goUserMain(HttpSession hs){
-		ModelAndView mav = new ModelAndView("user_tile");
-		return mav;
-	}
+
 }
