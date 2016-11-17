@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>JOBs</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
@@ -24,12 +24,15 @@ body, html {
 
 .bgimg {
 	background-image: url('/img/${img}.jpg');
+	/* background-image: url('/img/index.jpg'); */
 	min-height: 100%;
 	background-position: center;
 	background-size: cover;
 }
 </style>
 <body>
+
+	
 	<c:if test="${error != null }">
 	<div class="alert alert-danger" id="checkFail">
 		<strong>Fail!</strong> 유효하지 않는 아이디(패스워드) 입니다.
@@ -37,10 +40,17 @@ body, html {
 	</c:if>
 	<div
 		class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-		<div class="w3-display-topleft w3-padding-large w3-xlarge">Logo
+		<div class="w3-display-topleft w3-padding-large w3-xlarge">
+		<p>
+        
+          <span class="glyphicon glyphicon-exclamation-sign" onclick="location.href='/index/introduction'" style="padding: 50px 50px;" />  사이트소개
+        </a>
+      </p>
 		</div>
 		<div class="w3-display-middle" align="center">
-			<h1 class="w3-jumbo w3-animate-top">JOBs</h1>
+			<!-- <h1 class="w3-jumbo w3-animate-top">JOBs</h1> -->
+			<img src="/img/logoW.png" class="w3-jumbo w3-animate-top"/> 
+			<br/><br/>
 			<hr class="w3-border-grey" style="margin: auto; width: 40%">
 			<br />
 			<!-- main  -->
@@ -105,8 +115,13 @@ body, html {
 			$("#joinForm").prop("hidden", null);
 			$("#button").prop("hidden", "hidden");
 		});
+		
+		$("#icon").click(function(){
+			location
+		})
+		
 	</script>
-	<
+	
 
 </body>
 </html>

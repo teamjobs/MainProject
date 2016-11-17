@@ -6,13 +6,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="postUpload" parameterType = "post.model.PostData">
 		insert into post values ( post_seq.nextval,#{WAY},#{COMPANY},#{TITLE},sysdate,#{STARTDATE},
 		#{ENDDATE},#{JOB},#{LOCAL},#{CAREER},#{HIRETYPE},#{BUSINESS},#{QUALIFICATION},#{PROCESS},
-		#{RANK},#{SALARY},#{INCHARGE},#{CALLNUMBER},0,0	)
+		#{RANK},#{SALARY},#{INCHARGE},#{CALLNUMBER},0,0,#{PAY})
 	</insert>
 	<update id="postDataUpdate" parameterType = "post.model.PostData">
 		update post set WAY=#{WAY},TITLE=#{TITLE},STARTDATE=#{STARTDATE},
 		ENDDATE=#{ENDDATE},JOB=#{JOB},LOCAL=#{LOCAL},CAREER=#{CAREER},HIRETYPE=#{HIRETYPE},
 		BUSINESS=#{BUSINESS},QUALIFICATION=#{QUALIFICATION},PROCESS=#{PROCESS},
-		RANK=#{RANK},SALARY=#{SALARY},INCHARGE=#{INCHARGE},CALLNUMBER=#{CALLNUMBER}
+		RANK=#{RANK},SALARY=#{SALARY},INCHARGE=#{INCHARGE},CALLNUMBER=#{CALLNUMBER},PAY=#{PAY}
 		where NUM=#{NUM} 
 	</update>
 	<!-- 포스트 조회(글번호로 불러오기) -->
@@ -30,6 +30,10 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<!-- 마감임박 Post top 3(조회순) -->
 	<select id="getLatePost" resultType="post.model.PostData">
 		<![CDATA[select * from (select * from post where enddate >= sysdate order by enddate asc, hits asc) where rownum <= 3]]>
+	</select>
+	
+	<select id="getAllPost" resultType="post.model.PostData">
+		select * from post
 	</select>
 	
 </mapper>
