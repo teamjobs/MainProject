@@ -11,19 +11,17 @@ nav {
 	background-color: #D1E2E2;
 }
 
-p {
-
+header {
+	margin-left: 10em;
 }
 
 article {
 	height: 100%;
 	padding-bottom: 100px;
 	margin-left: 22em;
-	
 }
 
 footer {
-	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 100px;
@@ -34,20 +32,24 @@ footer {
 
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="min-height: 600px;">
 		<nav>
 			<tiles:insertAttribute name="menubar" />
 		</nav>
 		<p>
 			<tiles:insertAttribute name="side" />
 		</p>
+		<header>
+			<tiles:insertAttribute name="head" />
+		</header>
 		<article>
 			<tiles:insertAttribute name="body" />
 		</article>
-		<footer>
-			<tiles:insertAttribute name="foot" />
-		</footer>
+
 	</div>
+	<footer>
+		<tiles:insertAttribute name="foot" />
+	</footer>
 </body>
 </html>
 
