@@ -21,4 +21,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getCompanyName" resultType="java.lang.String" parameterType = "java.lang.String">
 		select name from company where id = #{id}
 	</select>
+	
+	<select id="getCompanyIntrodunction" parameterType="java.lang.String" resultType="java.util.HashMap">
+		select * from company where name = #{name} 
+	</select>
 </mapper>

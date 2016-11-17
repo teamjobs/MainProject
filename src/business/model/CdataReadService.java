@@ -1,9 +1,12 @@
 package business.model;
 
+import java.util.List;
+
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+import org.springframework.web.servlet.ModelAndView;
 
 @Component
 public class CdataReadService {
@@ -24,5 +27,12 @@ public class CdataReadService {
 		System.out.println(co);
 		sql.close();
 		return co;
+	}
+	
+	public List getIntrodunction(String com){
+		SqlSession sql = fac.openSession();
+		List list = sql.selectList("business.getCompanyIntrodunction",com);
+		sql.close();
+		return list;
 	}
 }

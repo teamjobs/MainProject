@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -30,11 +31,13 @@
     <tbody>
     <c:forEach var="t" items="${list }">
       <tr>
-        <td>${t.COMPANY }</td>
+        <td><a href="/company/introduction?com=${t.COMPANY }">${t.COMPANY }</a> </td>
         <td>${t.TITLE }</td>
         <td>${t.CAREER } / ${t.QUALIFICATION}</td>
         <td>${t.HIRETYPE } <br/> ${t.LOCAL } <br/> ${t.SALARY } ${t.PAY }</td>
-        <td>${t.ENDDATE }</td>
+        
+        <td><fmt:formatDate value="${t.ENDDATE}" pattern="YYYY-MM-dd"/>   마감<fmt:formatNumber value=" ${t.MAGAM}" pattern=".#"/>일 전</td>
+       
       </tr>
     </c:forEach>
       
