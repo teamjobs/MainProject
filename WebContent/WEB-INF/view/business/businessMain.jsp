@@ -4,7 +4,7 @@
 
 <!DOCTYPE html>
 <html>
-<title>W3.CSS</title>
+<title>JOBS - ${id }</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
@@ -15,9 +15,9 @@
 <!-- 비주얼 부분입니다 -->
 		
 	<header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="/img/1.jpg" alt="Fashion Blog" width="1600" height="300">
+    <img class="w3-image" src="/img/businessMain/main1.jpg" alt="Fashion Blog" width="1600" height="300">
     <div class="w3-display-left w3-padding-xlarge">
-      <h3 class="w3-text-white">abcdef</h3>
+      <h3 class="w3-text-white">abcde</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
       <h6><button class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">이력서 등록하기</button></h6>
     </div>
@@ -70,9 +70,10 @@
 </tr>
 </thead>
 <tbody>
-<c:forEach var="t" items="postlist">
+<c:forEach var="t" items="${ postlist}">
+
 <tr>
-  <td>${t.TITLE }</td>
+  <td><a href = "/">${t.TITLE }</a></td>
   <td>${t.ENDDATE }</td>
   <td>${t.JOB }</td>
   <td>${t.HITS }</td>

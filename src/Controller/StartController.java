@@ -91,7 +91,6 @@ public class StartController {
 		} else if(ls.loginC(id, pass)==false && ls.loginW(id, pass)==false){
 			//hs.setAttribute("error", "true");
 			mav.addObject("error", true);
-			mav.setViewName("redirect:/");
 		}
 		return mav;
 	}

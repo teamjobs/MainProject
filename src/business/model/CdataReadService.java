@@ -13,9 +13,7 @@ public class CdataReadService {
 	public CompanyData dataRead(String id){
 		SqlSession sql = fac.openSession();
 		CompanyData cd = null;
-		
 		cd = sql.selectOne("business.getCompanyData",id);
-		
 		sql.close();
 		return cd;
 	}
@@ -23,6 +21,7 @@ public class CdataReadService {
 	public String getCompanyName(String id){
 		SqlSession sql = fac.openSession();
 		String co = sql.selectOne("business.getCompanyName",id);
+		System.out.println(co);
 		sql.close();
 		return co;
 	}
