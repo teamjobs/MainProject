@@ -32,4 +32,14 @@ public class CPostController {
 		mav.addObject("pd",pd);
 		return mav;
 	}
+
+	@RequestMapping("work/list")
+	public ModelAndView postlist(){
+		ModelAndView mav = new ModelAndView("/post/workview/PostList.jsp");
+		
+		List<PostData> list = cpr.AllPost();
+		mav.addObject("list", list);
+		
+		return mav;
+	}
 }

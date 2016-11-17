@@ -32,4 +32,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		<![CDATA[select * from (select * from post where enddate >= sysdate order by enddate asc, hits asc) where rownum <= 3]]>
 	</select>
 	
+	<select id="getAllPost" resultType="post.model.PostData">
+		select * from post
+	</select>
+	
 </mapper>

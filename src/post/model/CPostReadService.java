@@ -41,4 +41,11 @@ public class CPostReadService {
 		return ar;
 	}
 	
+	public List<PostData> AllPost(){
+		SqlSession sql = fac.openSession();
+		List<PostData> list = sql.selectList("post.getAllPost");
+		sql.close();
+		return list;
+	}
+	
 }
