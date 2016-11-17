@@ -25,7 +25,7 @@ public class PostData {
 	int VOL;
 	
 	
-	
+
 	public PostData(String wAY, String cOMPANY, String tITLE, Date sTARTDATE, Date eNDDATE, String jOB,
 			String lOCAL, String cAREER, String hIRETYPE, String bUSINESS, String qUALIFICATION, String pROCESS,
 			String rANK, String sALARY, String iNCHARGE, String cALLNUMBER) {

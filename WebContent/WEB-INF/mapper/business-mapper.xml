@@ -18,4 +18,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getCompanyData" resultType="business.model.CompanyData" parameterType = "java.lang.String">
 		select * from company where id = #{id}
 	</select>
+	<select id="getCompanyName" resultType="java.lang.String" parameterType = "java.lang.String">
+		select name from company where id = #{id}
+	</select>
 </mapper>
