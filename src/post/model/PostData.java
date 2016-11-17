@@ -23,12 +23,13 @@ public class PostData {
 	String CALLNUMBER;
 	int HITS;
 	int VOL;
+	int PAY;
 	
 	
-
+	// 업로드 일자 / 조회수 / 지원자수 제외하고 순서대로 입력해야합니다.
 	public PostData(String wAY, String cOMPANY, String tITLE, Date sTARTDATE, Date eNDDATE, String jOB,
 			String lOCAL, String cAREER, String hIRETYPE, String bUSINESS, String qUALIFICATION, String pROCESS,
-			String rANK, String sALARY, String iNCHARGE, String cALLNUMBER) {
+			String rANK, String sALARY, String iNCHARGE, String cALLNUMBER, int pay) {
 		NUM = 0;
 		WAY = wAY;
 		COMPANY = cOMPANY;
@@ -49,11 +50,21 @@ public class PostData {
 		CALLNUMBER = cALLNUMBER;
 		HITS = 0;
 		VOL = 0;
+		PAY = pay;
 		
 	}
 
+	public int getPAY() {
+		return PAY;
+	}
+
+	public void setPAY(int pAY) {
+		PAY = pAY;
+	}
+
+	// 기본생성자입니다.
 	public PostData() {
-		this("","","",null,null,"","","","","","","","","","","");
+		this("","","",null,null,"","","","","","","","","","","",0);
 	}
 
 	public int getNUM() {
