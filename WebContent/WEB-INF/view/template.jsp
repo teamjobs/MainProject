@@ -18,7 +18,6 @@ article {
 }
 
 footer {
-	position: absolute;
 	bottom: 0;
 	width: 100%;
 	height: 100px;
@@ -29,7 +28,7 @@ footer {
 
 </head>
 <body>
-	<div class="container">
+	<div class="container" style="min-height: 600px;">
 		<nav>
 			<tiles:insertAttribute name="menubar" />
 		</nav>

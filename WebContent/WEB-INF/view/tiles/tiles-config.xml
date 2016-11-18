@@ -24,5 +24,9 @@
 	</definition>
 	<definition name="CompanyFileUpload_tile" extends="info">
 		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
+	<!-- 2. 타일 만들어서 컨트롤러가 불러낼 name을 지정한다. -->	
+	</definition>
+	<definition name="search" extends="info">
+		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/aa.jsp" />
 	</definition>
 </tiles-definitions>
