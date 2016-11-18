@@ -16,7 +16,20 @@
 	<context:component-scan base-package="business" />
 	<context:component-scan base-package="post" />
 	<context:component-scan base-package="mail" />
+<<<<<<< HEAD
 	<context:component-scan base-package="search" />
+=======
+	<context:component-scan base-package="file" />
+	
+	<!-- File -->
+	
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+	id="multipartResolver" />
+	
+	
+	<!-- DB -->
+	
+>>>>>>> branch 'master' of https://github.com/teamjobs/MainProject.git
 	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@121.134.125.131:1521:xe" />
@@ -31,7 +44,10 @@
 			</list>
 		</property>
 	</bean>
+	
+	
 	<!-- view resolver setting -->
+	
 	<bean class="org.springframework.web.servlet.view.BeanNameViewResolver"
 		id="beanNameViewResolver" p:order="1" />
 	<bean class="org.springframework.web.servlet.view.tiles3.TilesViewResolver"
@@ -47,7 +63,10 @@
 	<bean
 		class="org.springframework.web.servlet.view.InternalResourceViewResolver"
 		id="internalResourceViewResolver" p:order="9" p:prefix="/WEB-INF/view/" />
+		
+		
 	<!-- 이메일 전송 -->
+	
 	<bean class="org.springframework.mail.javamail.JavaMailSenderImpl"
 		id="javaMailSender">
 		<property name="host" value="smtp.google.com" />
