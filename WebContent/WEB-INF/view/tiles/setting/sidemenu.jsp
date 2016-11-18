@@ -19,8 +19,7 @@
   <br/>
   <div class="w3-container">
   </div>
-  <a href="#" class="w3-padding-16 w3-hide-large w3-dark-grey w3-hover-black"><i class="fa fa-remove fa-fw"></i>  Close Menu</a>
-  <a href="#" class="w3-padding" style="background-color: #D1E2E2;"><i class="fa fa-bell fa-fw"></i>  새 알림 (1)</a>
+  <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  새 알림 (1)</a>
   <a href="#" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  이력서 등록</a>
   <a href="#" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  내가 본 공고</a>
   <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  스크랩</a>

@@ -46,11 +46,5 @@
       </div>
     </div>
   </div>
-<script>
-// Get the Sidenav
-var mySidenav = document.getElementById("mySidenav");
-</script>
-
 </body>
-
 </html>
