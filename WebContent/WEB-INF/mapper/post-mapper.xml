@@ -6,12 +6,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="postUpload" parameterType = "post.model.PostData">
 		insert into post values ( post_seq.nextval,#{WAY},#{COMPANY},#{TITLE},sysdate,#{STARTDATE},
 		#{ENDDATE},#{JOB},#{LOCAL},#{CAREER},#{HIRETYPE},#{BUSINESS},#{QUALIFICATION},#{PROCESS},
-		#{RANK},#{SALARY},#{INCHARGE},#{CALLNUMBER},0,0,#{PAY})
+		#{RANK},#{SALARY},#{INCHARGE},#{CALLNUMBER},0,0,#{PAY},#{EDUCATION})
 	</insert>
 	<update id="postDataUpdate" parameterType = "post.model.PostData">
 		update post set WAY=#{WAY},TITLE=#{TITLE},STARTDATE=#{STARTDATE},
 		ENDDATE=#{ENDDATE},JOB=#{JOB},LOCAL=#{LOCAL},CAREER=#{CAREER},HIRETYPE=#{HIRETYPE},
-		BUSINESS=#{BUSINESS},QUALIFICATION=#{QUALIFICATION},PROCESS=#{PROCESS},
+		BUSINESS=#{BUSINESS},QUALIFICATION=#{QUALIFICATION},PROCESS=#{PROCESS},EDUCATION=#{EDUCATION},
 		RANK=#{RANK},SALARY=#{SALARY},INCHARGE=#{INCHARGE},CALLNUMBER=#{CALLNUMBER},PAY=#{PAY}
 		where NUM=#{NUM} 
 	</update>

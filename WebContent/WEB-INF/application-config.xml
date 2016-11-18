@@ -15,14 +15,26 @@
 	<context:component-scan base-package="post" />
 	<context:component-scan base-package="business" />
 	<context:component-scan base-package="post" />
+<<<<<<< HEAD
 	<context:component-scan base-package="mail" />
 	<context:component-scan base-package="search" />
+=======
+	<context:component-scan base-package="mail" />
+	<context:component-scan base-package="search" />
+>>>>>>> branch 'master' of https://github.com/teamjobs/MainProject.git
 	<context:component-scan base-package="file" />
 	<!-- File -->
+<<<<<<< HEAD
 	<bean
 		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
 		id="multipartResolver" />
 	<!-- DB -->
+=======
+	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
+	id="multipartResolver" />
+	
+	<!-- DB -->
+>>>>>>> branch 'master' of https://github.com/teamjobs/MainProject.git
 	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />
 		<property name="url" value="jdbc:oracle:thin:@121.134.125.131:1521:xe" />
