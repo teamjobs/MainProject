@@ -20,7 +20,7 @@ public class CfileController {
 	
 	@RequestMapping("/business/file")
 	public String goFile(){
-		return "businessfileup_tile";
+		return "business/file/fileup.jsp";
 	}
 	
 	// 업로드 절차는 유저 / 기업 각각 set할 항목이 달라집니다. 
