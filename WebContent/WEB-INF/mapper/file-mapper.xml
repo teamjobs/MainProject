@@ -14,12 +14,16 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getAllCompanyFile" resultType="file.model.FileData">
 		select * from companyfile order by num desc
 	</select>
+	<!-- 특정 기업회원이 올린 모든 파일 목록 로드 -->
+	<select id="getSomeCompanyFile" resultType="file.model.FileData" parameterType="java.lang.String">
+		select * from companyfile where uploader=#{id} order by num desc
+	</select>
 	<!-- 회사가 올린 특정 파일 로드 -->
 	<select id="getOneCompanyFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
 		select * from companyfile where NUM=#{num}
 	</select>
 	<!-- 해당 포스트에서 받은 이력서 로드(최신순) -->
-	<select id="getAllPostFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
+	<select id="getPostWorkFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
 		select * from workfile where post=#{post} order by num desc
 	</select>
 	<!-- 지원받은 이력서 개별 로드 -->

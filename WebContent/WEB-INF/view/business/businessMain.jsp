@@ -14,7 +14,7 @@
 
 <!-- 비주얼 부분입니다 -->
 		
-	<header class="w3-display-container w3-wide" id="home">
+	<header class="w3-display-container w3-wide" id="myHead">
     <img class="w3-image" src="/img/businessMain/main1.jpg" alt="Fashion Blog" width="1600" height="300">
     <div class="w3-display-middle w3-text-white w3-center">
       <h3 class="w3-text-white">abcde</h3>
