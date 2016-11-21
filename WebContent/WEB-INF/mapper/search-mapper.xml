@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="search">
+	<select id="searchall" resultType="post.model.PostData">
+		<![CDATA[
+			select * from post where way like #{word} or company like #{word} or title like #{word}
+			or job like #{word} or local like #{word} or career like #{word} or hiretype like #{word}
+			or business like #{word} or rank like #{word} or salary like #{word} or qualification like #{word}
+		]]>
+	</select>
+	
+	<select id="searchtest" resultType="post.model.PostData">
+		<![CDATA[
+			select * from post where upper(way) like #{word} or upper(company) like #{word} or upper(title) like #{word}
+			or upper(job) like #{word} or upper(local) like #{word} or upper(career) like #{word} or upper(hiretype) like #{word}
+			or upper(business) like #{word} or upper(rank) like #{word} or upper(salary) like #{word} or upper(qualification) like #{word}
+		]]>
+	</select>
+</mapper>

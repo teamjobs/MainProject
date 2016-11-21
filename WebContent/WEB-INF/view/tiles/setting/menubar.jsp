@@ -42,13 +42,19 @@ body {
 				<div class="w3-dropdown-content w3-white w3-card-4">
 					<a href="#">마이 페이지</a> <a href="#">로그아웃</a>
 				</div></li>
+				
+				
 			<li class="w3-hide-small w3-right"><a href="javascript:void(0)"
 				class="w3-padding-large w3-hover-red" id="opensearch"><i
 					class="fa fa-search"></i></a></li>
 			<li class="w3-hide-small w3-right" id="search" style="display: none;">
-					<form action="form.asp" target="_blank" style="display: inline;">
+			
+			
+					<!-- 3. 검색창에서 엔터를 치면 action에 지정된 경로로 간다. 경로는 Controller가 받는다. -->
+					
+					<form action="/searchall" target="_blank" style="display: inline;">
 						 <input class="w3-input w3-border w3-left" type="text"
-							placeholder="기업, 채용공고를 검색해보세요." name="Message" required style="width: 280px; vertical-align: middle; padding:11px;">
+							placeholder="기업, 채용공고를 검색해보세요." name="word" required style="width: 350px; vertical-align: middle; padding:11px;">
 					</form>
 			</li>
 		</ul>

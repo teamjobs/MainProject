@@ -19,4 +19,21 @@
 	<definition name="user_tile" extends="default">
 		<put-attribute name="body" value="/WEB-INF/view/work/workMain.jsp" />
 	</definition>
+	<definition name="CompanyFile_tile" extends="info">
+		<put-attribute name="body" value="/WEB-INF/view/business/file/filelist.jsp" />
+	</definition>
+	<definition name="CompanyFileUpload_tile" extends="info">
+		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
+	<!-- 2. 타일 만들어서 컨트롤러가 불러낼 name을 지정한다. -->	
+	</definition>
+	
+	<definition name="searchall" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/searchTitle.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/resultSearch.jsp" />
+
+	</definition>
+	<definition name="search" extends="info">
+		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/aa.jsp" />
+
+	</definition>
 </tiles-definitions>

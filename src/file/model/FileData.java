@@ -1,5 +1,7 @@
 package file.model;
 
+import java.sql.Date;
+
 public class FileData {
 	int NUM;
 	int FILESIZE;
@@ -10,7 +12,7 @@ public class FileData {
 	String FILENAME;
 	String FILEUUID;
 	String UPLOADER;
-	String UPDAY;
+	Date UPDAY;
 	
 	
 	// 기업 업로드시 파일정보 저장
@@ -88,7 +90,7 @@ public class FileData {
 	}
 
 
-	public String getUPDAY() {
+	public Date getUPDAY() {
 		return UPDAY;
 	}
 
@@ -138,7 +140,7 @@ public class FileData {
 	}
 
 
-	public void setUPDAY(String uPDAY) {
+	public void setUPDAY(Date uPDAY) {
 		UPDAY = uPDAY;
 	}
 

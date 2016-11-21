@@ -17,7 +17,7 @@ import org.springframework.web.servlet.view.AbstractView;
 
 import file.model.FileData;
 
-@Component
+@Component(value="dlv")
 public class FileDownloadView extends AbstractView{
 	
 	@Autowired
