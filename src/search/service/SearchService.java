@@ -1,5 +1,6 @@
 package search.service;
 
+import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -25,21 +26,11 @@ public class SearchService {
 		
 		// 12. 공고 데이터 타입을 이미 만들어 놨으니 'list'에 담긴 데이터베이스 내용을 '<타입>' 제너릭으로 받아 list를 만든다.
 		//		mapper에 지정한 아이디 값 'getResult'를 이용하여 'mm'=(검색어 관련 데이터베이스 내용을 리스트에 담는다. 
-		List<PostData> list = ss.selectList("search.searchall", searchword);
+		List<HashMap> list = ss.selectList("search.searchall", searchword);
 		ss.close();
 		
 		return list;
 		
 	}
-	
-	public List searchtest(String word){
-		SqlSession ss = fac.openSession();
-		
-		String searchword = "'%'||upper('"+word+"')||'%'";
-		
-		List<PostData> list = ss.selectList("search.searchtest", searchword);
-		
-		ss.close();
-		return list;
-	}
+
 }

@@ -8,7 +8,6 @@
 
 
 <style type="text/css">
-
 table {
 	font-family: "Lato", "sans-serif";
 }
@@ -17,7 +16,6 @@ table.one {
 	margin-bottom: 3em;
 	border-collapse: collapse;
 }
-
 
 td {
 	text-align: center;
@@ -36,7 +34,6 @@ tr {
 	height: 1em;
 }
 
-
 table tr:nth-child(even) {
 	background-color: #eee;
 }
@@ -44,7 +41,6 @@ table tr:nth-child(even) {
 table tr:nth-child(odd) {
 	background-color: #fff;
 }
-
 </style>
 
 
@@ -52,36 +48,50 @@ table tr:nth-child(odd) {
 
 <html>
 <body>
-	<div class="container">
-		<table class="table table-hover">
+	<div class="container" style="align: left">
+		<table class="table table-hover" style="width: 90%">
 			<thead>
 				<tr>
-					<th>회사명</th>
+					<th style="width: 15%">회사명</th>
 					<th>채용제목</th>
-					<th>자격요건</th>
-					<th>근무조건</th>
-					<th>마감일</th>
+					<th style="width: 12%">학력</th>
+					<th style="width: 15%">자격요건</th>
+					<th style="width: 12%">근무조건</th>
+					<th style="width: 12%">마감일</th>
 				</tr>
 			</thead>
 			<tbody>
-				<c:forEach var="i" items="${searchall }">
-					<tr>
-						<td><a href="/company/introduction?com=${i.COMPANY }">${i.COMPANY }</a>
-						</td>
-						<td>${i.TITLE }</td>
-						<td>${i.CAREER }<br/>${i.QUALIFICATION }
-						</td>
-						<td>${i.HIRETYPE }<br/>${i.LOCAL }<br/>${i.SALARY }
-						</td>
-					</tr>
+			
+			<c:choose>
+				<c:when test="${searchall.size() != 0}">
+						<c:forEach var="i" items="${searchall }">
+						<tr>
+							<td><a href="/company/introduction?com=${i.COMPANY }"><b>${i.COMPANY }</b></a>
+							</td>
+							<td><b>${i.TITLE }</b></td>
+							<td>${i.EDUCATION }</td>
+							<td>${i.CAREER }<br />${i.QUALIFICATION }
+							</td>
+							<td>${i.HIRETYPE }<br />${i.LOCAL }<br />${i.SALARY }
+							</td>
+							<td>
+								마감 <b><fmt:formatNumber value=" ${i.MAGAM}" pattern="#" />일</b> 전<br/>
+								<fmt:formatDate value="${i.ENDDATE}" pattern="YYYY-MM-dd" />
+				
+							</td>
+						</tr>
 				</c:forEach>
-					<c:forEach var="x" items="${searchtest }">
-					<tr>
-
-						<td>${x.COMPANY }</td>
-
-					</tr>
-				</c:forEach>
+				
+				</c:when>
+				<c:otherwise>
+					<tr><td colspan="6">
+						검색 결과가 없습니다.
+					</td></tr>
+				</c:otherwise>
+			</c:choose>			
+			
+			
+			
 			</tbody>
 		</table>
 	</div>

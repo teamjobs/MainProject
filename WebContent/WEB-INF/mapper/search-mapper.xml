@@ -3,19 +3,14 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="search">
-	<select id="searchall" resultType="post.model.PostData">
+	<select id="searchall" resultType="java.util.HashMap">
 		<![CDATA[
-			select * from post where way like #{word} or company like #{word} or title like #{word}
-			or job like #{word} or local like #{word} or career like #{word} or hiretype like #{word}
-			or business like #{word} or rank like #{word} or salary like #{word} or qualification like #{word}
+			select p.* from (select enddate-sysdate magam, pp.* from (select * from post where lower(way) like lower (#{word}) or lower(company) like lower (#{word})
+				or lower(title) like lower (#{word}) or lower(job) like lower (#{word}) or lower(local) like lower (#{word})
+				or lower(career) like lower (#{word}) or lower(hiretype) like lower (#{word}) or lower(business) like lower (#{word})
+				or lower(rank) like lower (#{word}) or lower(salary) like lower (#{word}) or lower(qualification) like lower (#{word})
+				or lower(education) like lower (#{word}))pp where enddate-sysdate >= 0) p ORDER BY magam
 		]]>
 	</select>
 	
-	<select id="searchtest" resultType="post.model.PostData">
-		<![CDATA[
-			select * from post where upper(way) like #{word} or upper(company) like #{word} or upper(title) like #{word}
-			or upper(job) like #{word} or upper(local) like #{word} or upper(career) like #{word} or upper(hiretype) like #{word}
-			or upper(business) like #{word} or upper(rank) like #{word} or upper(salary) like #{word} or upper(qualification) like #{word}
-		]]>
-	</select>
 </mapper>
