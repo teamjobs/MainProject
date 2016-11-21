@@ -43,9 +43,6 @@ table tr:nth-child(odd) {
 }
 </style>
 
-
-
-
 <html>
 <body>
 	<div class="container" style="align: left">
