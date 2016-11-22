@@ -13,9 +13,7 @@
 	<h1>
 		<b>${UPLOAD}</b>
 	</h1>
-	<div class="w3-section w3-bottombar w3-padding-5">
-		<h3>내 이력서</h3>
-	</div>
+	
 	<div class="w3-section w3-bottombar w3-padding-5">
 		<h3>지원 현황</h3>
 	</div>

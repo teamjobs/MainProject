@@ -33,7 +33,7 @@ public class MysumeController {
 	@RequestMapping("/my/clipping")
 	public ModelAndView clippingC(HttpSession hs){
 		
-		ModelAndView mav = new ModelAndView("work/clipping.jsp");
+		ModelAndView mav = new ModelAndView("myclipping");
 		String id= (String) hs.getAttribute("id");
 		List clipping = my.clipping(id);
 		System.out.println(clipping);
@@ -41,5 +41,6 @@ public class MysumeController {
 		
 		return mav;
 	}
+	
 	
 }

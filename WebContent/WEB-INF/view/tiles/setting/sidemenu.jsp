@@ -21,8 +21,8 @@
   </div>
   <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  새 알림 (1)</a>
   <a href="/my/history" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  이력서 관리</a>
-  <a href="#" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  내가 본 공고</a>
-  <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  스크랩</a>
+  <a href="/my/clipping" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  스크랩</a>
+  <!-- <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  스크랩</a> -->
   <a href="#" class="w3-padding"><i class="fa fa-cog fa-fw"></i>  회원정보 관리</a>
   <br/>
   <br/>
