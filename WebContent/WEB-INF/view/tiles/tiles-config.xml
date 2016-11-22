@@ -25,12 +25,30 @@
 	<definition name="CompanyFileUpload_tile" extends="info">
 		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
 	</definition>
-	
+
 	<!-- 2. 타일 만들어서 컨트롤러가 불러낼 name을 지정한다. -->	
-	<definition name="searchall" extends="info">
+	<definition name="searchall" template="/WEB-INF/view/template3.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/searchTitle.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/resultSearch.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
 
-</tiles-definitions>
+	<definition name="messageservice" extends="default">
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
 
+	<definition name="search" extends="info">
+		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/aa.jsp" />
+	</definition>
+	
+	<definition name="myhistory" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/history.jsp"/>
+	</definition>
+	
+	<definition name="myclipping" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
+	</definition>
+</tiles-definitions>

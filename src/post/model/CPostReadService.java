@@ -79,6 +79,12 @@ public class CPostReadService {
 			return li;
 	}
 	
+	public int AllPostCount(){
+		SqlSession sql = fac.openSession();
+		int size = sql.selectOne("post.getAllCount");
+		sql.close();
+		return size;
+	}
 	
 	
 }

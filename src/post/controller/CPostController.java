@@ -21,6 +21,7 @@ import file.model.FileUploadService;
 import post.model.CPostReadService;
 import post.model.CPostUploadService;
 import post.model.PostData;
+import post.model.PostPageService;
 
 @Controller
 public class CPostController {
@@ -33,6 +34,8 @@ public class CPostController {
 	CdataReadService crs;
 	@Autowired
 	CPostReadService cps;
+	@Autowired
+	FileUploadService fus;
 	
 	@RequestMapping("business/my/post/upload")
 	public ModelAndView goPostUpload(){
@@ -72,8 +75,15 @@ public class CPostController {
 		return mav;
 	}
 	
-	@Autowired
-	FileUploadService fus;
+	
+	@RequestMapping("business/company/my/post/{co}")
+	public ModelAndView goCompanyPost(@PathVariable String co){
+		ModelAndView mav = new ModelAndView("/post/companyview/extra.jsp");
+		List<PostData> pdl = cpr.getCompanyAllPost(co);
+		mav.addObject("pdlist",pdl);
+		return mav;
+	}
+	
 
 	@RequestMapping("/business/my/post/uploadrst")
 	public ModelAndView upPost(String way, String title, String startdate, String enddate, String job,
@@ -128,7 +138,4 @@ public class CPostController {
 		}
 		return mav;
 	}
-	
-
-
 }

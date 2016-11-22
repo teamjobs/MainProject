@@ -17,7 +17,9 @@
 	<context:component-scan base-package="post" />
 	<context:component-scan base-package="mail" />
 	<context:component-scan base-package="search" />
+	<context:component-scan base-package="message" />
 	<context:component-scan base-package="file" />
+	<context:component-scan base-package="Work" />
 	<!-- File -->
 
 	

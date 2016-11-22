@@ -40,7 +40,7 @@ body {
 				href="javascript:void(0)" class="w3-hover-none w3-padding-large"
 				title="More">☰ </a>
 				<div class="w3-dropdown-content w3-white w3-card-4">
-					<a href="#">마이 페이지</a> <a href="#">로그아웃</a>
+					<a href="/my/history">마이 페이지</a> <a href="#">로그아웃</a>
 				</div></li>
 				
 				

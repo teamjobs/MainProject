@@ -6,7 +6,6 @@
 <!-- 1. 원하는 부분에 어떻게 띄워줄지 '뷰페이지'를 먼저 만든다.-->
 <%-- 2. ${??} 으로 불러온다.--%>
 
-
 <style type="text/css">
 table {
 	font-family: "Lato", "sans-serif";
@@ -45,8 +44,8 @@ table tr:nth-child(odd) {
 
 <html>
 <body>
-	<div class="container" style="align: left">
-		<table class="table table-hover" style="width: 90%">
+	<div class="w3-row section"  style="min-height: 500px; margin-top: 100px;" align="center">
+		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>
 					<th style="width: 15%">회사명</th>
@@ -58,37 +57,37 @@ table tr:nth-child(odd) {
 				</tr>
 			</thead>
 			<tbody>
-			
-			<c:choose>
-				<c:when test="${searchall.size() != 0}">
+
+				<c:choose>
+					<c:when test="${searchall.size() != 0}">
 						<c:forEach var="i" items="${searchall }">
+							<tr>
+								<td><a href="/company/introduction?com=${i.COMPANY }"><b>${i.COMPANY }</b></a>
+								</td>
+								<td><b>${i.TITLE }</b></td>
+								<td>${i.EDUCATION }</td>
+								<td>${i.CAREER }<br />${i.QUALIFICATION }
+								</td>
+								<td>${i.HIRETYPE }<br />${i.LOCAL }<br />${i.SALARY }
+								</td>
+								<td>마감 <b><fmt:formatNumber value=" ${i.MAGAM}"
+											pattern="#" />일</b> 전<br /> <fmt:formatDate value="${i.ENDDATE}"
+										pattern="YYYY-MM-dd" />
+
+								</td>
+							</tr>
+						</c:forEach>
+
+					</c:when>
+					<c:otherwise>
 						<tr>
-							<td><a href="/company/introduction?com=${i.COMPANY }"><b>${i.COMPANY }</b></a>
-							</td>
-							<td><b>${i.TITLE }</b></td>
-							<td>${i.EDUCATION }</td>
-							<td>${i.CAREER }<br />${i.QUALIFICATION }
-							</td>
-							<td>${i.HIRETYPE }<br />${i.LOCAL }<br />${i.SALARY }
-							</td>
-							<td>
-								마감 <b><fmt:formatNumber value=" ${i.MAGAM}" pattern="#" />일</b> 전<br/>
-								<fmt:formatDate value="${i.ENDDATE}" pattern="YYYY-MM-dd" />
-				
-							</td>
+							<td colspan="6">검색 결과가 없습니다.</td>
 						</tr>
-				</c:forEach>
-				
-				</c:when>
-				<c:otherwise>
-					<tr><td colspan="6">
-						검색 결과가 없습니다.
-					</td></tr>
-				</c:otherwise>
-			</c:choose>			
-			
-			
-			
+					</c:otherwise>
+				</c:choose>
+
+
+
 			</tbody>
 		</table>
 	</div>
