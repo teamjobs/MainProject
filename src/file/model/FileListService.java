@@ -35,14 +35,22 @@ public class FileListService {
 	
 	public List<FileData> getPostWorkFile(int num){
 		SqlSession sql = fac.openSession();
-		List<FileData> li = sql.selectList("getPostWorkFile",num);
+		List<FileData> li = sql.selectList("file.getPostWorkFile",num);
 		sql.close();
 		return li;
 	}
 	
 	public FileData getOneWorkFile(int num){
 		SqlSession sql = fac.openSession();
-		FileData fd = (FileData)sql.selectOne("getOneWorkFile",num);
+		FileData fd = (FileData)sql.selectOne("file.getOneWorkFile",num);
+		sql.close();
+		return fd;
+	}
+	
+	//파일 두개 이상일시 최신 파일 다운로드하도록 수정
+	public FileData getPostCompanyFile(int num){
+		SqlSession sql = fac.openSession();
+		FileData fd = (FileData)sql.selectOne("file.getPostCompanyFile",num);
 		sql.close();
 		return fd;
 	}
