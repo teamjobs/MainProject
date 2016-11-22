@@ -51,4 +51,9 @@
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
 	</definition>
+	
+	<definition name="myinfo" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
+	</definition>
 </tiles-definitions>
