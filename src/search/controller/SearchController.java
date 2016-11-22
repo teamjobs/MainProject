@@ -1,6 +1,10 @@
 package search.controller;
 
+import java.util.HashMap;
 import java.util.List;
+
+import org.apache.ibatis.session.SqlSession;
+import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -23,18 +27,10 @@ public class SearchController {
 		// 7. 이제 Service(Model)로 가서
 		
 		// 13. 'Autowired'로 서비스를 불러내서 리턴해주는 list(데이터베이스 내용 담김)를 받는다. 
-		List<PostData> list = ss.searchall(word);
+		List<HashMap> list = ss.searchall(word);
 		// 14. list 내용을 담아 ModelAndView를 리턴한다.
 		mav.addObject("searchall", list);
 		return mav;
 	}
-	
-	public ModelAndView searchtest(@RequestParam(name="word")String word){
-		ModelAndView mav = new ModelAndView("searchtest");
-		
-		List<PostData> list = ss.searchtest(word);
-		mav.addObject("searchtest", list);
-		
-		return mav;
-	}
+
 }
