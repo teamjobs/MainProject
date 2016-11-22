@@ -48,6 +48,11 @@
 		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
 	</definition>
 	
+	<definition name="myinfo" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
+	</definition>
+	
 	
 	<!-- Business쪽에서 연결되는 타일입니다. -->
 	<!-- /business/file -->
@@ -64,14 +69,5 @@
 		<put-attribute name="head" value="/WEB-INF/view/business/my/CMyhead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/business/my/CMyinfoBody.jsp"/>
 	</definition>
-	
-	
-	
-	
-	
-	
-	
-	
-	
 	
 </tiles-definitions>

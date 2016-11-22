@@ -32,6 +32,14 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from clipping where id=#{id}
 </select>
 
+<update id="MyinfoChange" parameterType="java.util.HashMap">
+	UPDATE work SET name = #{name} ,pass = #{pass}, email=#{email} WHERE id = #{id}
+</update>
+
+<select id="Myinfo" parameterType="java.lang.String" resultType="java.util.HashMap">
+	select * from work where ID= #{id}
+</select>
+
 
 
 
