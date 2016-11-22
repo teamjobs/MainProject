@@ -35,7 +35,24 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getAllPost" resultType="java.util.HashMap">
 		<![CDATA[select p.* from (select enddate-sysdate magam, pp.* from post pp where enddate-sysdate >= 0) p ORDER BY magam]]>
 	</select>
+	<select id="getAllCount" resultType="java.lang.Integer">
+		<![CDATA[select count(*) from (select enddate-sysdate magam, pp.* from post pp where enddate-sysdate >= 0) p ORDER BY magam]]>
+	</select>
 	
+	
+	<!-- postpage 검색 -->
+	<select id="getPage" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		<![CDATA[
+			select temp.* from
+			  (select rownum rn, r.* from post r order by num desc)temp
+			  where temp.rn >= #{start} and temp.rn <=#{end}
+		  ]]>
+	</select>
+	
+	<!--지원 취소 -->
+	<delete id="cancel" parameterType="java.lang.String">
+		delete from workfile where num=#{num}
+	</delete>
 	
 	
 </mapper>

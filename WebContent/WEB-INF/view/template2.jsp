@@ -28,8 +28,6 @@ footer {
 	color: #383838;
 }
 </style>
-
-
 </head>
 <body>
 	<div class="container" style="min-height: 600px;">
@@ -45,7 +43,6 @@ footer {
 		<article>
 			<tiles:insertAttribute name="body" />
 		</article>
-
 	</div>
 	<footer>
 		<tiles:insertAttribute name="foot" />
