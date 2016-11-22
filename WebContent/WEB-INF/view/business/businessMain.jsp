@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jstl/fmt" %>
 
 <!DOCTYPE html>
 <html>
@@ -19,7 +20,7 @@
     <div class="w3-display-middle w3-text-white w3-center">
       <h3 class="w3-text-white">abcde</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
-      <h6><button class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">이력서 등록하기</button></h6>
+      <h6><a class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" href="/business/my/post/upload" >구인공고 등록하기</a></h6>
     </div>
   </header>
 
