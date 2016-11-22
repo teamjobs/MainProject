@@ -27,10 +27,15 @@
 	</definition>
 	
 	<!-- 2. 타일 만들어서 컨트롤러가 불러낼 name을 지정한다. -->	
-	<definition name="searchall" extends="info">
+	<definition name="searchall" template="/WEB-INF/view/template3.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/searchTitle.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/resultSearch.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
-
+	
+	<definition name="messageservice" extends="default">
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
 </tiles-definitions>
 
