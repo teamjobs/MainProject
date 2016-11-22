@@ -41,11 +41,7 @@
 </style>
 
 <!-- 상세 검색 메뉴 -->
-<header class="w3-container" style="padding-top:22px">
-    <h5><b><i class="fa fa-dashboard"></i> 상세검색 메뉴</b></h5>
-</header>
   
-
 <div class="w3-main" style="margin-left:300px;margin-top:43px;">
 
 <form name="zn" method="get" action="/work/post/selectserch">
@@ -53,12 +49,12 @@
 		<button type="button" class="btn btn-success" id="hidebt"
 			style="width: 250;">상세검색</button>
 	</div>
-	<div align="left" class="container" style="width: 100%; display: none"
+	<div align="left" class="container" style="width: 50%; display: none"
 		id="container">
 		<h2>상세 검색 조건 설정</h2>
 		<!-- 지역 -->
 		
-		<div class="panel-group" id="accordion">
+		<div align="center" class="panel-group" id="accordion" style="width: 100%">
 			<div class="panel panel-default">
 				<div class="panel-heading">
 					<h4 class="panel-title">
@@ -72,7 +68,7 @@
 							<c:set var="i" value="0" />
 							<c:forEach var="local" items="${local }">
 								<input class="local" type="checkbox" name="local"
-									value="${local }" /> &nbsp;&nbsp;${local }&nbsp;&nbsp;&nbsp;&nbsp;
+									value="${local }" /> &nbsp;&nbsp;${local }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 							<c:set var="i" value="${i+1 }" />
 								<c:if test="${i % 5==0 }">
 									<br />
