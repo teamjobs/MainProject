@@ -19,75 +19,95 @@
     <div class="w3-display-middle w3-text-white w3-center">
       <h3 class="w3-text-white">JOBS</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
-      <h6><button class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" onclick="document.getElementById('subscribe').style.display='block'">이력서 등록하기</button></h6>
-    </div>
-  </header>
+      
+      <a href="/my/resume/in">
+				<button
+					class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
+					onclick="document.getElementById('subscribe').style.display='block'">
+					이력서 등록하기
+				</button>
+				</a>
+			</h6>
+		</div>
+	</header>
+	<div class="w3-row-padding w3-center w3-margin-top">
+		<div class="w3-third">
+			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
+				<h4>지원 이력서 확인하기</h4>
+				<br> <a href="/work/resume/view"><i
+					class="fa fa-desktop w3-margin-bottom w3-text-theme"
+					style="font-size: 120px"></i></a>
+				<p>
+					지원한 이력서를 <br />확인할 수 있습니다.
+				</p>
+			</div>
+		</div>
+		<div class="w3-third">
+			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
+				<h4>회사 리뷰 확인하기</h4>
+				<br> <i class="fa fa-css3 w3-margin-bottom w3-text-theme"
+					style="font-size: 120px"></i>
+				<p>
+					직원이 작성한 리뷰를 <br />확인할 수 있습니다.
+				</p>
+			</div>
+		</div>
 
-
-<div class="w3-row-padding w3-center w3-margin-top">
-<div class="w3-third">
-  <div class="w3-card-2 w3-padding-top" style="min-height:300px">
-  <h4>지원 이력서 확인하기</h4><br>
-  <i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>지원한 이력서를 <br/>확인할 수 있습니다.</p>
-  </div>
-</div>
-
-<div class="w3-third">
-  <div class="w3-card-2 w3-padding-top" style="min-height:300px">
-  <h4>회사 리뷰 확인하기</h4><br>
-  <i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>직원이 작성한 리뷰를 <br/>확인할 수 있습니다.</p>
-  </div>
-</div>
-
-<div class="w3-third">
-  <div class="w3-card-2 w3-padding-top" style="min-height:300px">
-  <h4>기업 찾기</h4><br>
-  <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>입사지원 가능한 기업을 <br/>열람할 수 있습니다.</p>
-  </div>
-</div>
-</div>
+		<div class="w3-third">
+			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
+				<h4>기업 찾기</h4>
+				<br><a href="/work/post/serch">
+				 <i class="fa fa-diamond w3-margin-bottom w3-text-theme"
+					style="font-size: 120px"></i>
+					</a>
+				<p>
+					입사지원 가능한 기업을 <br />열람할 수 있습니다.
+				</p>
+			</div>
+		</div>
+	</div>
      
 
 
 <div class="w3-container">
-  <hr>
-  <div class="w3-center">
-    <h2>회사</h2>
-    <p w3-class="w3-large">공고 현황</p>
-  </div>
-<div class="w3-responsive w3-card-4">
-<table class="w3-table w3-striped w3-bordered">
-<thead>
-<tr class="w3-theme">
-  <th>회사명</th>
-  <th>직무</th>
-  <th>지원일자</th>
-  <th>종료일자</th>
-  <th>열람여부</th>
-</tr>
-</thead>
-<tbody>
-<!-- 
-<c:forEach var="t" items="${ postlist}">
+		<hr>
+		<div class="w3-center">
+			<h2>회사</h2>
+			<p w3-class="w3-large">최신 공고 현황</p>
+		</div>
+		<div class="w3-responsive w3-card-4">
+			<table class="w3-table w3-striped w3-bordered">
+				<thead>
+					<tr class="w3-theme">
+						<th>기업</th>
+						<th>제목</th>
+						<th>경력, 학력</th>
+						<th>고용형태, 위치, 급여</th>
+						<th>마감일자</th>
+					</tr>
+				</thead>
+				<tbody>
+					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
+						<tr>
+							<b><td><a href="/company/introduction?com=${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }
+							</td></b>
+							<td>${t.TITLE }</td>
+							<td>${t.CAREER }/${t.QUALIFICATION}</td>
+							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
+								${t.PAY }
+							</td>
 
-<tr>
-  <td><a href = "/">${t.TITLE }</a></td>
-  <td>${t.ENDDATE }</td>
-  <td>${t.JOB }</td>
-  <td>${t.HITS }</td>
-  <td>${t.VOL }</td>
-</tr>
-</c:forEach>
- -->
-</tbody>
-</table>
-</div>
-</div>
-<hr>
+							<td><fmt:formatDate value="${t.ENDDATE}"
+									pattern="YYYY-MM-dd" /> 마감<fmt:formatNumber
+									value=" ${t.MAGAM}" pattern=".#" />일 전</td>
+						</tr>
+					</c:forEach>
 
+				</tbody>
+			</table>
+		</div>
+	</div>
+	<hr>
 
 
 

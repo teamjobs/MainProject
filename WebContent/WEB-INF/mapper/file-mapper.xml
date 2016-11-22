@@ -38,6 +38,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		insert into workfile values (workfile_seq.nextval,#{COMPANY},#{POST},#{TITLE},
 		#{FILENAME},#{FILEUUID},#{UPLOADER},sysdate)
 	</insert>
+
+	<!-- 이력서 업로드 -->
+	<insert id="resumeFileUpload" parameterType = "Work.model.ResumeData">
+		insert into myresumefile values (myresume_seq.nextval,#{TITLE},#{FILENAME},#{FILEUUID},
+		#{UPLOADER},sysdate,sysdate,#{FILESIZE})
+	</insert>
 	<!-- 해당 포스트 파일(지원양식) 로드 -->
 	<select id="getPostCompanyFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
 		select * from companyfile where post=#{post} order by num desc
