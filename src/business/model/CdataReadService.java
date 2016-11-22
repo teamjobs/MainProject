@@ -24,15 +24,14 @@ public class CdataReadService {
 	public String getCompanyName(String id){
 		SqlSession sql = fac.openSession();
 		String co = sql.selectOne("business.getCompanyName",id);
-		System.out.println(co);
 		sql.close();
 		return co;
 	}
 	
-	public List getIntrodunction(String com){
+	public CompanyData getIntrodunction(String com){
 		SqlSession sql = fac.openSession();
-		List list = sql.selectList("business.getCompanyIntrodunction",com);
+		CompanyData cd = sql.selectOne("business.getCompanyIntrodunction",com);
 		sql.close();
-		return list;
+		return cd;
 	}
 }

@@ -73,7 +73,7 @@
 <c:forEach var="t" items="${ postlist}">
 
 <tr>
-  <td><a href = "/">${t.TITLE }</a></td>
+  <td><a href = "/business/post/${t.NUM }">${t.TITLE }</a></td>
   <td>${t.ENDDATE }</td>
   <td>${t.JOB }</td>
   <td>${t.HITS }</td>
