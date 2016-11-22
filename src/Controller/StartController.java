@@ -77,7 +77,7 @@ public class StartController {
 	@RequestMapping("/index/agreeOK")
 	public String agreeOK(){
 		return "/start/join.jsp";
-	}
+	} 
 	
 	@RequestMapping("/index/login")
 	public ModelAndView login(String id, String pass, HttpSession hs){
