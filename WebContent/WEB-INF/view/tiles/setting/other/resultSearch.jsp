@@ -44,12 +44,12 @@ table tr:nth-child(odd) {
 
 <html>
 <body>
-	<div class="w3-row section"  style="min-height: 500px; margin-top: 100px;" align="center">
+	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
 		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>
 					<th style="width: 15%">회사명</th>
-					<th>채용제목</th>
+					<th>제목</th>
 					<th style="width: 12%">학력</th>
 					<th style="width: 15%">자격요건</th>
 					<th style="width: 12%">근무조건</th>
