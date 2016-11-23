@@ -61,5 +61,10 @@ public class MysumeController {
 		return mav;
 	}
 	
+	@RequestMapping("/my/clipping/cancel")
+	public String ClippingCancel(String n){
+		my.ClippingCancel(n);
+		return "redirect:/my/clipping";
+	}
 	
 }

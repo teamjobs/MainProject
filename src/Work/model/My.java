@@ -30,6 +30,12 @@ public class My {
 		sql.close();
 	}
 	
+	public void ClippingCancel(String n){
+		SqlSession sql = fac.openSession();
+		sql.delete("member.ClippingCancel",n);
+		sql.close();
+	}
+	
 	public List clipping(String id){
 		SqlSession sql = fac.openSession();
 		List list = sql.selectList("member.Myclipping",id);

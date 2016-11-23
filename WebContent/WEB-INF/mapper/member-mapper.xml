@@ -40,7 +40,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	select * from work where ID= #{id}
 </select>
 
-
+<delete id="ClippingCancel" parameterType="java.lang.String">
+		delete from clipping where num=#{num}
+	</delete>
 
 
 </mapper>

@@ -34,7 +34,7 @@
 			<tbody>
 				<c:forEach var="t" items="${list }">
 					<tr>
-						<td><a href="/company/introduction?com=${t.COMPANY }">${t.COMPANY }</a>
+						<td><a href="/company/introduction/${t.COMPANY }">${t.COMPANY }</a>
 						</td>
 						<td>${t.TITLE }</td>
 						<td>${t.CAREER }/${t.QUALIFICATION}</td>
