@@ -37,8 +37,9 @@ body, html {
 	</c:if>
 	<div
 		class="bgimg w3-display-container w3-animate-opacity w3-text-white">
-		<div class="w3-display-topleft w3-padding-large w3-xlarge">Logo
+		<div class="w3-display-topleft w3-padding-large w3-xlarge">
 		</div>
+		<img src="/img/logoW.png"/>
 		<div class="w3-display-middle" align="center">
 			<h3>잘못된 접근입니다.</h3> <br/>
 			<h1 class="w3-jumbo w3-animate-top">다시 시도해 주세요!

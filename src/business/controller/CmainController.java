@@ -29,7 +29,7 @@ public class CmainController {
 		//ModelAndView mav = new ModelAndView("/business/businessMain.jsp");
 		ModelAndView mav = new ModelAndView();
 		
-		String OK = (String) hs.getAttribute("comfirm");
+		String OK = (String) hs.getAttribute("confirm");
 		if(OK == "company"){
 			mav.setViewName("business_tile");
 			String id = (String)hs.getAttribute("id");

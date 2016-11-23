@@ -29,11 +29,14 @@
   <form action="/my/Myinfo/change">
    	Name : <input type="text" name="name" value="${t.NAME }"> <br/><br/>
    	Password : <input type="password" name="pass" value="${t.PASS }"> <br/><br/>
-   	E-Mail : <input type="text" name="email" value="${t.EMAIL }"> <br/>
-    <input type="submit" value="수정">
+   	E-Mail : <input type="text" name="email" value="${t.EMAIL }"> <br/><br/>
+    <input type="submit" value="수정" id="OK">
   </form>
 </div>
 </c:forEach>
 <script>
+	$("#OK").click(function(){
+		window.confirm("정말 수정하시겠습니까?")
+	})
 	
 </script>

@@ -85,11 +85,11 @@ public class StartController {
 		if(ls.loginC(id, pass)){
 			mav.setViewName("redirect:/business/main");
 			hs.setAttribute("id", id);
-			hs.setAttribute("comfirm", "company");
+			hs.setAttribute("confirm", "company");
 		} else if(ls.loginW(id, pass)){
 			mav.setViewName("redirect:/work/main");
 			hs.setAttribute("id", id);
-			hs.setAttribute("comfirm", "work");
+			hs.setAttribute("confirm", "work");
 		} else if(ls.loginC(id, pass)==false && ls.loginW(id, pass)==false){
 			//hs.setAttribute("error", "true");
 			mav.addObject("error", true);

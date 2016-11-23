@@ -12,7 +12,7 @@ public class MainController {
 	@RequestMapping("/work/main")
 	public ModelAndView goUserMaintest(HttpSession hs){
 		ModelAndView mav = new ModelAndView();
-		String OK = (String) hs.getAttribute("comfirm");
+		String OK = (String) hs.getAttribute("confirm");
 		if(OK == "work"){
 			mav.setViewName("user_tile");
 		}else{
