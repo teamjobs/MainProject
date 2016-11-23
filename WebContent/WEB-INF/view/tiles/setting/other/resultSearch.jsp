@@ -64,7 +64,7 @@ table tr:nth-child(odd) {
 							<tr>
 								<td><a href="/company/introduction/${i.COMPANY }"><b>${i.COMPANY }</b></a>
 								</td>
-								<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }/${i.NUM }</b></a></td>
+								<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }</b></a></td>
 								<td>${i.EDUCATION }</td>
 								<td>${i.CAREER }<br />${i.QUALIFICATION }
 								</td>
