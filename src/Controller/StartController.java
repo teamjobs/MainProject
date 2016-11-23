@@ -85,11 +85,11 @@ public class StartController {
 		if(ls.loginC(id, pass)){
 			mav.setViewName("redirect:/business/main");
 			hs.setAttribute("id", id);
-			hs.setAttribute("company", "company");
+			hs.setAttribute("comfirm", "company");
 		} else if(ls.loginW(id, pass)){
 			mav.setViewName("redirect:/work/main");
 			hs.setAttribute("id", id);
-			hs.setAttribute("work", "work");
+			hs.setAttribute("comfirm", "work");
 		} else if(ls.loginC(id, pass)==false && ls.loginW(id, pass)==false){
 			//hs.setAttribute("error", "true");
 			mav.addObject("error", true);
@@ -101,4 +101,5 @@ public class StartController {
 	public String qwe(){
 		return "/site/introduction.jsp";
 	}
+	
 }

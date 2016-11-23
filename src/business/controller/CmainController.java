@@ -27,14 +27,25 @@ public class CmainController {
 	public ModelAndView goBusinessMain(HttpSession hs){
 		System.out.println("???");
 		//ModelAndView mav = new ModelAndView("/business/businessMain.jsp");
-		ModelAndView mav = new ModelAndView("business_tile");
-		String id = (String)hs.getAttribute("id");
-		String co = (String)crs.getCompanyName(id);
-		// 메인에서 필요한 정보	
-		// 접속자 아이디  /  업로드포스트 목록 
-		List<PostData> li = prs.getCompanyAllPost(co);
-		System.out.println("1"+li);
-		mav.addObject("postlist",li);
+		ModelAndView mav = new ModelAndView();
+		
+		String OK = (String) hs.getAttribute("comfirm");
+		if(OK == "company"){
+			mav.setViewName("business_tile");
+			String id = (String)hs.getAttribute("id");
+			String co = (String)crs.getCompanyName(id);
+			// 메인에서 필요한 정보	
+			// 접속자 아이디  /  업로드포스트 목록 
+			List<PostData> li = prs.getCompanyAllPost(co);
+			System.out.println("1"+li);
+			mav.addObject("postlist",li);
+		}else{
+			int img = (int)(Math.random()*6);
+			mav.addObject("img",img);
+			mav.setViewName("start/Error.jsp");
+		}
+		
+		
 		return mav;
 	}
 	

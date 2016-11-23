@@ -29,8 +29,8 @@
   <form action="/my/Myinfo/change">
    	Name : <input type="text" name="name" value="${t.NAME }"> <br/><br/>
    	Password : <input type="password" name="pass" value="${t.PASS }"> <br/><br/>
-   	E-Mail : <input type="text" name="email" value="${t.EMAIL }">
-    <input type="submit">
+   	E-Mail : <input type="text" name="email" value="${t.EMAIL }"> <br/>
+    <input type="submit" value="수정">
   </form>
 </div>
 </c:forEach>
