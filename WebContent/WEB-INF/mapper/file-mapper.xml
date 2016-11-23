@@ -39,11 +39,22 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		#{FILENAME},#{FILEUUID},#{UPLOADER},sysdate)
 	</insert>
 
-	<!-- 이력서 업로드 -->
+	<!--내 이력서 업로드 -->
 	<insert id="resumeFileUpload" parameterType = "Work.model.ResumeData">
 		insert into myresumefile values (myresume_seq.nextval,#{TITLE},#{FILENAME},#{FILEUUID},
 		#{UPLOADER},sysdate,sysdate,#{FILESIZE})
 	</insert>
+	<!-- 내 이력서 list -->
+	<select id="Myresumelist" resultType="java.util.HashMap">
+		select * from MYRESUMEFILE where UPLOADER = #{UPLOADER}
+	</select>
+	<!-- 내 이력서 다운로드 -->
+	<select id="MyresumeDown" resultType="Work.model.ResumeData"
+														 parameterType="java.lang.String">
+		select * from MYRESUMEFILE where FILEUUID = #{FILEUUID}
+	</select>
+	
+	
 	<!-- 해당 포스트 파일(지원양식) 로드 -->
 	<select id="getPostCompanyFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
 		select * from companyfile where post=#{post} order by num desc

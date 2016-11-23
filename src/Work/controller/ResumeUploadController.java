@@ -1,5 +1,7 @@
 package Work.controller;
 
+import java.util.List;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import Work.Service.MyResumeListService;
 import Work.Service.ResumeUploadService;
 import Work.model.ResumeData;
 
@@ -21,14 +24,14 @@ public class ResumeUploadController {
 	@RequestMapping("/my/resume/in")
 	public String resumein(){
 		
-		return "/work/File/ResumeInput.jsp";
+		return "myresumeup";
 	}
 	
 	@RequestMapping("/my/resume/upload")
 	public ModelAndView Upresumefile(@RequestParam(name="file") MultipartFile file, 
 							  HttpSession hs){
 		String id = (String)hs.getAttribute("id");
-		ModelAndView mav = new ModelAndView("/work/File/ResumeInput.jsp");
+		ModelAndView mav = new ModelAndView("myresumeup");
 		ResumeData rd = rus.ResumeUploadSV(file);
 		rd.setTITLE(id + "´ÔÀÇ ÀÌ·Â¼­");
 		rd.setUPLOADER(id);
@@ -37,6 +40,28 @@ public class ResumeUploadController {
 		mav.addObject("ResumeUp",b);
 		return mav;
 	}
+	
+	
+	@Autowired
+	MyResumeListService mrls;
+	
+	@RequestMapping("/my/resume/mylist")
+	public ModelAndView Myresumelist(HttpSession hs){
+		
+		String id = (String)hs.getAttribute("id");
+		
+		ModelAndView mav = new ModelAndView();
+		
+		List mrlist = mrls.MyResumeList(id);
+		
+		mav.setViewName("/work/MyFile/ResumeList.jsp");
+		mav.addObject("mrlist",mrlist);
+		
+		return mav;
+		
+		
+	}
+	
 }
 
 

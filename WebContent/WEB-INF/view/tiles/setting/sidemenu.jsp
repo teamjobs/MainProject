@@ -3,7 +3,7 @@
 
 <html>
 <br/>
-<nav class="w3-sidenav w3-collapse w3-white" style=width:300px;" id="mySidenav"><br>
+<nav class="w3-sidenav w3-collapse w3-white" style="width:300px;" id="mySidenav"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
      &nbsp;&nbsp;<img src="/img/iu.jpg" class="w3-circle" style="width:80px">
@@ -19,7 +19,7 @@
   <br/>
   <div class="w3-container">
   </div>
-  <a href="#" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  새 알림 (1)</a>
+  <a href="/my/resume/in" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  이력서 등록</a>
   <a href="/my/history" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i>  이력서 관리</a>
   <a href="/my/clipping" class="w3-padding"><i class="fa fa-eye fa-fw"></i>  스크랩</a>
   <!-- <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  스크랩</a> -->

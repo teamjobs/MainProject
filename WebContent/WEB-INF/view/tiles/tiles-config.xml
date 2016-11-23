@@ -51,4 +51,19 @@
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
 	</definition>
+	
+	<!-- 개인 이력서 업로드 -->
+	<definition name="myresumeup" extends="myclipping">
+		<put-attribute name="body" value="/WEB-INF/view/work/MyFile/ResumeInput.jsp"/>
+	</definition>
+	
+	<!-- 상세 검색 -->
+	<definition name="defultSearch" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/work/SelectView/SelectPost.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/SelectView/SerchView.jsp"/>
+	</definition>
+	<definition name="detailSearch" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/work/SelectView/SelectPost.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/SelectView/SelectSerchView.jsp"/>
+	</definition>
 </tiles-definitions>

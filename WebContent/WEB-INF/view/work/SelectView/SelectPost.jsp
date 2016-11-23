@@ -2,231 +2,203 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<meta charset="utf-8">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="https://fonts.googleapis.com/css?family=Raleway">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
 
-<style>
-
-.button {
-	background-color: #4CAF50; /* Green */
-	border: none;
-	color: white;
-	padding: 15px 32px;
-	text-align: center;
-	text-decoration: none;
-	display: inline-block;
-	font-size: 16px;
-	margin: 4px 2px;
-	cursor: pointer;
-}
-
-.button2 {
-	background-color: #008CBA;
-} /* Blue */
-</style>
 
 <!-- 상세 검색 메뉴 -->
-  
-<div class="w3-main" style="margin-left:300px;margin-top:43px;">
-
-<form name="zn" method="get" action="/work/post/selectserch">
-	<div align="right">
-		<button type="button" class="btn btn-success" id="hidebt"
-			style="width: 250;">상세검색</button>
-	</div>
-	<div align="left" class="container" style="width: 50%; display: none"
-		id="container">
-		<h2>상세 검색 조건 설정</h2>
-		<!-- 지역 -->
+ <div class="w3-row-padding w3-margin-bottom">
+	<form name="zn" method="get" action="/work/post/selectserch">
+		<div align="right">
+		<button type="button" class="w3-btn w3-green w3-text-shadow" id="hidebt"><b>상세검색</b></button>
 		
-		<div align="center" class="panel-group" id="accordion" style="width: 100%">
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse1">지역</a> :: <span id="local_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse1" class="panel-collapse collapse in">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="local" items="${local }">
-								<input class="local" type="checkbox" name="local"
-									value="${local }" /> &nbsp;&nbsp;${local }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 직무 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse2">직무</a> :: <span id="job_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse2" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="job" items="${job }">
-								<input class="job" type="checkbox" name="job" value="${job }" />&nbsp;${job }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 경력 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse3">경력</a> :: <span id="career_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse3" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="career" items="${career }">
-								<input class="career" type="checkbox" name="career"
-									value="${career }" />&nbsp;${career }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 고용형태 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse4">고용 형태</a> :: <span id="hiretype_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse4" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="hiretype" items="${hiretype }">
-								<input class="hiretype" type="checkbox" name="hiretype"
-									value="${hiretype }" />&nbsp;${hiretype }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 학력 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse5">학력</a> :: <span id="education_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse5" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="education" items="${education }">
-								<input class="education" type="checkbox" name="education"
-									value="${education }" />&nbsp;${education }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 직급 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse6">직급</a> :: <span id="rank_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse6" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:set var="i" value="0" />
-							<c:forEach var="rank" items="${rank }">
-								<input class="rank" type="checkbox" name="rank" value="${rank }" />&nbsp;${rank }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-								<c:if test="${i % 5==0 }">
-									<br />
-								</c:if>
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
-			<!-- 급여 -->
-			<div class="panel panel-default">
-				<div class="panel-heading">
-					<h4 class="panel-title">
-						<a data-toggle="collapse" data-parent="#accordion"
-							href="#collapse7">급여</a> :: <span id="salary_rst"></span>
-					</h4>
-				</div>
-				<div id="collapse7" class="panel-collapse collapse">
-					<div class="panel-body">
-						<fieldset>
-							<c:forEach var="salary" items="${salary }">
-								<input class="salary" type="checkbox" name="salary"
-									value="${salary }" />&nbsp;${salary }&nbsp;&nbsp;&nbsp;&nbsp;
-							<c:set var="i" value="${i+1 }" />
-							</c:forEach>
-						</fieldset>
-					</div>
-				</div>
-			</div>
+		</div>
+		<div align="left" class="container" style="width: 50%; display: none"
+			id="container">
+			<h2>상세 검색 조건 설정</h2>
+			<!-- 지역 -->
 
+			<div align="center" class="panel-group" id="accordion"
+				style="width: 100%">
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse1">지역</a> :: <span id="local_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse1" class="panel-collapse collapse in">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="local" items="${local }">
+									<input class="local" type="checkbox" name="local"
+										value="${local }" /> &nbsp;&nbsp;${local }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 직무 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse2">직무</a> :: <span id="job_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse2" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="job" items="${job }">
+									<input class="job" type="checkbox" name="job" value="${job }" />&nbsp;${job }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 경력 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse3">경력</a> :: <span id="career_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse3" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="career" items="${career }">
+									<input class="career" type="checkbox" name="career"
+										value="${career }" />&nbsp;${career }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 고용형태 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse4">고용 형태</a> :: <span id="hiretype_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse4" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="hiretype" items="${hiretype }">
+									<input class="hiretype" type="checkbox" name="hiretype"
+										value="${hiretype }" />&nbsp;${hiretype }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 학력 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse5">학력</a> :: <span id="education_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse5" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="education" items="${education }">
+									<input class="education" type="checkbox" name="education"
+										value="${education }" />&nbsp;${education }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 직급 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse6">직급</a> :: <span id="rank_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse6" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:set var="i" value="0" />
+								<c:forEach var="rank" items="${rank }">
+									<input class="rank" type="checkbox" name="rank"
+										value="${rank }" />&nbsp;${rank }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+									<c:if test="${i % 5==0 }">
+										<br />
+									</c:if>
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
+				<!-- 급여 -->
+				<div class="panel panel-default">
+					<div class="panel-heading">
+						<h4 class="panel-title">
+							<a data-toggle="collapse" data-parent="#accordion"
+								href="#collapse7">급여</a> :: <span id="salary_rst"></span>
+						</h4>
+					</div>
+					<div id="collapse7" class="panel-collapse collapse">
+						<div class="panel-body">
+							<fieldset>
+								<c:forEach var="salary" items="${salary }">
+									<input class="salary" type="checkbox" name="salary"
+										value="${salary }" />&nbsp;${salary }&nbsp;&nbsp;&nbsp;&nbsp;
+							<c:set var="i" value="${i+1 }" />
+								</c:forEach>
+							</fieldset>
+						</div>
+					</div>
+				</div>
 
-			<!-- 끝 -->
-			<div align="center">
-				<input type="submit" class="button" value="선택 조건 검색"
-					style="width: 200" /> <input type="button" class="button button2"
-					value="초기화" id="resetbt" style="width: 200" />
+				<hr/>
+				<!-- 끝 -->
+				<div align="center">
+				<button type="submit" class="w3-btn w3-white w3-border w3-round-large">상세검색</button>
+				<button type="button" id="resetbt" class="w3-btn w3-white w3-border w3-round-large"> 초 기 화 </button>
+				</div>
 			</div>
 		</div>
-	</div>
-</form>
+	</form>
 </div>
 
 <hr />

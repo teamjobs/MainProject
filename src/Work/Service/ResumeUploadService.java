@@ -62,14 +62,14 @@ public class ResumeUploadService {
 			int rst = sql.insert("file.resumeFileUpload", rd);
 			if(rst == 1){
 			 b = true;	
-				
+			 System.out.println("성공");
 			}else{
 			 b = false;	
-				
+			System.out.println("실패");
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
-
+			System.out.println("익셉션");
 		}
 
 		sql.close();

@@ -48,7 +48,7 @@ public class WorkSerchController {
 
 		System.out.println("ÄÁÆ®·Ñ2" + map.toString());
 
-		ModelAndView mav = new ModelAndView("work/SelectView/SelectSerchView.jsp");
+		ModelAndView mav = new ModelAndView("detailSearch");
 
 		List<PostData> sslist = ws.SelectSerchService(map);
 

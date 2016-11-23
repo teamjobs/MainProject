@@ -28,6 +28,8 @@ footer {
 	color: #383838;
 }
 </style>
+<script src="https://code.jquery.com/jquery-1.10.2.js"></script>
+<script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 </head>
 <body>
 	<div class="container" style="min-height: 600px;">
