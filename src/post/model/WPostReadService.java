@@ -21,4 +21,12 @@ public class WPostReadService {
 		sql.close();
 		return list;
 	}
+	
+	public PostData readPostData(int num){
+		SqlSession sql = fac.openSession();
+		PostData pd = null;	
+		pd = sql.selectOne("post.getPostData",num);
+		sql.close();
+		return pd;
+	}
 }

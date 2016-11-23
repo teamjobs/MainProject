@@ -2,6 +2,9 @@ package post.model;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+
+@Component
 public class PostData {
 	int NUM;
 	String WAY;

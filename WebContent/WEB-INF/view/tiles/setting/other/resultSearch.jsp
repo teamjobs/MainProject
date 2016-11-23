@@ -62,9 +62,9 @@ table tr:nth-child(odd) {
 					<c:when test="${searchall.size() != 0}">
 						<c:forEach var="i" items="${searchall }">
 							<tr>
-								<td><a href="/company/introduction?com=${i.COMPANY }"><b>${i.COMPANY }</b></a>
+								<td><a href="/company/introduction/${i.COMPANY }"><b>${i.COMPANY }</b></a>
 								</td>
-								<td><b>${i.TITLE }</b></td>
+								<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }/${i.NUM }</b></a></td>
 								<td>${i.EDUCATION }</td>
 								<td>${i.CAREER }<br />${i.QUALIFICATION }
 								</td>
@@ -85,8 +85,6 @@ table tr:nth-child(odd) {
 						</tr>
 					</c:otherwise>
 				</c:choose>
-
-
 
 			</tbody>
 		</table>
