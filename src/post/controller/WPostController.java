@@ -12,6 +12,7 @@ import org.springframework.web.servlet.ModelAndView;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import post.model.CPostReadService;
+import post.model.PostData;
 import post.model.PostPageService;
 import post.model.WPostReadService;
 
@@ -27,6 +28,7 @@ public class WPostController {
 	@Autowired
 	CPostReadService cpr;
 	
+	
 	@RequestMapping("company/introduction/{com}")
 	public ModelAndView getintrodunction(@PathVariable(name="com")String com){
 		ModelAndView mav = new ModelAndView("/work/CompanyIntro.jsp");
@@ -35,6 +37,18 @@ public class WPostController {
 		return mav;
 	}
 	
+	@RequestMapping("work/post/{num}")
+	public ModelAndView goPostRead(@PathVariable(name="num") int num){
+		System.out.println("111");
+		ModelAndView mav = new ModelAndView("/post/companyview/viewPost.jsp");
+		PostData pd = wpr.readPostData(num);
+		CompanyData cd = cds.getIntrodunction(pd.getCOMPANY());
+		mav.addObject("pd",pd);
+		mav.addObject("com",cd);
+		mav.addObject("sort",true);
+		return mav;
+	}
+	 
 	   @RequestMapping("work/list")
 	   public ModelAndView postlist(@RequestParam(defaultValue="1") int p){
 	      ModelAndView mav = new ModelAndView("/post/workview/PostList.jsp");

@@ -22,7 +22,7 @@
 	</div>
 
 </div>
-<form id="cancel" action="/my/cancel" method="post"
+<form id="cancel" action="/my/clipping/cancel" method="post"
 	style="display: hidden">
 	<input id="cn" type="hidden" name="n" value="" />
 </form>
