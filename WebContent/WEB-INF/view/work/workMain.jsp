@@ -20,11 +20,12 @@
       <h3 class="w3-text-white">JOBS</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
       
-      <a href="/my/resume/in">
+      <a href="/my/history">
 				<button
+					
 					class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
 					onclick="document.getElementById('subscribe').style.display='block'">
-					이력서 등록하기
+					마이페이지
 				</button>
 				</a>
 			</h6>

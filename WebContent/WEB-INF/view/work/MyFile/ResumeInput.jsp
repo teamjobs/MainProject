@@ -56,10 +56,10 @@
 		<h3>내 이력서 등록</h3>
 		<form action="/my/resume/upload" method="post" enctype="multipart/form-data">
 		<div class="filebox" id="portfolio">
-			<input class="upload-name" value="파일선택" disabled="disabled">
+			<input class="upload-name" value="파일선택" disabled="disabled" id="OK">
 			<label class="btn btn-success" for="ex_filename">파일 선택</label> <input
 				type="file" name="file" id="ex_filename" class="upload-hidden">
-			<input class="w3-btn w3-white w3-border w3-round-large" type="submit" value="등록"/>
+			<input class="w3-btn w3-white w3-border w3-round-large" type="submit" value="등록" id="add" style="display: none"/>
 		</div>
 		</form>
 	</div>
@@ -122,6 +122,7 @@ tr:nth-child(even){background-color: #f2f2f2}
 		fileTarget.on('change', function() { // 값이 변경되면
 			if (window.FileReader) { // modern browser
 				var filename = $(this)[0].files[0].name;
+				$("#add").fadeIn(1000);
 			} else { // old IE
 				var filename = $(this).val().split('/').pop().split('\\').pop(); // 파일명만 추출
 			}
@@ -130,6 +131,12 @@ tr:nth-child(even){background-color: #f2f2f2}
 			$(this).siblings('.upload-name').val(filename);
 		});
 	});
+	
+	 $("#OK").change(function(){
+		
+	}) 
+	
+	
 </script>
 
 
