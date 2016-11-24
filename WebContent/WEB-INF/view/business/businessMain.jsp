@@ -72,7 +72,6 @@
 </thead>
 <tbody>
 <c:forEach var="t" items="${ postlist}">
-
 <tr>
   <td><a href = "/business/post/${t.NUM }">${t.TITLE }</a></td>
   <td>${t.ENDDATE }</td>
