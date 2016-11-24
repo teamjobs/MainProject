@@ -2,14 +2,16 @@ package post.model;
 
 import java.sql.Date;
 
+import org.springframework.stereotype.Component;
+
 public class PostData {
 	int NUM;
 	String WAY;
 	String COMPANY;
 	String TITLE;
 	Date UPLOADDATE;
-	Date STARTDATE; 
-	Date ENDDATE;
+	String STARTDATE; 
+	String ENDDATE;
 	String JOB;
 	String LOCAL;
 	String CAREER;
@@ -26,9 +28,14 @@ public class PostData {
 	int PAY;
 	String EDUCATION;
 	
+	@Override
+	public String toString() {
+		return "PostData [NUM=" + NUM + ", COMPANY=" + COMPANY + ", TITLE=" + TITLE + ", HITS=" + HITS + ", VOL=" + VOL
+				+ "]";
+	}
 	
 	// 업로드 일자 / 조회수 / 지원자수 제외하고 순서대로 입력해야합니다.
-	public PostData(String wAY, String cOMPANY, String tITLE, Date sTARTDATE, Date eNDDATE, String jOB,
+	public PostData(String wAY, String cOMPANY, String tITLE, String sTARTDATE, String eNDDATE, String jOB,
 			String lOCAL, String cAREER, String hIRETYPE, String bUSINESS, String qUALIFICATION, String pROCESS,
 			String rANK, String sALARY, String iNCHARGE, String cALLNUMBER, int pay, String e) {
 		NUM = 0;
@@ -54,6 +61,29 @@ public class PostData {
 		PAY = pay;
 		EDUCATION = e;
 		
+	}
+	
+	public void adjPostData(String wAY, String cOMPANY, String tITLE, String sTARTDATE, String eNDDATE, String jOB,
+			String lOCAL, String cAREER, String hIRETYPE, String bUSINESS, String qUALIFICATION, String pROCESS,
+			String rANK, String sALARY, String iNCHARGE, String cALLNUMBER, int pay, String e) {
+		WAY = wAY;
+		COMPANY = cOMPANY;
+		TITLE = tITLE;
+		STARTDATE = sTARTDATE;
+		ENDDATE = eNDDATE;
+		JOB = jOB;
+		LOCAL = lOCAL;
+		CAREER = cAREER;
+		HIRETYPE = hIRETYPE;
+		BUSINESS = bUSINESS;
+		QUALIFICATION = qUALIFICATION;
+		PROCESS = pROCESS;
+		RANK = rANK;
+		SALARY = sALARY;
+		INCHARGE = iNCHARGE;
+		CALLNUMBER = cALLNUMBER;
+		PAY = pay;
+		EDUCATION = e;
 	}
 	
 
@@ -100,11 +130,11 @@ public class PostData {
 		return UPLOADDATE;
 	}
 
-	public Date getSTARTDATE() {
+	public String getSTARTDATE() {
 		return STARTDATE;
 	}
 
-	public Date getENDDATE() {
+	public String getENDDATE() {
 		return ENDDATE;
 	}
 
@@ -180,11 +210,11 @@ public class PostData {
 		UPLOADDATE = uPLOADDATE;
 	}
 
-	public void setSTARTDATE(Date sTARTDATE) {
+	public void setSTARTDATE(String sTARTDATE) {
 		STARTDATE = sTARTDATE;
 	}
 
-	public void setENDDATE(Date eNDDATE) {
+	public void setENDDATE(String eNDDATE) {
 		ENDDATE = eNDDATE;
 	}
 

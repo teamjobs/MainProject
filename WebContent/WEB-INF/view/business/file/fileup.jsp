@@ -46,7 +46,7 @@
 						<input id="zip" class="w3-radio" type="radio" name="type"
 							value="zip" checked> <label class="w3-validate">압축파일</label>
 						<br> 
-						<input id=image class="w3-radio" type="radio"
+						<input id="image" class="w3-radio" type="radio"
 							name="type" value="image"> <label class="w3-validate">이미지</label>
 						<br> 
 						<input id="text" class="w3-radio" type="radio"
@@ -69,8 +69,6 @@
 		var t=$(this)[0].files[0].name;
 		$("#filename").html(t);
 	});
-	
-	
 </script>
 
 

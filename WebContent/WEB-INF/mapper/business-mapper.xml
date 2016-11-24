@@ -22,7 +22,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select name from company where id = #{id}
 	</select>
 	
-	<select id="getCompanyIntrodunction" parameterType="java.lang.String" resultType="java.util.HashMap">
+	<select id="getCompanyIntrodunction" parameterType="java.lang.String" resultType="business.model.CompanyData">
 		select * from company where name = #{name} 
 	</select>
 </mapper>

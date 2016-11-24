@@ -44,12 +44,12 @@ table tr:nth-child(odd) {
 
 <html>
 <body>
-	<div class="w3-row section"  style="min-height: 500px; margin-top: 100px;" align="center">
+	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
 		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>
 					<th style="width: 15%">회사명</th>
-					<th>채용제목</th>
+					<th>제목</th>
 					<th style="width: 12%">학력</th>
 					<th style="width: 15%">자격요건</th>
 					<th style="width: 12%">근무조건</th>
@@ -62,9 +62,9 @@ table tr:nth-child(odd) {
 					<c:when test="${searchall.size() != 0}">
 						<c:forEach var="i" items="${searchall }">
 							<tr>
-								<td><a href="/company/introduction?com=${i.COMPANY }"><b>${i.COMPANY }</b></a>
+								<td><a href="/company/introduction/${i.COMPANY }"><b>${i.COMPANY }</b></a>
 								</td>
-								<td><b>${i.TITLE }</b></td>
+								<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }</b></a></td>
 								<td>${i.EDUCATION }</td>
 								<td>${i.CAREER }<br />${i.QUALIFICATION }
 								</td>
@@ -85,8 +85,6 @@ table tr:nth-child(odd) {
 						</tr>
 					</c:otherwise>
 				</c:choose>
-
-
 
 			</tbody>
 		</table>

@@ -28,7 +28,7 @@ public class MysumeController {
 	@RequestMapping("/my/cancel")
 	public String cancel(String n){
 		my.cancel(n);
-		return "redirect:/my";
+		return "redirect:/my/history";
 	}
 	@RequestMapping("/my/clipping")
 	public ModelAndView clippingC(HttpSession hs){
@@ -42,5 +42,29 @@ public class MysumeController {
 		return mav;
 	}
 	
+	@RequestMapping("/my/Myinfo")
+	public ModelAndView Myinfo(HttpSession hs){
+		ModelAndView mav = new ModelAndView("myinfo");
+		String id= (String) hs.getAttribute("id");
+		System.out.println(id);
+		List list = my.myinfo(id);
+		mav.addObject("list",list);
+		return mav;
+	}
+	
+	@RequestMapping("/my/Myinfo/change")
+	public ModelAndView change(String name, String pass, String email,HttpSession hs){
+		ModelAndView mav = new ModelAndView("redirect:/my/index");
+		String id= (String) hs.getAttribute("id");
+		my.change(name, pass, email, id);
+		
+		return mav;
+	}
+	
+	@RequestMapping("/my/clipping/cancel")
+	public String ClippingCancel(String n){
+		my.ClippingCancel(n);
+		return "redirect:/my/clipping";
+	}
 	
 }

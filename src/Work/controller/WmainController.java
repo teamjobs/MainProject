@@ -20,12 +20,12 @@ public class WmainController {
 	@Autowired
 	CdataReadService cds;
 	
-	//@RequestMapping("/work/main")
+	/*//@RequestMapping("/work/main")
 	public ModelAndView goWorkMain(HttpSession hs){
 		ModelAndView mav = new ModelAndView( "user_tile");
 		List list = cpr.AllPost();
 		
 		mav.addObject("list",list);
 		return mav;
-	}
+	}*/
 }

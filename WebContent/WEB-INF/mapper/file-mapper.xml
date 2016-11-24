@@ -30,6 +30,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getOneWorkFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
 		select * from workfile where NUM=#{num}
 	</select>
+	<delete id="updatePostFileDelete" parameterType="java.lang.Integer">
+		delete from companyfile where post=#{POST}
+	</delete>
 	
 	
 	<!-- 유저 -->
@@ -57,7 +60,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	
 	<!-- 해당 포스트 파일(지원양식) 로드 -->
 	<select id="getPostCompanyFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
-		select * from companyfile where post=#{post} order by num desc
+		select * from companyfile where post=#{post}
 	</select>
 	
 

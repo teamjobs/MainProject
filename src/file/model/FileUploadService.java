@@ -67,6 +67,25 @@ public class FileUploadService {
 		}
 	}
 	
+	public boolean delfile(int num){
+		SqlSession sql = fac.openSession();
+		boolean r = false;
+		try{
+			int r1 = sql.delete("file.updatePostFileDelete",num);
+			if(r1 == 1){
+				sql.commit();
+				r = true;
+			}else{
+				sql.rollback();
+			}
+		}catch(Exception e){
+			sql.rollback();
+		}
+		
+		sql.close();
+		return r;
+	}
+	
 	public boolean upWorkDB(FileData fd){
 		SqlSession sql = fac.openSession();
 		boolean r = false;

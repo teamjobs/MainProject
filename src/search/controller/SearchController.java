@@ -30,6 +30,7 @@ public class SearchController {
 		List<HashMap> list = ss.searchall(word);
 		// 14. list 내용을 담아 ModelAndView를 리턴한다.
 		mav.addObject("searchall", list);
+		System.out.println(list);
 		return mav;
 	}
 

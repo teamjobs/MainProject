@@ -72,7 +72,7 @@ public class CdataController {
 	@RequestMapping("/business/my/rev/passwordcheck/{id}/{pass}")
 	@ResponseBody
 	public String RpassCheck(@PathVariable(name="id")String id,@PathVariable(name="pass")String pass){
-		HashMap<String,String> map = new HashMap();
+		HashMap<String,String> map = new HashMap<>();
 		map.put("id", id);
 		map.put("pass",pass);
 		boolean b = cis.passCheck(map);

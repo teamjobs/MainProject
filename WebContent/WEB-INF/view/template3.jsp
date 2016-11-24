@@ -5,6 +5,30 @@
 
 <!DOCTYPE html>
 <html>
+<head>
+<style>
+nav {
+	background-color: #D1E2E2;
+}
+
+header {
+}
+
+article {
+	height: 100%;
+	padding-bottom: 100px;
+}
+
+footer {
+	bottom: 0;
+	width: 100%;
+	height: 100px;
+	color: #383838;
+}
+</style>
+</head>
+
+<body>
 	<div class="container" style="min-height: 600px;">
 		<nav>
 			<tiles:insertAttribute name="menubar" />
@@ -19,5 +43,6 @@
 		<footer>
 			<tiles:insertAttribute name="foot" />
 		</footer>
+</body>
 </html>
 

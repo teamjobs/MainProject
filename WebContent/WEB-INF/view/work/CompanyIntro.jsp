@@ -25,55 +25,51 @@
   <li><a href="javascript:void(0)" onclick="openCity('7')">사원수, 매출액</a></li>
   <li><a href="javascript:void(0)" onclick="openCity('8')">홈페이지, 기업주소</a></li>
 </ul>
-<c:forEach var="t" items="${list }"> 
 <div id="1" class="w3-container city">
   <h2>기업명</h2>
-  <p>${t.NAME }</p>
+  <p>${list.NAME }</p>
 </div>
 
 <div id="2" class="w3-container city">
   <h2>대표자 명</h2>
-  <p>${t.BOSS }</p>
+  <p>${list.BOSS }</p>
   <h2>대표 번호</h2>
-  <p>${t.CALLNUM }</p>
+  <p>${list.CALLNUM }</p>
 </div>
 
 <div id="3" class="w3-container city">
   <h2>업종</h2>
-  <p>${t.INDUSTRY }</p>
+  <p>${list.INDUSTRY }</p>
 </div>
 
 <div id="4" class="w3-container city">
   <h2>사업내용</h2>
-  <p>${t.INTRODUCE }</p>
+  <p>${list.INTRODUCE }</p>
 </div>
 
 <div id="5" class="w3-container city">
   <h2>기업형태</h2>
-  <p>${t.FORM }</p>
+  <p>${list.FORM }</p>
 </div>
 
 <div id="6" class="w3-container city">
   <h2>설립일, 채용현황</h2>
-  <p><fmt:formatDate value="${t.INCO }" pattern="YYYY-MM-dd"/></p>
+  <p><fmt:formatDate value="${list.INCO }" pattern="YYYY-MM-dd"/></p>
 </div>
 
 <div id="7" class="w3-container city">
   <h2>사원수</h2>
-  <p>${t.EMPLOYEE_NUM }</p>
+  <p>${list.EMPLOYEE_NUM }</p>
   <h2>매출액</h2>
-  <p>${t.SALESACCOUNT }</p>
+  <p>${list.SALESACCOUNT }</p>
 </div>
 
 <div id="8" class="w3-container city">
   <h2>홈페이지</h2>
-  <p>${t.WEBSITE }</p>
+  <p>${list.WEBSITE }</p>
    <h2>기업주소</h2>
-  <p>${t.ADDR }</p>
+  <p>${list.ADDR }</p>
 </div>
-
-
-</c:forEach>
 <script>
 openCity("1")
 function openCity(cityName) {

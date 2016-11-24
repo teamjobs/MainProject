@@ -11,7 +11,16 @@ public class MainController {
 
 	@RequestMapping("/work/main")
 	public ModelAndView goUserMaintest(HttpSession hs){
-		ModelAndView mav = new ModelAndView("user_tile");
+		ModelAndView mav = new ModelAndView();
+		String OK = (String) hs.getAttribute("confirm");
+		if(OK == "work"){
+			mav.setViewName("user_tile");
+		}else{
+			int img = (int)(Math.random()*6);
+			mav.addObject("img",img);
+			mav.setViewName("start/Error.jsp");
+		}
+		
 		return mav;
 	}
 

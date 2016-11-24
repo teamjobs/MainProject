@@ -37,10 +37,14 @@ public class CPostUploadService {
 			if(r == 1){
 				sql.commit();
 				b = true;
+				System.out.println("DB 결과=="+b);
 			}else{
+				System.out.println("DB 결과=="+b);
 				sql.rollback();
 			}
 		}catch(Exception e){
+			System.out.println("DB수정중 EXCEPTION!!!!!!!!!!");
+			e.printStackTrace();
 			sql.rollback();
 		}
 		sql.close();
