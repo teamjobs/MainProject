@@ -21,7 +21,7 @@ public class ResumeUploadController {
 	@Autowired
 	ResumeUploadService rus;
 
-	@RequestMapping("/my/resume/in")
+	//@RequestMapping("/my/resume/in")
 	public String resumein(){
 		
 		return "myresumeup";
@@ -31,7 +31,7 @@ public class ResumeUploadController {
 	public ModelAndView Upresumefile(@RequestParam(name="file") MultipartFile file, 
 							  HttpSession hs){
 		String id = (String)hs.getAttribute("id");
-		ModelAndView mav = new ModelAndView("myresumeup");
+		ModelAndView mav = new ModelAndView("redirect:/my/resume/in");
 		ResumeData rd = rus.ResumeUploadSV(file);
 		rd.setTITLE(id + "´ÔÀÇ ÀÌ·Â¼­");
 		rd.setUPLOADER(id);
@@ -45,7 +45,7 @@ public class ResumeUploadController {
 	@Autowired
 	MyResumeListService mrls;
 	
-	@RequestMapping("/my/resume/mylist")
+	@RequestMapping("/my/resume/in")
 	public ModelAndView Myresumelist(HttpSession hs){
 		
 		String id = (String)hs.getAttribute("id");
@@ -54,7 +54,7 @@ public class ResumeUploadController {
 		
 		List mrlist = mrls.MyResumeList(id);
 		
-		mav.setViewName("/work/MyFile/ResumeList.jsp");
+		mav.setViewName("myresumeup");
 		mav.addObject("mrlist",mrlist);
 		
 		return mav;

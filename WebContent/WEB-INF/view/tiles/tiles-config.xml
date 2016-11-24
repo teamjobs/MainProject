@@ -55,6 +55,7 @@
 	<!-- 개인 이력서 업로드 -->
 	<definition name="myresumeup" extends="myclipping">
 		<put-attribute name="body" value="/WEB-INF/view/work/MyFile/ResumeInput.jsp"/>
+		
 	</definition>
 	
 	<!-- 상세 검색 -->
