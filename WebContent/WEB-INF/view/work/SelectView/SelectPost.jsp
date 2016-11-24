@@ -8,7 +8,7 @@
 
 
 <h2>상세 검색</h2>
- 
+  
 	<form name="zn" method="get" action="/work/post/selectserch">
 	<button type="button" class="w3-btn w3-green w3-text-shadow" id="hidebt"><b>상세검색</b></button>
 		<div id="box" style="display: none;">
