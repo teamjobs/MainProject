@@ -30,7 +30,7 @@ body {
 				onclick="myFunction()" title="Toggle Navigation Menu"><i
 					class="fa fa-bars"></i></a></li>
 			<c:choose>
-					<c:when test="${ comfirm == 'company' }">
+					<c:when test="${ confirm == 'company' }">
 						<li><a href="/business/main" class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
 					</c:when>
 					<c:when test="${ confirm == 'work'}">
@@ -51,7 +51,7 @@ body {
 				title="More">☰ </a>
 				<div class="w3-dropdown-content w3-white w3-card-4">
 					<c:choose>
-					<c:when test="${ comfirm == 'company' }">
+					<c:when test="${ confirm == 'company' }">
 						<a href="/business/my">마이 페이지</a> <a href="/business/logout">로그아웃</a>
 					</c:when>
 					<c:when test="${ confirm == 'work'}">

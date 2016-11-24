@@ -133,21 +133,22 @@
 				$("#cot-2").hide();
 				$("#cot-3").hide();
 				$("#cot-4").hide();
-			}else if(ct=="IT·정보통신")
+			}else if(ct=="IT·정보통신"){
 				$("#cot-2").show();
 				$("#cot-1").hide();
 				$("#cot-3").hide();
 				$("#cot-4").hide();
-			else if(ct=="미디어·광고·문화·예술")
+			}else if(ct=="미디어·광고·문화·예술"){
 				$("#cot-3").show();
 				$("#cot-1").hide();
 				$("#cot-2").hide();
 				$("#cot-4").hide();
-			else if(ct=="제조 통신 화학 건설")
+			}else if(ct=="제조 통신 화학 건설"){
 				$("#cot-4").show();
 				$("#cot-2").hide();
 				$("#cot-3").hide();
 				$("#cot-1").hide();
+			}
 		}
 		
 	</script>
