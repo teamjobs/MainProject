@@ -63,6 +63,7 @@ public class CompanyData {
 		SALESACCOUNT = salesaccount;
 		INDUSTRY = industry;
 		INTRODUCE = introduce;
+		System.out.println("세팅완료!");
 	}
 
 	public CompanyData() {

@@ -13,7 +13,10 @@
 
 <div class="w3-container">
 <div class="w3-panel w3-card-2">
-	<a href="" class="w3-btn w3-tiny">${com.NAME }</a>
+	<a href="" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
+	<c:if test=" ${ confirm == 'work'}">
+	<a href="" class="w3-btn w3-tiny">공고 스크랩</a>
+	</c:if>
 	<div class="w3-container w3-center">
 	<h3>${pd.TITLE}</h3>	
 	</div>
@@ -83,10 +86,10 @@
 	</div>
 </div>
 <c:choose>
-<c:when test="${ sort != true}">
-<p><a href="/" class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
+<c:when test="${ confirm == 'work'}">
+<p><a href="/apply/${pd.NUM }" target="_blank" class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
 </c:when>
-<c:when test="${ id == com.ID}">
+<c:when test="${ confirm == 'company' && id == com.ID}">
 <p><a href="/business/post/${pd.NUM }/adj" class="w3-btn w3-large" style="width: 100%;">공고 수정</a></p>
 </c:when>
 </c:choose>

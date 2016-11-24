@@ -38,6 +38,7 @@ public class CdataInputService {
 		boolean r = true;
 		CompanyData rst = (CompanyData)sql.selectOne("business.passCheck",map);
 		sql.close();
+		System.out.println(rst);
 		if(rst != null){
 			return r;
 		}else{

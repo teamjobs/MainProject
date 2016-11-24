@@ -1,13 +1,14 @@
 package business.controller;
 
-import java.sql.Date;
+import java.util.ArrayList;
 import java.util.HashMap;
+
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -21,10 +22,8 @@ public class CdataController {
 	
 	@Autowired
 	CdataJoinService cjs;
-	
 	@Autowired
 	CdataReadService crs;
-	
 	@Autowired
 	CdataInputService cis;
 
@@ -53,19 +52,19 @@ public class CdataController {
 			return "n";
 	}
 	
-	@RequestMapping("/business/my/{id}")
-	public ModelAndView goMy(@PathVariable(name="id") String id){
-		ModelAndView mav = new ModelAndView("/");
-		CompanyData cd = crs.dataRead(id);
+	@RequestMapping("/business/my/rev")
+	public ModelAndView goMyUp(HttpSession hs){
+		ModelAndView mav = new ModelAndView("busMy_tile");
+		CompanyData cd = crs.dataRead((String)hs.getAttribute("id"));
+		HashMap li = crs.addCotypeList();
+		ArrayList<String> cotli = new ArrayList<>();
+		cotli.add("제조 통신 화학 건설");
+		cotli.add("미디어·광고·문화·예술");
+		cotli.add("IT·정보통신");
+		cotli.add("서비스·교육·금융·유통");
+		mav.addObject("coli",li);
 		mav.addObject("cd",cd);
-		return mav;
-	}
-	
-	@RequestMapping("/business/my/rev/{id}")
-	public ModelAndView goMyUp(@PathVariable(name="id") String id){
-		ModelAndView mav = new ModelAndView("/companymember/CdataRev.jsp");
-		CompanyData cd = crs.dataRead(id);
-		mav.addObject("cd",cd);
+		mav.addObject("cotli",cotli);
 		return mav;
 	}
 	
@@ -83,19 +82,19 @@ public class CdataController {
 	}
 	
 
-	@RequestMapping("/business/my/revRst")
-	public String myUpdate(String id, String callnum, 
+	@RequestMapping("/business/my/rev/rst")
+	public String myUpdate(HttpSession hs, String callnum, 
 							String email, String boss, String addr, String website, String employee_num,String inco,
-							String form,String salesaccount,String industry,String introduce){
-		CompanyData cd = crs.dataRead(id);
+							String form,String salesaccount,String ind, String ind2, String introduce){
+		System.out.println("들어옴");
+		CompanyData cd = crs.dataRead((String)hs.getAttribute("id"));
+		String industry = ind+"/"+ind2;
 		cd.setData(callnum, email, boss, addr, website, employee_num, inco, form, salesaccount, industry, introduce);
 		boolean b = cis.dataIn(cd);
 		if(b){
-			//return "/companymember/revSuccess.jsp";
 			System.out.println("됨");
 			return "/";
 		}else{
-			//return "/companymember/revFalse.jsp";
 			System.out.println("망");
 			return "/";
 		}

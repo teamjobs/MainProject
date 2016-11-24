@@ -24,14 +24,6 @@
 		<put-attribute name="body" value="/WEB-INF/view/work/workMain.jsp" />
 	</definition>
 	
-	<definition name="CompanyFile_tile" extends="info">
-		<put-attribute name="body" value="/WEB-INF/view/business/file/filelist.jsp" />
-	</definition>
-	
-	<definition name="CompanyFileUpload_tile" extends="info">
-		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
-	</definition>
-
 	<!-- 2. 타일 만들어서 컨트롤러가 불러낼 name을 지정한다. -->	
 	<definition name="searchall" template="/WEB-INF/view/template3.jsp">
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
@@ -79,4 +71,55 @@
 		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
 
 	</definition>
+	
+	
+	<!-- Business쪽에서 연결되는 타일입니다. -->
+
+	
+	<!-- /business/my -->
+	<definition name="businfo" template="/WEB-INF/view/template2.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="side" value="/WEB-INF/view/business/my/CMysidemenu.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/business/my/CMyhead.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/business/my/CMyinfoBody.jsp"/>
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
+	<definition name="busMy_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/business/companymember/CdataRev.jsp" />
+	</definition>
+
+	<!-- /business/file -->
+	<definition name="CompanyFile_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/business/file/filelist.jsp" />
+	</definition>
+	<definition name="CompanyFileUpload_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
+	</definition>
+	
+	<!-- /business/post -->
+	<definition name="CompanyPost_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/business/myPost/myPostList.jsp" />
+	</definition>
+	<definition name="CompanyPostUpload_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/post/companyview/upPost.jsp" />
+	</definition>
+	<definition name="CompanyPostView_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/post/companyview/viewPost.jsp" />
+	</definition>
+
+	
 </tiles-definitions>
+
+
+
+
+
+
+
+
+
+
+
+
+
+

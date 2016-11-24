@@ -16,7 +16,7 @@
 <div class="w3-responsive w3-card-4">
 <table class="w3-table w3-striped w3-bordered">
 <thead>
-<tr class="w3-theme">
+<tr class="w3-red">
   <th>파일 종류</th>
   <th>&nbsp;</th>
   <th>파일명</th>
@@ -56,7 +56,7 @@
   </td>
   <td><fmt:formatDate value="${t.UPDAY }" pattern="yy/MM/dd"/></td>
   <c:choose   >
-	  <c:when test="${t.POST != 0 }"><td><a href = "/">바로가기</a></td></c:when>
+	  <c:when test="${t.POST != 0 }"><td><a href = "/business/my/post/${t.POST }">바로가기</a></td></c:when>
 	  <c:otherwise><td>&nbsp;</td></c:otherwise>
   </c:choose>
 </tr>
@@ -66,6 +66,6 @@
 </div>
 <hr>
 <div class="w3-right">
-	<a class="w3-btn w3-theme" href="/business/file/fileup">파일 올리기</a>
+	<a class="w3-btn w3-hover-red" href="/business/file/fileup">파일 올리기</a>
 </div>
 </div>
