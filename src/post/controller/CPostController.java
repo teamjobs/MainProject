@@ -57,6 +57,7 @@ public class CPostController {
 		return mav;
 	}
 	
+	
 	@RequestMapping(value="business/post/{num}/adj")
 	public ModelAndView goPostUpload2(@PathVariable(name="num") int num, HttpSession hs){
 		String co = crs.getCompanyName((String)hs.getAttribute("id"));

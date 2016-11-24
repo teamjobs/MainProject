@@ -39,13 +39,20 @@ public class WPostController {
 	
 	@RequestMapping("work/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
-		System.out.println("111");
 		ModelAndView mav = new ModelAndView("/post/companyview/viewPost.jsp");
 		PostData pd = wpr.readPostData(num);
 		CompanyData cd = cds.getIntrodunction(pd.getCOMPANY());
 		mav.addObject("pd",pd);
 		mav.addObject("com",cd);
 		mav.addObject("sort",true);
+		return mav;
+	}
+	
+	@RequestMapping("/find")
+	public ModelAndView topPostRead() {
+		ModelAndView mav = new ModelAndView("findjob");
+		List<PostData> list = wpr.readTopPost();
+		mav.addObject("list",list);
 		return mav;
 	}
 	 

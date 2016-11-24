@@ -11,14 +11,12 @@ nav {
 	background-color: #D1E2E2;
 }
 
-body {
-	text-align: center;
+header {
 }
 
 article {
 	height: 100%;
 	padding-bottom: 100px;
-	text-align: center;
 }
 
 footer {
@@ -37,9 +35,11 @@ footer {
 		<nav>
 			<tiles:insertAttribute name="menubar" />
 		</nav>
+		<header>
+			<tiles:insertAttribute name="head" />
+		</header>
 		<article>
-			<tiles:insertAttribute name="body1" />
-			<tiles:insertAttribute name="body2" />
+			<tiles:insertAttribute name="boxlist" />
 		</article>
 		<footer>
 			<tiles:insertAttribute name="foot" />

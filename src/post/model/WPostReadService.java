@@ -29,4 +29,12 @@ public class WPostReadService {
 		sql.close();
 		return pd;
 	}
+	
+	public List readTopPost(){
+		SqlSession sql = fac.openSession();
+		PostData pd = null;
+		List<PostData> list = sql.selectList("post.getTopPost");
+		sql.close();
+		return list;
+	}
 }
