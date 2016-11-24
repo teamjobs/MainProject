@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
   
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-
+<%--
 <html>
 <ul class="w3-navbar w3-black">
   <li><a href="javascript:void(0)" onclick="openCity('1')">기업명</a></li>
@@ -72,3 +72,4 @@ function openCity(cityName) {
 </script>
 
 </html>
+ --%>

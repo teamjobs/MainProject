@@ -42,7 +42,8 @@
 		<label>사원수</label></p>
 		<p><input class="w3-input" type="text" name="salesaccount" value="${cd.SALESACCOUNT }" >
 		<label>매출액</label></p>
-		<p><input type="date" name="inco" >
+		<p><input type="date" name="inco" ><br>
+		<label>설립일</label>
 		</p>
 	</div>
 	</div>
@@ -58,30 +59,13 @@
 		<label>기업형태</label></p>
 		<p><select class="w3-select" name="ind" id="ind">
 				<option selected="selected" id="ctg1-1">산업군 선택</option>
-			<c:forEach var="it" items="${cotli }">
+				<c:forEach var="it" items="${cotli }">
 				<option>${it}</option>
-			</c:forEach>
+				</c:forEach>
 			</select>
-				<select class="w3-select" name="ind2" id="cot-1" style="display:none">
-					<c:forEach var="it" items="${coli.cotype1 }">
-					<option>${it}</option>
-					</c:forEach>
-				</select>
-				<select class="w3-select" name="ind2" id="cot-2" style="display:none">
-					<c:forEach var="it" items="${coli.cotype2 }">
-					<option>${it}</option>
-					</c:forEach>
-				</select>
-				<select class="w3-select" name="ind2" id="cot-3" style="display:none">
-					<c:forEach var="it" items="${coli.cotype3 }">
-					<option>${it}</option>
-					</c:forEach>
-				</select>
-				<select class="w3-select" name="ind2" id="cot-4" style="display:none">
-					<c:forEach var="it" items="${coli.cotype4 }">
-					<option>${it}</option>
-					</c:forEach>
-				</select><br>
+			<select class="w3-select" name="ind2" id="ind2" style="display:none">
+				<option selected="selected" id="ctg2">세부 선택</option>
+			</select><br>
 		<label>산업군</label></p>
 	</div>
 	</div>				
@@ -120,6 +104,14 @@
 			
 		});
 		
+
+		var op = "";
+		
+		var cot1 = ${coli.cotype1};
+		var cot2 = ${coli.cotype2};
+		var cot3 = ${coli.cotype3};
+		var cot4 = ${coli.cotype4};
+		
 		$("#ind").change(function(){
 			if ($(this).val() != "산업군 선택"){
 				setOption($(this).val());
@@ -129,25 +121,33 @@
 		
 		function setOption(ct){
 			if(ct == "서비스·교육·금융·유통"){
-				$("#cot-1").show();
-				$("#cot-2").hide();
-				$("#cot-3").hide();
-				$("#cot-4").hide();
+				$("#ind2").show();
+				op = "";
+				for(var t = 0 ; t < cot1.length ; t++){
+					op +="<option>"+cot1[t]+"</option>";
+				}
+				$("#ind2").html(op);
 			}else if(ct=="IT·정보통신"){
-				$("#cot-2").show();
-				$("#cot-1").hide();
-				$("#cot-3").hide();
-				$("#cot-4").hide();
+				$("#ind2").show();
+				op = "";
+				for(var t = 0 ; t < cot2.length ; t++){
+				op +="<option>"+cot2[t]+"</option>";
+			}
+			$("#ind2").html(op);
 			}else if(ct=="미디어·광고·문화·예술"){
-				$("#cot-3").show();
-				$("#cot-1").hide();
-				$("#cot-2").hide();
-				$("#cot-4").hide();
+				$("#ind2").show();
+				op = "";
+				for(var t = 0 ; t < cot3.length ; t++){
+					op +="<option>"+cot3[t]+"</option>";
+				}
+				$("#ind2").html(op);
 			}else if(ct=="제조 통신 화학 건설"){
-				$("#cot-4").show();
-				$("#cot-2").hide();
-				$("#cot-3").hide();
-				$("#cot-1").hide();
+				$("#ind2").show();
+				op = "";
+				for(var t = 0 ; t < cot4.length ; t++){
+					op +="<option>"+cot4[t]+"</option>";
+				}
+				$("#ind2").html(op);
 			}
 		}
 		

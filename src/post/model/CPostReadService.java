@@ -8,6 +8,8 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import file.model.FileData;
+
 @Component
 public class CPostReadService {
 	@Autowired
@@ -84,6 +86,13 @@ public class CPostReadService {
 		int size = sql.selectOne("post.getAllCount");
 		sql.close();
 		return size;
+	}
+	
+	public List<FileData> getPostVolList(int post){
+		SqlSession sql = fac.openSession();
+		List<FileData> fd = sql.selectList("workfile.allpostfile",post);
+		sql.close();
+		return fd;
 	}
 	
 	
