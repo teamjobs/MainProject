@@ -98,8 +98,17 @@ public class StartController {
 	}
 	
 	@RequestMapping("/index/introduction")
-	public String qwe(){
-		return "/site/introduction.jsp";
+	public String qwe(HttpSession hs){
+		String confirm = (String) hs.getAttribute("confirm");
+		if(confirm == "work"){
+			return"/site/introductionW.jsp";
+		}else if(confirm == "company"){
+			return "/site/introductionC.jsp";
+		}else{
+			
+			return "/site/introduction.jsp";
+		}
+		
 	}
 	
 }
