@@ -54,5 +54,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		delete from workfile where num=#{num}
 	</delete>
 	
+	<select id="Postget" parameterType="java.lang.String" resultType="java.util.HashMap">
+		select * from post where num=#{num}
+	</select>
+	
 	
 </mapper>
