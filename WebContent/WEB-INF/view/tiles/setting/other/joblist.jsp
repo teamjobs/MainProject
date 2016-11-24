@@ -7,9 +7,10 @@
     margin: auto;
     width: 57%;
     border: 2px solid #FFFFFF;
+    padding-bottom: 10px;
 }
 </style>
-
+<br/>
 <div class="center">
  <div class="w3-row">
  	<c:forEach var="i" items="${list }">

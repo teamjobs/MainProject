@@ -40,7 +40,6 @@ footer {
 		</header>
 		<article>
 			<tiles:insertAttribute name="searchselect" />
-			<tiles:insertAttribute name="boxlist" />
 			<tiles:insertAttribute name="table" />
 		</article>
 		<footer>

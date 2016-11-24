@@ -28,7 +28,7 @@
 	<div class="container">
 	  <h2>회원정보수정 (기업회원)</h2>
 	  <p>기업회원 정보 수정</p><hr/>
-		<form action="/business/my/revRst" method="post">
+		<form action="/business/my/rev/rst" method="post">
 			<div class="form-group">
 		      <label for="pwd">회사명 : ${cd.NAME }</label>
 		    </div>

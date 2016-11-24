@@ -37,14 +37,14 @@ public class CPostController {
 	@Autowired
 	FileUploadService fus;
 	
-	@RequestMapping("business/my/post/upload")
+	
+	@RequestMapping("business/post/upload")
 	public ModelAndView goPostUpload(){
 		ModelAndView mav = new ModelAndView("/post/companyview/upPost.jsp");
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
 		return mav;
 	}
-	
 	
 	@RequestMapping("business/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
@@ -76,15 +76,6 @@ public class CPostController {
 		return mav;
 	}
 	
-	
-	@RequestMapping("business/company/my/post/{co}")
-	public ModelAndView goCompanyPost(@PathVariable String co){
-		ModelAndView mav = new ModelAndView("/post/companyview/extra.jsp");
-		List<PostData> pdl = cpr.getCompanyAllPost(co);
-		mav.addObject("pdlist",pdl);
-		return mav;
-	}
-	
 
 	@RequestMapping("/business/my/post/uploadrst")
 	public ModelAndView upPost(String way, String title, String startdate, String enddate, String job,
@@ -93,7 +84,7 @@ public class CPostController {
 			int pay, String education, int adjSort, HttpSession session, 
 			@RequestParam(name="file") MultipartFile file ){
 		System.out.println("career?="+career);
-		ModelAndView mav = new ModelAndView("business/my/post/upload");
+		ModelAndView mav = new ModelAndView("redirect:/business/my/post/upload");
 		String id = (String)session.getAttribute("id");
 		String co = crs.getCompanyName((String)session.getAttribute("id"));
 		boolean sort = adjSort == 0;
@@ -129,7 +120,7 @@ public class CPostController {
 			FileData fd = fus.uploadFile(file);
 			fd.setFILETYPE("text");
 			fd.setTITLE(title+"file");
-			fd.setUPLOADER(co);
+			fd.setUPLOADER(id);
 			fd.setPOST(postnumber);
 			b2 = fus.upCompanyDB(fd);
 			System.out.println("업로드 파일=="+fd);

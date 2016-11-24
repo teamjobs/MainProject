@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <title>W3.CSS Template</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -28,19 +29,38 @@ body {
 				class="w3-padding-large" href="javascript:void(0)"
 				onclick="myFunction()" title="Toggle Navigation Menu"><i
 					class="fa fa-bars"></i></a></li>
-			<li><a href="#"
-				class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+			<c:choose>
+					<c:when test="${ confirm == 'company' }">
+						<li><a href="/business/main" class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+					</c:when>
+					<c:when test="${ confirm == 'work'}">
+						<li><a href="/work/main" class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+					</c:when>
+					<c:otherwise>
+						<li><a href="#" class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+					</c:otherwise>
+			</c:choose>	
 			<li class="w3-hide-small"><a href="#band"
 				class="w3-padding-large">구인</a></li>
-			<li class="w3-hide-small"><a href="#tour"
+			<li class="w3-hide-small"><a href="/find"
 				class="w3-padding-large">구직</a></li>
 			<li class="w3-hide-small"><a href="#contact"
-				class="w3-padding-large">면접</a></li>
+				class="w3-padding-large">리뷰</a></li>
 			<li class="w3-hide-small w3-dropdown-hover"><a
 				href="javascript:void(0)" class="w3-hover-none w3-padding-large"
 				title="More">☰ </a>
 				<div class="w3-dropdown-content w3-white w3-card-4">
-					<a href="/my/history">마이 페이지</a> <a href="#">로그아웃</a>
+					<c:choose>
+					<c:when test="${ confirm == 'company' }">
+						<a href="/business/my">마이 페이지</a> <a href="/business/logout">로그아웃</a>
+					</c:when>
+					<c:when test="${ confirm == 'work'}">
+						<a href="/my/history">마이 페이지</a> <a href="/business/logout">로그아웃</a>
+					</c:when>
+					<c:otherwise>
+						<a href="/my/history">마이 페이지</a> <a href="#">로그아웃</a>
+					</c:otherwise>
+					</c:choose>	
 				</div></li>
 				
 				
