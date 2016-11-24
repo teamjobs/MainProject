@@ -56,4 +56,11 @@
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
 	</definition>
+	
+	<definition name="findjob" template="/WEB-INF/view/templateFind.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="body1" value="/WEB-INF/view/tiles/setting/body.jsp" />
+		<put-attribute name="body2" value="/WEB-INF/view/tiles/setting/other/joblist.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
 </tiles-definitions>
