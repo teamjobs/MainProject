@@ -1,14 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
 <tiles-definitions>
+
 	<definition name="default" template="/WEB-INF/view/template.jsp">
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/body.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
+	
 	<definition name="business_tile" extends="default">
 		<put-attribute name="body" value="/WEB-INF/view/business/businessMain.jsp" />
 	</definition>
+	
 	<definition name="info" template="/WEB-INF/view/template2.jsp">
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="side" value="/WEB-INF/view/tiles/setting/sidemenu.jsp"/>
@@ -16,12 +19,15 @@
 		<put-attribute name="body" value="/WEB-INF/view/tiles/setting/other/infoBody.jsp"/>
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
+	
 	<definition name="user_tile" extends="default">
 		<put-attribute name="body" value="/WEB-INF/view/work/workMain.jsp" />
 	</definition>
+	
 	<definition name="CompanyFile_tile" extends="info">
 		<put-attribute name="body" value="/WEB-INF/view/business/file/filelist.jsp" />
 	</definition>
+	
 	<definition name="CompanyFileUpload_tile" extends="info">
 		<put-attribute name="body" value="/WEB-INF/view/business/file/fileup.jsp"/>
 	</definition>
@@ -52,9 +58,26 @@
 		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
 	</definition>
 	
+	<!-- 개인 이력서 업로드 -->
+	<definition name="myresumeup" extends="myclipping">
+		<put-attribute name="body" value="/WEB-INF/view/work/MyFile/ResumeInput.jsp"/>
+		
+	</definition>
+	
+	<!-- 상세 검색 -->
+	<definition name="defultSearch" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/work/SelectView/SelectPost.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/SelectView/SerchView.jsp"/>
+	</definition>
+	<definition name="detailSearch" extends="info">
+		<put-attribute name="head" value="/WEB-INF/view/work/SelectView/SelectPost.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/work/SelectView/SelectSerchView.jsp"/>
+	</definition>
+	
 	<definition name="myinfo" extends="info">
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
+
 	</definition>
 	
 	<definition name="findjob" template="/WEB-INF/view/templateFind.jsp">
