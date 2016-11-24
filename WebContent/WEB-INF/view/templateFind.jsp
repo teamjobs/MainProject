@@ -11,9 +11,14 @@ nav {
 	background-color: #D1E2E2;
 }
 
+body {
+	text-align: center;
+}
+
 article {
 	height: 100%;
 	padding-bottom: 100px;
+	text-align: center;
 }
 
 footer {
@@ -26,6 +31,7 @@ footer {
 
 
 </head>
+
 <body>
 	<div class="container" style="min-height: 600px;">
 		<nav>
@@ -34,7 +40,6 @@ footer {
 		<article>
 			<tiles:insertAttribute name="body1" />
 			<tiles:insertAttribute name="body2" />
-			
 		</article>
 		<footer>
 			<tiles:insertAttribute name="foot" />

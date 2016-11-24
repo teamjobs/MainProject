@@ -3,67 +3,67 @@
 
 
 <hr/>
- <center>
- <div class="w3-row-padding" style="max-width: 77%">
- 	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+<center>
+ <div class="w3-row" style="min-width: 200px; text-align: center;">
+ 	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
 </div>
- <div class="w3-row-padding" style="max-width: 77%">
- 	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+ <div class="w3-row" style="max-width: 100%; text-align: center;">
+ 	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
-	<div class="w3-col m2">
-		<div class="w3-display-container" style="width:200px; height: 200px;">
-		  <img src="/img/pattern.jpg" style="width:200px; height: 200px;">
+	<div class="w3-col m1">
+		<div class="w3-display-container" style="width:180px; height: 180px;">
+		  <img src="/img/pattern.jpg" style="width:180px; height: 180px;">
 		  <div class="w3-padding w3-display-bottommiddle">MidGSADSAGSAGDSA</div>
 		</div>
 	</div>
