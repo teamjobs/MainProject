@@ -87,7 +87,7 @@
 </div>
 <c:choose>
 <c:when test="${ confirm == 'work'}">
-<p><a href="/" class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
+<p><a href="/apply/${pd.NUM }" target="_blank" class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
 </c:when>
 <c:when test="${ comfirm == 'company' && id == com.ID}">
 <p><a href="/business/post/${pd.NUM }/adj" class="w3-btn w3-large" style="width: 100%;">공고 수정</a></p>
