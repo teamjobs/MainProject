@@ -12,6 +12,7 @@ import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import Work.Service.MyResumeListService;
+import Work.Service.MyResumeRDService;
 import Work.Service.ResumeUploadService;
 import Work.model.ResumeData;
 
@@ -20,6 +21,9 @@ public class ResumeUploadController {
 	
 	@Autowired
 	ResumeUploadService rus;
+	
+	@Autowired
+	MyResumeRDService myrd;
 
 	//@RequestMapping("/my/resume/in")
 	public String resumein(){
@@ -59,7 +63,27 @@ public class ResumeUploadController {
 		
 		return mav;
 		
+	}
+	
+	
+	@RequestMapping("/my/resume/delete")
+	public String delete(String num){
 		
+		System.out.println(num);
+		
+		myrd.DeleteService(num);
+		
+		return "redirect:/my/resume/in";
+	}
+	
+	@RequestMapping("/my/resume/revise")
+	public String revise(String num){
+		
+		System.out.println(num);
+		
+		
+		
+		return "redirect:/my/resume/in";
 	}
 	
 }
