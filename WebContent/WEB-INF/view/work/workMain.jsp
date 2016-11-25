@@ -35,7 +35,7 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>지원 이력서 확인하기</h4>
-				<br> <a href="/work/resume/view"><i
+				<br> <a href="/my/history/board"><i
 					class="fa fa-desktop w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i></a>
 				<p>

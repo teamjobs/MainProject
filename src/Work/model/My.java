@@ -1,14 +1,16 @@
 package Work.model;
 
+import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
-
-import javax.servlet.http.HttpSession;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
+
+import post.model.PostData;
 
 @Component
 public class My {
@@ -18,6 +20,14 @@ public class My {
 	public List myAll(String id){
 		SqlSession sql = fac.openSession();
 		List list = sql.selectList("member.Myworkfile",id);
+		sql.close();
+		
+		return list;
+	}
+	
+	public List myhistoryPost(String id){
+		SqlSession sql = fac.openSession();
+		List list = sql.selectList("member.Myhistoryboard", id);
 		sql.close();
 		
 		return list;
