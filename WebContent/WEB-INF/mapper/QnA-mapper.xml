@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="qna">
+	<insert id="question" parameterType="qna.model.QnAData">
+		insert into companyqboard values(companyqboard_seq.nextval,sysdate,#{QUEID},#{QTITLE},#{QUES},#{ANSCO},#{ANSW},#{CHE})
+	</insert>
+	<update id="answer" parameterType="qna.model.QnAData">
+		update companyqboard set answ=#{ANSW}, che=#{CHE} where num=#{NUM}
+	</update>
+	<select id="getCompanyQnA" parameterType="java.lang.String" resultType="qna.model.QnAData">
+		select * from companyqboard where ansco=#{ANSCO}
+	</select>
+	<select id="getOneQnA" parameterType="java.lang.Integer" resultType="qna.model.QnAData">
+		select * from companyqboard where num=#{num}
+	</select>
+	<select id="getWorkQnA" parameterType="java.lang.String" resultType="qna.model.QnAData">
+		select * from companyqboard where queid=#{queid}
+	</select>
+</mapper>

@@ -31,6 +31,13 @@ public class CdataReadService {
 		return co;
 	}
 	
+	public String getCompanyId(String co){
+		SqlSession sql = fac.openSession();
+		String id = sql.selectOne("business.getCompanyId",co);
+		sql.close();
+		return id;
+	}
+	
 	public CompanyData getIntrodunction(String com){
 		SqlSession sql = fac.openSession();
 		CompanyData cd = sql.selectOne("business.getCompanyIntrodunction",com);

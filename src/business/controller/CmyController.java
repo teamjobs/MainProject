@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
+import business.model.CMyViewdataService;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import file.model.FileData;
@@ -28,12 +29,18 @@ public class CmyController {
 	CdataReadService cds;
 	@Autowired
 	CPostReadService cps;
+	@Autowired
+	CMyViewdataService mvs;
+	
+	CompanyData cd;
 
 	@RequestMapping("/business/my")
 	public ModelAndView myinfo(HttpSession hs){
 		ModelAndView mav = new ModelAndView("businfo");
 		String id = (String) hs.getAttribute("id");
-		CompanyData cd = cds.dataRead(id);
+		cd = cds.dataRead(id);
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
 		mav.addObject("list", cd);
 		return mav;
 	}
@@ -49,6 +56,8 @@ public class CmyController {
 		String id = (String)hs.getAttribute("id");
 		String co = (String)crs.getCompanyName(id);
 		List<PostData> li = prs.getCompanyAllPost(co);
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
 		mav.addObject("postlist",li);
 		return mav;
 	}
@@ -56,6 +65,9 @@ public class CmyController {
 	@RequestMapping("business/my/post/upload")
 	public ModelAndView goPostUpload(){
 		ModelAndView mav = new ModelAndView("CompanyPostUpload_tile");
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
+		
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
 		return mav;
@@ -63,8 +75,11 @@ public class CmyController {
 	
 	@RequestMapping(value="business/my/post/{num}/adj")
 	public ModelAndView goPostUpload2(@PathVariable(name="num") int num, HttpSession hs){
-		String co = crs.getCompanyName((String)hs.getAttribute("id"));
 		ModelAndView mav = new ModelAndView();
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
+		
+		String co = crs.getCompanyName((String)hs.getAttribute("id"));
 		PostData pd = cps.readPostData(num);
 		System.out.println("회사명>"+co+" 접속자>"+pd.getCOMPANY());
 		HashMap li = cps.addList();
@@ -82,6 +97,9 @@ public class CmyController {
 	@RequestMapping("business/my/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
 		ModelAndView mav = new ModelAndView("CompanyPostView_tile");
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
+		
 		PostData pd = cps.readPostData(num);
 		CompanyData cd = crs.getIntrodunction(pd.getCOMPANY());
 		mav.addObject("pd",pd);
@@ -93,6 +111,9 @@ public class CmyController {
 	@RequestMapping("/business/my/post/{num}/vol")
 	public ModelAndView goPostVol(@PathVariable(name="num") int num, HttpSession hs){
 		ModelAndView mav = new ModelAndView("CompanyPostVolList_tile");
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		mav.addObject("vpd",ma);
+		
 		String id = (String)hs.getAttribute("id");
 		PostData pd = cps.readPostData(num);
 		List<FileData> fi = prs.getPostVolList(num);

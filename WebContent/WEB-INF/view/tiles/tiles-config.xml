@@ -98,7 +98,7 @@
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="side" value="/WEB-INF/view/business/my/CMysidemenu.jsp"/>
 		<put-attribute name="head" value="/WEB-INF/view/business/my/CMyhead.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/view/business/my/CMyinfoBody.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/business/companyQNA/CQlist.jsp"/>
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
 	

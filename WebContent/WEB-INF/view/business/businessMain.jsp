@@ -18,7 +18,7 @@
 	<header class="w3-display-container w3-wide" id="myHead">
     <img class="w3-image" src="/img/businessMain/main1.jpg" alt="Fashion Blog" width="1600" height="300">
     <div class="w3-display-middle w3-text-white w3-center">
-      <h3 class="w3-text-white">abcde</h3>
+      <h3 class="w3-text-white">${id }</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
       <h6><a class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off" href="/business/my/post/upload" >구인공고 등록하기</a></h6>
     </div>
