@@ -38,6 +38,8 @@ table tr:nth-child(odd) {
 }
 </style>
 
+
+
 <html>
 <body>
 	<div class="w3-row section"
