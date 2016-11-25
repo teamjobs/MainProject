@@ -43,6 +43,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <delete id="ClippingCancel" parameterType="java.lang.String">
 		delete from clipping where num=#{num}
 	</delete>
-
+	
+<select id="Myhistoryboard" parameterType="java.lang.String" resultType="java.util.HashMap">
+	select p.*, w.* from post p, (select * from workfile where uploader=#{id})w where w.post=p.num
+</select>
 
 </mapper>
