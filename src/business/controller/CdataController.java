@@ -29,17 +29,22 @@ public class CdataController {
 
 	@RequestMapping("/business/join/")
 	public String CJoin(){
-		return "/companymember/Cjoin.jsp";
+		return "/business/companymember/Cjoin.jsp";
 	}
 	
 	@RequestMapping("/business/join/CJoinAuth")
-	public String CJoinAuth(String id, String pass, String callnum, String email, String conumber, String name, String boss, String addr){
+	public ModelAndView CJoinAuth(String id, String pass, String callnum, String email, String conumber, String name, String boss, String addr){
 		CompanyData cd = new CompanyData(id,pass,callnum,email,conumber,name,boss,addr);
 		boolean b = cjs.joinResult(cd);
+		
+		ModelAndView mav = new ModelAndView("/business/companymember/joinRst.jsp");
 		if(b)
-			return "/companymember/joinSuccess.jsp";
+			mav.addObject("cjoinrst",true);
 		else
-			return "/companymember/joinFalse.jsp";
+			mav.addObject("cjoinrst",false);
+		
+		return mav;
+			
 	}
 	
 	@RequestMapping("/business/join/idcheck/{id}")
