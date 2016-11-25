@@ -29,4 +29,71 @@ public class WPostReadService {
 		sql.close();
 		return pd;
 	}
+	
+	public boolean checkClipping(String id, int post){
+		SqlSession sql = fac.openSession();
+		HashMap<String,Object> hs = new HashMap<>();
+		hs.put("postnum", post);
+		hs.put("id", id);
+		System.out.println(hs);
+		List<HashMap> rst = sql.selectList("post.postClipCheck",hs);
+		if(rst.isEmpty())
+			return true;
+		else
+			return false;
+		
+	}
+	
+	public boolean doClipping(PostData pd, String id){
+		SqlSession sql = fac.openSession();
+		HashMap<String,Object> hs = new HashMap<>();
+		hs.put("postnum", pd.getNUM());
+		hs.put("id", id);
+		hs.put("company", pd.getCOMPANY());
+		hs.put("title", pd.getTITLE());
+		hs.put("enddate", pd.ENDDATE.toString().substring(0, 10));
+		System.out.println(pd.ENDDATE.toString().substring(0, 10));
+		System.out.println(hs);
+		boolean r = false;
+		try{
+			int r1 = sql.insert("post.postClipping",hs);
+			if(r1 == 1){
+				sql.commit();
+				r = true;
+			}else{
+				System.out.println("0!!!");
+				sql.rollback();
+			}
+		}catch(Exception e){
+			System.out.println("exception!!!!");
+			e.printStackTrace();
+			sql.rollback();
+		}
+		sql.close();
+		return r;
+	}
+	
+	public boolean clipOff(String id, int post){
+		SqlSession sql = fac.openSession();
+		HashMap<String,Object> hs = new HashMap<>();
+		hs.put("postnum", post);
+		hs.put("id", id);
+		boolean r = false;
+		try{
+			int r1 = sql.delete("post.postClipOff",hs);
+			if(r1 == 1){
+				sql.commit();
+				r = true;
+			}else{
+				System.out.println("0!!!");
+				sql.rollback();
+			}
+		}catch(Exception e){
+			System.out.println("exception!!!!");
+			e.printStackTrace();
+			sql.rollback();
+		}
+		sql.close();
+		return r;
+	}
 }
