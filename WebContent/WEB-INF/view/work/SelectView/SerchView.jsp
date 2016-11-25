@@ -3,70 +3,85 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
     
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet"
-	href="http://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<style type="text/css">
+table {
+	font-family: "Lato", "sans-serif";
+}
 
+table.one {
+	margin-bottom: 3em;
+	border-collapse: collapse;
+}
 
-<div align="center">
-	<h3>기업 채용 정보</h3>
-</div>
+td {
+	text-align: center;
+	width: 10em;
+	padding: 1em;
+}
 
+th {
+	text-align: center;
+	padding: 1em;
+	background-color: #e8503a;
+	color: white;
+}
 
-	<div class="w3-container">
-		<hr>
-		<div class="w3-center">
-			<h2>회사</h2>
-			<h3><p w3-class="w3-large">최신 공고 현황</p></h3>
-		</div>
-		<div class="w3-responsive w3-card-4">
-			<table class="w3-table w3-striped w3-bordered">
-				<thead>
-					<tr class="w3-theme">
-						<th style="text-align: center;">NO.</th>
-						<th style="text-align: center;">지역</th>
-						<th style="text-align: center;">회사명</th>
-						<th style="text-align: center;">제목</th>
-						<th style="text-align: center;">직무</th>
-						<th style="text-align: center;">학력</th>
-						<th style="text-align: center;">자격 요건</th>
-						<th style="text-align: center;">경력</th>
-						<th style="text-align: center;">고용형태,직급,급여</th>
-						<th style="text-align: center;">마감일자</th>
-						<th style="text-align: center;">등록 일자</th>
-						<th style="text-align: center;">확인 Y/N</th>
-					</tr>
-				</thead>
-				<tbody>
-					<c:forEach var="w" items="${wlist }">
-					<tr>
-							<td style="text-align: center;">${w.NUM}</td>
-							<td style="text-align: center;">${w.LOCAL}</td>
-							<td style="text-align: center;">${w.COMPANY}</td>
-							<td style="text-align: center;">${w.TITLE}</td>
-							<td style="text-align: center;">${w.JOB}</td>
-							<td style="text-align: center;">${w.EDUCATION}</td>
-							<td style="text-align: center;">${w.QUALIFICATION}</td>
-							<td style="text-align: center;">${w.CAREER}</td>
-							<td style="text-align: center;">${w.HIRETYPE}</td>
-							<td style="text-align: center;">${w.ENDDATE}</td>
-							<td style="text-align: center;">${w.STARTDATE}</td>
-							<td style="text-align: center;">Y</td>
-					</tr>
+tr {
+	height: 1em;
+}
+
+table tr:nth-child(even) {
+	background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+	background-color: #fff;
+}
+</style>
+
+<html>
+<body>
+<hr/>
+	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
+		<table class="table table-hover" style="width: 60%; height: 100%;">
+			<thead>
+				<tr>
+					<th style="width: 15%">회사명</th>
+					<th>제목</th>
+					<th style="width: 12%">학력</th>
+					<th style="width: 15%">자격요건</th>
+					<th style="width: 12%">근무조건</th>
+					<th style="width: 12%">마감일</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:choose>
+				<c:when test="${wlist.size() != 0}">
+						<c:forEach var="w" items="${wlist}">
+							<tr>
+								<td><a href="/company/introduction/${w.COMPANY }"><b>${w.COMPANY }</b></a>
+								</td>
+								<td><a href="/work/post/${w.NUM }"><b>${w.TITLE }</b></a></td>
+								<td>${w.EDUCATION }</td>
+								<td>${w.CAREER }<br />${w.QUALIFICATION }
+								</td>
+								<td>${w.HIRETYPE }<br />${w.LOCAL }<br />${w.SALARY }
+								</td>
+								<td>마감 
+								</td>
+							</tr>
 						</c:forEach>
 
-				</tbody>
-			</table>
-		</div>
-	</div>
+					</c:when>
+					<c:otherwise>
+						<tr>
+							<td colspan="6">검색 결과가 없습니다.</td>
+						</tr>
+					</c:otherwise>
+				</c:choose>
 
+			</tbody>
+		</table>
+	</div>
+</body>
+</html>

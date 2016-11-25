@@ -19,9 +19,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getPostData" parameterType="java.lang.Integer" resultType="post.model.PostData">
 		select * from post where NUM=#{NUM} 
 	</select>
-	<!-- 지원자수 많은 순서대로 top3 -->
+	<!-- 지원자수 많은 순서대로 top15 -->
 	<select id="getTopPost" resultType="post.model.PostData">
-		<![CDATA[select * from (select * from post order by VOL desc) where rownum <= 3 ]]>
+		<![CDATA[select * from (select * from post order by VOL desc) where rownum <= 15 ]]>
 	</select>
 	<!-- 해당 회원이 올린 post 전부 불러오기(최신순) -->
 	<select id="getCompanyAllPost" resultType="post.model.PostData" parameterType="java.lang.String">

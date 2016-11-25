@@ -19,4 +19,9 @@ public class HomeController {
 	public String test3() {
 		return "messageservice";
 	}
+	
+//	@RequestMapping("/find")
+//	public String test4() {
+//		return "findjob";
+//	}
 }

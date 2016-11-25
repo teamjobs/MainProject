@@ -6,17 +6,16 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
-
-<h2>상세 검색</h2>
-  
-	<form name="zn" method="get" action="/work/post/selectserch">
-	<button type="button" class="w3-btn w3-green w3-text-shadow" id="hidebt"><b>상세검색</b></button>
+<center>
+	<form name="zn" method="get" action="/find/result">
+	<button type="button" class="w3-btn-block w3-padding-large w3-red w3-margin-bottom" style="width: 150px;" id="hidebt"><b>상세 검색</b></button>
 		<div id="box" style="display: none;">
-		<!-- 지역 -->	
-		<fieldset style="width: 600">
-		<label>지역 :: <span id="local_rst"></span></label>
+		<!-- 지역 -->
+		<br/>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>지역</b> »<span id="local_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="local" items="${local }">
 					<input class="local" type="checkbox" name="local" value="${local }" /> &nbsp;&nbsp;${local }&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
@@ -29,10 +28,10 @@
 			
 			
 		<!-- 직무 -->
-		<fieldset style="width: 600">
-		<label>직무 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>직무</b> »<span id="job_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="job" items="${job }">
 					<input class="job" type="checkbox" name="job" value="${job }" />&nbsp;${job }&nbsp;&nbsp;&nbsp;&nbsp;
@@ -47,10 +46,10 @@
 	
 		<!-- 경력 -->
 		
-		<fieldset style="width: 600">
-		<label>경력 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>경력</b> »<span id="career_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="career" items="${career }">
 					<input class="career" type="checkbox" name="career"
@@ -65,10 +64,10 @@
 	
 		<!-- 고용형태 -->
 		
-		<fieldset style="width: 600">
-		<label>고용형태 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>고용형태</b> »<span id="hiretype_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="hiretype" items="${hiretype }">
 					<input class="hiretype" type="checkbox" name="hiretype"
@@ -82,10 +81,10 @@
 
 
 		<!-- 학력  -->
-		<fieldset style="width: 600">
-		<label>학력 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>학력</b> »<span id="education_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="education" items="${education }">
 					<input class="education" type="checkbox" name="education"
@@ -101,10 +100,10 @@
 
 		<!-- 직급 -->
 		
-		<fieldset style="width: 600">
-		<label>직급 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>직급</b> »<span id="rank_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+			<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:set var="i" value="0" />
 				<c:forEach var="rank" items="${rank }">
 					<input class="rank" type="checkbox" name="rank" value="${rank }" />&nbsp;${rank }&nbsp;&nbsp;&nbsp;&nbsp;
@@ -118,21 +117,23 @@
 
 		<!-- 급여  -->
 		
-		<fieldset style="width: 600">
-		<label>급여 :: <span id="local_rst"></span></label>
+		<fieldset style="max-width: 700px; border: 2px solid;">
+		<label><b>급여</b> »<span id="salary_rst"></span></label>
 		</fieldset>
-			<fieldset style="width: 600">
+		<fieldset style="width: 700px; border: none; margin: 15px;">
 				<c:forEach var="salary" items="${salary }">
 					<input class="salary" type="checkbox" name="salary"
 						value="${salary }" />&nbsp;${salary }&nbsp;&nbsp;&nbsp;&nbsp;
 							<c:set var="i" value="${i+1 }" />
 				</c:forEach>
 			</fieldset>
+			<br/>
+			<input id="resetbt" type="button" class="w3-btn-block w3-padding w3-light-grey w3-margin-bottom" style="width: 100px;" value="선택해제"/>&nbsp;&nbsp;
+			<input type="submit" class="w3-btn-block w3-padding w3-red w3-margin-bottom" style="width: 100px;" value="검색" /><br/><br/>
 			
-			<input type="submit" value="검색" />
-			<input id="resetbt" type="button" value="초기화"/>
 		</div>
 </form>
+</center>
 <script>
 
 //상세 검색 숨김

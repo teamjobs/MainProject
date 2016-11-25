@@ -72,6 +72,23 @@
 
 	</definition>
 	
+	<definition name="findjob" template="/WEB-INF/view/templateFind.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/header.jsp"/>
+		<put-attribute name="searchselect" value="/WEB-INF/view/work/SelectView/SelectPost.jsp" />
+		<put-attribute name="boxlist" value="/WEB-INF/view/tiles/setting/other/joblist.jsp" />
+		<put-attribute name="table" value="/WEB-INF/view/work/SelectView/SerchView.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
+
+	<definition name="findresult" template="/WEB-INF/view/templateFind2.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/header.jsp"/>
+		<put-attribute name="searchselect" value="/WEB-INF/view/work/SelectView/SelectPost.jsp" />
+		<put-attribute name="table" value="/WEB-INF/view/work/SelectView/SelectSerchView.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
+
 	
 	<!-- Business쪽에서 연결되는 타일입니다. -->
 
@@ -84,6 +101,7 @@
 		<put-attribute name="body" value="/WEB-INF/view/business/my/CMyinfoBody.jsp"/>
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
+	
 	<definition name="busMy_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/business/companymember/CdataRev.jsp" />
 	</definition>
@@ -112,17 +130,3 @@
 
 	
 </tiles-definitions>
-
-
-
-
-
-
-
-
-
-
-
-
-
-

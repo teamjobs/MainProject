@@ -30,6 +30,15 @@ public class WPostReadService {
 		return pd;
 	}
 	
+
+	public List readTopPost(){
+		SqlSession sql = fac.openSession();
+		PostData pd = null;
+		List<PostData> list = sql.selectList("post.getTopPost");
+		sql.close();
+		return list;
+	}
+
 	public boolean checkClipping(String id, int post){
 		SqlSession sql = fac.openSession();
 		HashMap<String,Object> hs = new HashMap<>();
@@ -95,5 +104,6 @@ public class WPostReadService {
 		}
 		sql.close();
 		return r;
+
 	}
 }
