@@ -124,6 +124,9 @@
 	<definition name="CompanyPostView_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/post/companyview/viewPost.jsp" />
 	</definition>
+	<definition name="CompanyPostVolList_tile" extends="businfo">
+		<put-attribute name="body" value="/WEB-INF/view/post/companyview/volList.jsp" />
+	</definition>
 
 	
 </tiles-definitions>

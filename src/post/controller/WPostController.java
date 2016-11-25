@@ -5,11 +5,14 @@ import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
 
+import javax.servlet.http.HttpSession;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import Work.Service.WorkSerchService;
@@ -44,6 +47,7 @@ public class WPostController {
 	}
 
 	@RequestMapping("work/post/{num}")
+
 	public ModelAndView goPostRead(@PathVariable(name = "num") int num) {
 		ModelAndView mav = new ModelAndView("/post/companyview/viewPost.jsp");
 		PostData pd = wpr.readPostData(num);
@@ -53,6 +57,7 @@ public class WPostController {
 		mav.addObject("sort", true);
 		return mav;
 	}
+
 
 	@RequestMapping("/find")
 	public ModelAndView topPostRead() {
@@ -165,6 +170,7 @@ public class WPostController {
 		mav.addObject("page", page);
 		return mav;
 	}
+	
 	/*
 	 * @RequestMapping("company/introduction") public ModelAndView
 	 * getintrodunction(String com){ ModelAndView mav = new
@@ -173,4 +179,35 @@ public class WPostController {
 	 * 
 	 * return mav; }
 	 */
+
+	   
+	   @RequestMapping("work/post/{num}/clip/{do}")
+	   @ResponseBody
+	   public String doClip(HttpSession hs,@PathVariable(name="num") int num,@PathVariable(name="do") String d){
+		   String id = (String) hs.getAttribute("id");
+		   PostData pd = wpr.readPostData(num);
+		   System.out.println("받아온것?"+id+" "+pd);
+		   boolean b = false;
+		   if(d.equals("do"))
+			   b = wpr.doClipping(pd, id);
+		   else
+			   b = wpr.clipOff(id, num);
+		   System.out.println("결과는! "+b);
+		   if(b)
+			   return "y";
+		   else
+			   return "n";
+	   }
+	   
+	   @RequestMapping("/work/post/{num}/clipCheck")
+	   @ResponseBody
+	   public String checkClip(@PathVariable(name="num") int num,HttpSession hs){
+		   System.out.println("clipCheck들어옴");
+		   String id = (String) hs.getAttribute("id");
+		   boolean b = wpr.checkClipping(id, num);
+		   if(b)
+			   return "do";
+		   else
+			   return "donot";
+	   }
 }

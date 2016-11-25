@@ -25,6 +25,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>${t.COMPANY }</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>입사지원 하기</b></h5> <br/>
+          	이력서 제목(필수) : <input type="text" name="title"  required="required"> <br/> <br/>
           <h6 class="w3-text-teal"><i class="fa fa-search fa-fw w3-margin-right"></i>
           <input type="file" id="fileup" style="display: none" name="file" required="required"/>
           	이력서 등록 <button type="button" class="w3-btn w3-teal" id="fileup_bt" >FIND</button></h6>

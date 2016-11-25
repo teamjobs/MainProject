@@ -17,6 +17,7 @@ import org.springframework.web.servlet.ModelAndView;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import file.model.FileData;
+import file.model.FileListService;
 import file.model.FileUploadService;
 import post.model.CPostReadService;
 import post.model.CPostUploadService;
@@ -36,6 +37,10 @@ public class CPostController {
 	CPostReadService cps;
 	@Autowired
 	FileUploadService fus;
+	@Autowired
+	CPostReadService prs;
+	@Autowired
+	FileListService fls;
 	
 	
 	@RequestMapping("business/post/upload")
@@ -130,4 +135,34 @@ public class CPostController {
 		}
 		return mav;
 	}
+	
+	
+	@RequestMapping("/business/post/{num}/vol")
+	public ModelAndView goPostVol(@PathVariable(name="num") int num, HttpSession hs){
+		ModelAndView mav = new ModelAndView("/post/companyview/volList.jsp");
+		String id = (String)hs.getAttribute("id");
+		PostData pd = cpr.readPostData(num);
+		List<FileData> fi = prs.getPostVolList(num);
+		mav.addObject("volsize",fi.size());
+		mav.addObject("pd",pd);
+		mav.addObject("vollist",fi);
+		return mav;
+	}
+	
+	
+	@RequestMapping("/business/post/{postnum}/vol/{volnum}/download")
+	public ModelAndView getPostVolFile(@PathVariable(name="postnum") int post, @PathVariable(name="volnum") int vol){
+		ModelAndView mav = new ModelAndView();
+		FileData fd = fls.getOneWorkFile(vol); 
+		boolean b = fls.isEx(fd.getFILEUUID());
+		
+		if(fd == null || !b){
+			mav.setViewName("/business/post/"+post+"/vol");
+		}else{
+			mav.setViewName("dlv");
+			mav.addObject("file",fd);
+		}
+		return mav;
+	}
+	
 }

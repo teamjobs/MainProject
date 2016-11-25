@@ -58,5 +58,26 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from post where num=#{num}
 	</select>
 	
+	<update id="volup" parameterType="java.lang.String">
+		UPDATE post SET vol = vol+1 WHERE num = #{num}
+	</update>
+	
+	<update id="hitsup" parameterType="java.lang.String">
+		UPDATE post SET hits = hits+1 WHERE num = #{num}
+	</update>
+	
+	<!-- post clipping -->
+	<insert id="postClipping" parameterType="java.util.HashMap">
+		insert into clipping values(clipping_seq.nextval,#{postnum},#{id},#{company},#{title},#{enddate})
+	</insert>
+	<select id="postClipCheck" parameterType="java.util.HashMap" resultType="java.util.HashMap">
+		select * from clipping where id=#{id} and postnum=#{postnum}
+	</select>
+	<delete id="postClipOff" parameterType="java.util.HashMap">
+		delete from clipping where id=#{id} and postnum=#{postnum}
+	</delete>
+	
+	
+	
 	
 </mapper>
