@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
+import business.model.CdataReadService;
 import file.model.FileData;
 import file.model.FileListService;
 import file.model.FileUploadService;
@@ -24,9 +25,10 @@ public class CfileController {
 	
 	@Autowired
 	FileUploadService fus;
-	
 	@Autowired
 	FileListService fls;
+	@Autowired
+	CdataReadService crs;
 	
 	@RequestMapping("/business/file")
 	public String goFile(){
@@ -38,6 +40,11 @@ public class CfileController {
 		return "CompanyFileUpload_tile";
 	}
 	
+	@RequestMapping("/business/file/logoup")
+	public String goLogoup(){
+		return "business/file/logoup.jsp";
+	}
+	
 	@RequestMapping("/business/file/upload")
 	public ModelAndView upCompanyFile(@RequestParam(name="file") MultipartFile file, 
 							 String title, String type, HttpSession hs){
@@ -46,6 +53,21 @@ public class CfileController {
 		FileData fd = fus.uploadFile(file);
 		fd.setFILETYPE(type);
 		fd.setTITLE(title);
+		fd.setUPLOADER(id);
+		boolean b = fus.upCompanyDB(fd);
+		mav.addObject("uprst",b);
+		return mav;
+	}
+	
+	@RequestMapping("/business/logo/upload")
+	public ModelAndView upCompanyLogoFile(@RequestParam(name="file") MultipartFile file, 
+							 HttpSession hs){
+		String id = (String)hs.getAttribute("id");
+		String co = (String)crs.getCompanyName(id);
+		ModelAndView mav = new ModelAndView("business/file/uploadrst.jsp");
+		FileData fd = fus.uploadLogo(file,id);
+		fd.setFILETYPE("logofile");
+		fd.setTITLE(co+"_logo");
 		fd.setUPLOADER(id);
 		boolean b = fus.upCompanyDB(fd);
 		mav.addObject("uprst",b);

@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import qna.model.QnAData;
@@ -40,7 +41,7 @@ public class WQnAController {
 	
 	@RequestMapping("/work/qna/{co}/writerst")
 	public ModelAndView qnaUpload(String id, String title, String ques,@PathVariable String co ){
-		ModelAndView mav = new ModelAndView("redirect:/work/qna/mylist");
+		ModelAndView mav = new ModelAndView("/companyQNA/QnArst.jsp");
 		QnAData qd = new QnAData(id,title,ques,co);
 		System.out.println(qd);
 		boolean b = qus.upQuestion(qd);
@@ -57,11 +58,10 @@ public class WQnAController {
 		System.out.println("getli");
 		System.out.println(li);
 		System.out.println(qlistsize);
-		ModelAndView mav = new ModelAndView("/companyQNA/QnAlist.jsp");
+		ModelAndView mav = new ModelAndView("/");
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);
 		return mav;
 	}
-	
 	
 }

@@ -75,6 +75,8 @@
 	<label for="pwd">기업소개: </label><br/>
 	<textarea rows="10" cols="90" name="introduce" class="form-control" >${cd.INTRODUCE }</textarea>
 	<br><br>	
+	<p><a href="/business/file/logoup" target="_blank" class="w3-btn w3-large" style="width: 100%;">로고 파일 업로드</a></p>
+	<br><br>	
 	<div class="w3-left">
 	<button type="submit" class="w3-btn w3-red" id="okbutton" >회원정보 수정</button>
 	</div>

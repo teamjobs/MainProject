@@ -67,6 +67,32 @@ public class FileUploadService {
 		}
 	}
 	
+	public FileData uploadLogo(MultipartFile f, String id){
+		if(f.isEmpty())
+			return null;
+		FileData fd = new FileData(); 
+		try{	
+			String uid = UUID.randomUUID().toString();
+			String fileuid = uid.substring(0,23);
+			String fileDir=application.getRealPath("/files");
+			String filename = id+"jpg";
+			int filesize = (int)f.getSize();
+
+			File dest = new File(fileDir,filename);
+			System.out.println(fileDir);
+			f.transferTo(dest);
+			
+			fd.setFILENAME(filename);
+			fd.setFILEUUID(fileuid);
+			fd.setFILESIZE(filesize);
+			return fd;
+		
+		}catch(Exception e){
+			e.printStackTrace();
+			return null;
+		}
+	}
+	
 	public boolean delfile(int num){
 		SqlSession sql = fac.openSession();
 		boolean r = false;

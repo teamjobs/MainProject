@@ -54,6 +54,7 @@
 		<property name="definitions">
 			<list>
 				<value>/WEB-INF/view/tiles/tiles-config.xml</value>
+				<value>/WEB-INF/view/tiles/tiles_companyDataView-config.xml</value>
 			</list>
 		</property>
 	</bean>

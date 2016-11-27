@@ -6,7 +6,7 @@
 <nav class="w3-sidenav w3-collapse w3-white" style=width:300px;" id="mySidenav"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-     &nbsp;&nbsp;<img src="/img/iu.jpg" class="w3-circle" style="width:80px">
+     &nbsp;&nbsp;<img src="/files/${id}" style="width:80px">
     </div>
     <div class="w3-col s8">
     <br/>

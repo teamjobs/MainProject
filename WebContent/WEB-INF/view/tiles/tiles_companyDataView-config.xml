@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+<tiles-definitions>
+
+	<definition name="Companydefault_tile" template="/WEB-INF/view/template_CompanyData.jsp">
+		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
+		<put-attribute name="CVData" value="/WEB-INF/view/companyView/companyDataView.jsp" />
+		<put-attribute name="CVReview" value="/WEB-INF/view/viewtest2.jsp" />
+		<put-attribute name="CVQnA" value="/WEB-INF/view/companyQNA/QnAlist.jsp" />
+		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
+	</definition>
+
+	
+</tiles-definitions>

@@ -103,7 +103,5 @@ public class CdataController {
 			System.out.println("¸Á");
 			return "/";
 		}
-	}
-	
-	
+	}	
 }

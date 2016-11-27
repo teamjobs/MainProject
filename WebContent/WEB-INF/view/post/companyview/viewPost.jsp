@@ -13,7 +13,7 @@
 
 <div class="w3-container">
 <div class="w3-panel w3-card-2">
-	<a href="" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
+	<a href="/companydata/${com.NAME }" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
 	<button class="w3-btn w3-tiny" id="clip">Clip</button>
 	<div class="w3-container w3-center">
 	<h3>${pd.TITLE}</h3>	

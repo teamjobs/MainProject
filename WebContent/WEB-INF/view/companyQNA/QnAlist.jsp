@@ -40,7 +40,7 @@
 </thead>
 <tbody>
 
-			<c:forEach var="i" begin="0" end="${qlistsize -1 }" step="1">
+			<c:forEach var="i" begin="0" end="${qlistsize }" step="1">
 				<tr>
 					<td>${i+1 }</td>
 					<c:choose>
@@ -51,7 +51,7 @@
 							<td>${qlist[i].QUEID }</td>
 						</c:otherwise>
 					</c:choose>
-					<td><a href="/work/qna/${qlist[i].NUM }">${qlist[i].QTITLE }</a></td>
+					<td><a href="/work/qna/${qlist[i].NUM }" target="_blank">${qlist[i].QTITLE }</a></td>
 					<td>${qlist[i].UPDAY }</td>
 					<c:choose>
 					<c:when test="${ confirm == 'company' && qlist[i].ANSCO == myCo && qlist[i].CHE != 'check'}">
@@ -69,7 +69,13 @@
 </tbody>
 </table>
 
+
 </c:otherwise>
 </c:choose>
+</div>
+<div class="w3-container">
+<c:if test="${ confirm == 'work'}">
+<p><a href="/work/qna/${co.NAME }/write" target="_blank" class="w3-btn w3-large" style="width: 100%;">질문 작성</a></p>
+</c:if>
 </div>
 	
