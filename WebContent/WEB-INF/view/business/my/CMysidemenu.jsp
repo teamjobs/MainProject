@@ -6,7 +6,7 @@
 <nav class="w3-sidenav w3-collapse w3-white" style=width:300px;" id="mySidenav"><br>
   <div class="w3-container w3-row">
     <div class="w3-col s4">
-     &nbsp;&nbsp;<img src="/img/iu.jpg" class="w3-circle" style="width:80px">
+     &nbsp;&nbsp;<img src="/files/${id}.jpg" style="width:80px">
     </div>
     <div class="w3-col s8">
     <br/>
@@ -19,11 +19,11 @@
   <br/>
   <div class="w3-container">
   </div>
-  <a href="/business/my/rev" class="w3-padding"><i class="fa fa-bell fa-fw"></i>  새 알림 (1)</a>
+  <a href="/business/my" class="w3-padding"><i class="fa fa-bell fa-fw"></i> 질문 게시판</a>
   <a href="/business/my/post" class="w3-padding"><i class="fa fa-bullseye fa-fw"></i> 구인공고 관리 </a>
   <a href="/business/file" class="w3-padding"><i class="fa fa-eye fa-fw"></i> 파일 관리 </a>
   <!-- <a href="#" class="w3-padding"><i class="fa fa-diamond fa-fw"></i>  스크랩</a> -->
-  <a href="/business/my/rev" class="w3-padding"><i class="fa fa-cog fa-fw"></i>  회원정보 관리</a>
+  <a href="/business/my/rev" class="w3-padding"><i class="fa fa-cog fa-fw"></i> 회원정보 관리</a>
   <br/>
   <br/>
   <a href="#" class="w3-padding"><i class="fa fa-users fa-fw"></i>  Traffic</a>

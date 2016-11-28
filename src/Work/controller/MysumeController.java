@@ -1,5 +1,6 @@
 package Work.controller;
 
+import java.util.HashMap;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -10,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import Work.model.My;
+import post.model.PostData;
 
 @Controller
 public class MysumeController {
@@ -30,6 +32,16 @@ public class MysumeController {
 		my.cancel(n);
 		return "redirect:/my/history";
 	}
+	
+	@RequestMapping("/my/history/board")
+	public ModelAndView myhistory(HttpSession hs){
+		ModelAndView mav = new ModelAndView("work/Resumes/ResumeView.jsp");
+		String id= (String) hs.getAttribute("id");
+		List<HashMap> list = my.myhistoryPost(id);
+		mav.addObject("list",list);
+		return mav;
+	}
+	
 	@RequestMapping("/my/clipping")
 	public ModelAndView clippingC(HttpSession hs){
 		

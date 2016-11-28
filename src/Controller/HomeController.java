@@ -20,8 +20,8 @@ public class HomeController {
 		return "messageservice";
 	}
 	
-//	@RequestMapping("/find")
-//	public String test4() {
-//		return "findjob";
-//	}
+	@RequestMapping("/write/review")
+	public String test4() {
+		return "reviewform";
+	}
 }

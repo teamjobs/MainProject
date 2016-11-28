@@ -17,6 +17,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getOnepostfile" parameterType="java.util.HashMap" resultType="file.model.FileData">
 		select * from workfile where post = #{post} AND UPLOADER = #{uploader}
 	</select>
+	<select id="getAllCompanyFile" parameterType="java.lang.String" resultType="file.model.FileData">
+		select * from workfile where company = #{co} order by upday desc
+	</select>
 	
 	<delete id="Newresume" parameterType="java.util.HashMap">
 		delete from workfile where post = #{post} and UPLOADER = #{uploader}

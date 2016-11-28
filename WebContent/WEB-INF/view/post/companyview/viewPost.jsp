@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet"
@@ -13,7 +13,7 @@
 
 <div class="w3-container">
 <div class="w3-panel w3-card-2">
-	<a href="" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
+	<a href="/companydata/${com.NAME }" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
 	<button class="w3-btn w3-tiny" id="clip">Clip</button>
 	<div class="w3-container w3-center">
 	<h3>${pd.TITLE}</h3>	
@@ -65,6 +65,9 @@
 	<br>
 	<h3>상세요강</h3>
 	<p>${pd.QUALIFICATION }</p>
+	<br>
+	<h3>모집기간</h3>
+	<p>${fn:substring(pd.STARTDATE,0,10)} - <b>${fn:substring(pd.ENDDATE,0,10) }</b></p>
 </div>
 </div>
 

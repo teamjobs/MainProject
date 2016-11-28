@@ -12,6 +12,10 @@
 		<put-attribute name="body" value="/WEB-INF/view/business/businessMain.jsp" />
 	</definition>
 	
+	<definition name="reviewform" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/review/writeform2.jsp" />
+	</definition>
+	
 	<definition name="info" template="/WEB-INF/view/template2.jsp">
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="side" value="/WEB-INF/view/tiles/setting/sidemenu.jsp"/>
@@ -98,12 +102,15 @@
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="side" value="/WEB-INF/view/business/my/CMysidemenu.jsp"/>
 		<put-attribute name="head" value="/WEB-INF/view/business/my/CMyhead.jsp"/>
-		<put-attribute name="body" value="/WEB-INF/view/business/my/CMyinfoBody.jsp"/>
+		<put-attribute name="body" value="/WEB-INF/view/companyQNA/QnAlist.jsp"/>
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
 	</definition>
 	
 	<definition name="busMy_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/business/companymember/CdataRev.jsp" />
+	</definition>
+	<definition name="CompanyAllVol_tile" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/post/companyview/companyAllvolList.jsp"/>
 	</definition>
 
 	<!-- /business/file -->
