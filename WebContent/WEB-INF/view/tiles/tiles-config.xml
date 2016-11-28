@@ -109,6 +109,9 @@
 	<definition name="busMy_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/business/companymember/CdataRev.jsp" />
 	</definition>
+	<definition name="CompanyAllVol_tile" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/post/companyview/companyAllvolList.jsp"/>
+	</definition>
 
 	<!-- /business/file -->
 	<definition name="CompanyFile_tile" extends="businfo">

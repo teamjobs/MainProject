@@ -1,6 +1,8 @@
 package business.controller;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 import javax.servlet.http.HttpSession;
@@ -17,6 +19,8 @@ import business.model.CompanyData;
 import file.model.FileData;
 import post.model.CPostReadService;
 import post.model.PostData;
+import qna.model.QnAData;
+import qna.model.QnAReadService;
 
 @Controller
 public class CmyController {
@@ -31,17 +35,54 @@ public class CmyController {
 	CPostReadService cps;
 	@Autowired
 	CMyViewdataService mvs;
-	
+	@Autowired
+	QnAReadService qrs;
 	CompanyData cd;
-
+	String id;
+	
+	
+	@RequestMapping("/business/my/rev")
+	public ModelAndView goMyUp(HttpSession hs){
+		ModelAndView mav = new ModelAndView("busMy_tile");
+		CompanyData cd = crs.dataRead((String)hs.getAttribute("id"));
+		HashMap li = crs.addCotypeList();
+		ArrayList<String> cotli = new ArrayList<>();
+		cotli.add("제조 통신 화학 건설");
+		cotli.add("미디어·광고·문화·예술");
+		cotli.add("IT·정보통신");
+		cotli.add("서비스·교육·금융·유통");
+		mav.addObject("coli",li);
+		mav.addObject("cd",cd);
+		mav.addObject("cotli",cotli);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
+		return mav;
+	}
+	
 	@RequestMapping("/business/my")
 	public ModelAndView myinfo(HttpSession hs){
 		ModelAndView mav = new ModelAndView("businfo");
-		String id = (String) hs.getAttribute("id");
-		cd = cds.dataRead(id);
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
+		this.id = (String) hs.getAttribute("id");
+		this.cd = crs.dataRead(id);
+		List li = qrs.getCompanyQnA(cd.getNAME());
+		int qlistsize = li.size();
 		mav.addObject("list", cd);
+		mav.addObject("qlist",li);
+		mav.addObject("qlistsize",qlistsize);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
 		return mav;
 	}
 	
@@ -56,34 +97,53 @@ public class CmyController {
 		String id = (String)hs.getAttribute("id");
 		String co = (String)crs.getCompanyName(id);
 		List<PostData> li = prs.getCompanyAllPost(co);
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
 		mav.addObject("postlist",li);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
 		return mav;
 	}
 	
 	@RequestMapping("business/my/post/upload")
 	public ModelAndView goPostUpload(){
 		ModelAndView mav = new ModelAndView("CompanyPostUpload_tile");
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
 		
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
 		return mav;
 	}
 	
 	@RequestMapping(value="business/my/post/{num}/adj")
 	public ModelAndView goPostUpload2(@PathVariable(name="num") int num, HttpSession hs){
 		ModelAndView mav = new ModelAndView();
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
 		
 		String co = crs.getCompanyName((String)hs.getAttribute("id"));
 		PostData pd = cps.readPostData(num);
 		System.out.println("회사명>"+co+" 접속자>"+pd.getCOMPANY());
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
+		
 		if(co.equals(pd.getCOMPANY())){
 			mav.setViewName("CompanyPostUpload_tile");
 			mav.addObject("pd",pd);
@@ -97,22 +157,26 @@ public class CmyController {
 	@RequestMapping("business/my/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
 		ModelAndView mav = new ModelAndView("CompanyPostView_tile");
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
-		
 		PostData pd = cps.readPostData(num);
 		CompanyData cd = crs.getIntrodunction(pd.getCOMPANY());
 		mav.addObject("pd",pd);
 		mav.addObject("com",cd);
 		mav.addObject("sort",true);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
 		return mav;
 	}
 	
 	@RequestMapping("/business/my/post/{num}/vol")
 	public ModelAndView goPostVol(@PathVariable(name="num") int num, HttpSession hs){
 		ModelAndView mav = new ModelAndView("CompanyPostVolList_tile");
-		HashMap ma = mvs.setViewData(cd.getNAME());
-		mav.addObject("vpd",ma);
+		
 		
 		String id = (String)hs.getAttribute("id");
 		PostData pd = cps.readPostData(num);
@@ -120,7 +184,41 @@ public class CmyController {
 		mav.addObject("volsize",fi.size());
 		mav.addObject("pd",pd);
 		mav.addObject("vollist",fi);
+		
+		// =====================
+		
+		HashMap viewdata = initView(id);
+		mav.addObject("initviewCdata",viewdata);
+		
+		// =====================
+		
 		return mav;
+	}
+	
+	
+	public HashMap initView(String id){
+		HashMap<String,Object> hm = new HashMap<>();
+		cd = cds.dataRead(id);
+		
+		// ============== 메세지
+		List li = qrs.getCompanyQnA(cd.getNAME());
+		Iterator it = li.iterator();
+		int i = 0;
+		while(it.hasNext()){
+			QnAData qd = (QnAData) it.next();
+			if(!qd.getCHE().equals("checked"))
+				i++;
+		}
+		int newmassage = i;
+		
+		// =============== post정보
+		HashMap ma = mvs.setViewData(cd.getNAME());
+		
+		
+		hm.put("myCo", cd.getNAME());
+		hm.put("cNewMassage", newmassage);
+		hm.put("vpd",ma);
+		return hm;
 	}
 
 	

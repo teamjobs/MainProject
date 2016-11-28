@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%@ taglib prefix="fn" uri="http://java.sun.com/jsp/jstl/functions" %>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet"
@@ -65,6 +65,9 @@
 	<br>
 	<h3>상세요강</h3>
 	<p>${pd.QUALIFICATION }</p>
+	<br>
+	<h3>모집기간</h3>
+	<p>${fn:substring(pd.STARTDATE,0,10)} - <b>${fn:substring(pd.ENDDATE,0,10) }</b></p>
 </div>
 </div>
 

@@ -12,21 +12,22 @@ import org.springframework.web.servlet.ModelAndView;
 import business.model.CdataReadService;
 import post.model.CPostReadService;
 import post.model.PostData;
+import qna.model.QnAReadService;
 
 @Controller
 public class CmainController {
 	
 	@Autowired
 	CPostReadService prs;
-	
 	@Autowired
 	CdataReadService crs;
+	@Autowired
+	QnAReadService qrs;
 
 	
 	@RequestMapping("/business/main")
 	public ModelAndView goBusinessMain(HttpSession hs){
 		System.out.println("???");
-		//ModelAndView mav = new ModelAndView("/business/businessMain.jsp");
 		ModelAndView mav = new ModelAndView();
 		
 		String OK = (String) hs.getAttribute("confirm");
@@ -34,32 +35,21 @@ public class CmainController {
 			mav.setViewName("business_tile");
 			String id = (String)hs.getAttribute("id");
 			String co = (String)crs.getCompanyName(id);
-			// 메인에서 필요한 정보	
-			// 접속자 아이디  /  업로드포스트 목록 
+			
 			List<PostData> li = prs.getCompanyAllPost(co);
-			System.out.println("1"+li);
+			List qli = qrs.getCompanyQnA(co);
+			int qlistsize = qli.size();
+			
 			mav.addObject("postlist",li);
+			mav.addObject("qlist",qli);
+			mav.addObject("qlistsize",qlistsize);
+			mav.addObject("myCo",co);
 		}else{
 			int img = (int)(Math.random()*6);
 			mav.addObject("img",img);
 			mav.setViewName("start/Error.jsp");
 		}
 		
-		
-		return mav;
-	}
-	
-	@RequestMapping("/business/main2")
-	public ModelAndView goBusinessMain2(HttpSession hs){
-		System.out.println("???");
-		ModelAndView mav = new ModelAndView("/business/businessMain.jsp");
-		String id = (String)hs.getAttribute("id");
-		String co = (String)crs.getCompanyName(id);
-		// 메인에서 필요한 정보	
-		// 접속자 아이디  /  업로드포스트 목록 
-		List<PostData> li = prs.getCompanyAllPost(co);
-		System.out.println("1"+li);
-		mav.addObject("postlist",li);
 		return mav;
 	}
 	

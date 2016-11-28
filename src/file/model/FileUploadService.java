@@ -75,7 +75,7 @@ public class FileUploadService {
 			String uid = UUID.randomUUID().toString();
 			String fileuid = uid.substring(0,23);
 			String fileDir=application.getRealPath("/files");
-			String filename = id+"jpg";
+			String filename = id+".jpg";
 			int filesize = (int)f.getSize();
 
 			File dest = new File(fileDir,filename);

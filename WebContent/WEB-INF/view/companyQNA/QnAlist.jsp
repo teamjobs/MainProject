@@ -12,6 +12,17 @@
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 
+<c:if test="${ confirm == 'company' && initviewCdata.myCo != null}">
+<div class="w3-container">
+	<label>답변을 기다리는 질문이 <b>${ initviewCdata.cNewMassage }개</b> 있습니다.</label>
+</div>
+</c:if>
+
+<c:if test="${ confirm == 'company' && goAns != null}">
+<div class="w3-container">
+	<p><a href="/business/my" target="_blank" class="w3-btn w3-large w3-light-grey w3-hover-red" style="width: 100%;">질문 답변</a></p>
+</div>
+</c:if>
 
 <div class="w3-container">
 
@@ -39,8 +50,7 @@
 </tr>
 </thead>
 <tbody>
-
-			<c:forEach var="i" begin="0" end="${qlistsize }" step="1">
+			<c:forEach var="i" begin="0" end="${qlistsize -1 }" step="1">
 				<tr>
 					<td>${i+1 }</td>
 					<c:choose>
@@ -54,10 +64,10 @@
 					<td><a href="/work/qna/${qlist[i].NUM }" target="_blank">${qlist[i].QTITLE }</a></td>
 					<td>${qlist[i].UPDAY }</td>
 					<c:choose>
-					<c:when test="${ confirm == 'company' && qlist[i].ANSCO == myCo && qlist[i].CHE != 'check'}">
-						<td><a href="/business/qna/${qlist[i].NUM }/ans"><i class="fa fa-check"></i></a></td>
+					<c:when test="${ confirm == 'company' && qlist[i].ANSCO == initviewCdata.myCo && qlist[i].CHE != 'checked'}">
+						<td><a href="/business/qna/${qlist[i].NUM }/ans" target="_blank">답변하기</a></td>
 					</c:when>
-					<c:when test="${ qlist[i].CHE != 'check'}">
+					<c:when test="${ qlist[i].CHE != 'checked'}">
 						<td></td>
 					</c:when>
 					<c:otherwise>
@@ -68,7 +78,6 @@
 			</c:forEach>
 </tbody>
 </table>
-
 
 </c:otherwise>
 </c:choose>
