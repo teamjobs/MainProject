@@ -42,10 +42,10 @@ body {
 			</c:choose>	
 			<li class="w3-hide-small"><a href="#band"
 				class="w3-padding-large">구인</a></li>
-			<li class="w3-hide-small"><a href="#tour"
+			<li class="w3-hide-small"><a href="/find"
 				class="w3-padding-large">구직</a></li>
 			<li class="w3-hide-small"><a href="#contact"
-				class="w3-padding-large">면접</a></li>
+				class="w3-padding-large">리뷰</a></li>
 			<li class="w3-hide-small w3-dropdown-hover"><a
 				href="javascript:void(0)" class="w3-hover-none w3-padding-large"
 				title="More">☰ </a>

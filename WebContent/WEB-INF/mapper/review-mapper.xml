@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="review">
+
+<!-- 연봉 -->
+	<select id="Income" resultType="java.util.HashMap" >
+		<![CDATA[
+		select * from (
+  			select rownum rank, temp.* from
+    			(select company, avg(pay) average 
+      			from income group by company order by average desc) 
+  			temp) 
+		where company = #{COMPANY}
+  		]]>
+	</select>
+	
+	<!-- 면접 난이도 -->
+	<select id="InterviewLevel" resultType="java.util.HashMap">
+		<![CDATA[
+		select * from (
+  			select temp.* from
+    			(select company, avg(interviewlevel) average 
+      			from interview group by company) 
+  			temp) 
+		where company = #{COMPANY}
+		]]>
+	</select>
+	
+	<!--  -->
+	<select id="interAppraisal" resultType="java.util.HashMap">
+	
+		select  appraisal, count(*) cnt from interview where company = #{company} 
+            group by appraisal
+     
+	</select>
+	
+	<select id="interPass" resultType="java.util.HashMap">
+
+		select  pass, count(*) cnt from interview where company = #{company}
+            group by pass 
+
+	</select>
+	
+	
+</mapper>
+
+
+
+
+
+
+
+
+

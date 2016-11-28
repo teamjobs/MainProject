@@ -20,11 +20,12 @@
       <h3 class="w3-text-white">JOBS</h3>
       <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
       
-      <a href="/my/resume/in">
+      <a href="/my/history">
 				<button
+					
 					class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
 					onclick="document.getElementById('subscribe').style.display='block'">
-					이력서 등록하기
+					마이페이지
 				</button>
 				</a>
 			</h6>
@@ -56,7 +57,7 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>기업 찾기</h4>
-				<br><a href="/work/post/serch">
+				<br><a href="/find">
 				 <i class="fa fa-diamond w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i>
 					</a>
@@ -89,7 +90,7 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
-							<b><td><a href="/company/introduction?com=${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }
+							<b><td><a href="/work/post/${t.NUM}">${t.COMPANY }</a> ${t.JOB }
 							</td></b>
 							<td>${t.TITLE }</td>
 							<td>${t.CAREER }/${t.QUALIFICATION}</td>

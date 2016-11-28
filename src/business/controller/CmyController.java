@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import business.model.CdataReadService;
 import business.model.CompanyData;
+import file.model.FileData;
 import post.model.CPostReadService;
 import post.model.PostData;
 
@@ -27,8 +28,6 @@ public class CmyController {
 	CdataReadService cds;
 	@Autowired
 	CPostReadService cps;
-	@Autowired
-	CPostReadService cpr;
 
 	@RequestMapping("/business/my")
 	public ModelAndView myinfo(HttpSession hs){
@@ -66,7 +65,7 @@ public class CmyController {
 	public ModelAndView goPostUpload2(@PathVariable(name="num") int num, HttpSession hs){
 		String co = crs.getCompanyName((String)hs.getAttribute("id"));
 		ModelAndView mav = new ModelAndView();
-		PostData pd = cpr.readPostData(num);
+		PostData pd = cps.readPostData(num);
 		System.out.println("회사명>"+co+" 접속자>"+pd.getCOMPANY());
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
@@ -83,7 +82,7 @@ public class CmyController {
 	@RequestMapping("business/my/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
 		ModelAndView mav = new ModelAndView("CompanyPostView_tile");
-		PostData pd = cpr.readPostData(num);
+		PostData pd = cps.readPostData(num);
 		CompanyData cd = crs.getIntrodunction(pd.getCOMPANY());
 		mav.addObject("pd",pd);
 		mav.addObject("com",cd);
@@ -91,6 +90,17 @@ public class CmyController {
 		return mav;
 	}
 	
+	@RequestMapping("/business/my/post/{num}/vol")
+	public ModelAndView goPostVol(@PathVariable(name="num") int num, HttpSession hs){
+		ModelAndView mav = new ModelAndView("CompanyPostVolList_tile");
+		String id = (String)hs.getAttribute("id");
+		PostData pd = cps.readPostData(num);
+		List<FileData> fi = prs.getPostVolList(num);
+		mav.addObject("volsize",fi.size());
+		mav.addObject("pd",pd);
+		mav.addObject("vollist",fi);
+		return mav;
+	}
 
 	
 }

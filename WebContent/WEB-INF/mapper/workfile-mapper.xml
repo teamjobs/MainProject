@@ -6,5 +6,28 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="apply" parameterType="java.util.HashMap">
 		insert into workfile values (workfile_seq.nextval,#{company},#{post},#{title},#{filename},#{fileuuid},#{upload},sysdate)
 	</insert>
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- 지원자 확인용(business) -->
+	<select id="allpostfile" parameterType="java.lang.Integer" resultType="file.model.FileData">
+		select rownum rn, temp.* from(select * from workfile where post = #{POST} order by upday asc) temp order by rn desc
+	</select>
+	<select id="getOnepostfile" parameterType="java.util.HashMap" resultType="file.model.FileData">
+		select * from workfile where post = #{post} AND UPLOADER = #{uploader}
+	</select>
+	
 
 </mapper>

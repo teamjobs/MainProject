@@ -25,4 +25,21 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getCompanyIntrodunction" parameterType="java.lang.String" resultType="business.model.CompanyData">
 		select * from company where name = #{name} 
 	</select>
+	
+	
+	<select id="getCompanyNewPost" parameterType="java.lang.String" resultType="java.lang.Integer">
+		select temp.num from
+		(select rownum rn, p.* from (select * from post order by uploaddate desc) p where p.company = ${company}) temp
+		where temp.rn = 1
+	</select>
+	<select id="getCompanyPostVol" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select p.vol from post p where p.num=${post}
+	</select>
+	<select id="getCompanyPosthits" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select p.hits from post p where p.num=${post}
+	</select>
+	<select id="getCompanyPostClip" parameterType="java.lang.Integer" resultType="java.lang.Integer">
+		select count(*) from (select * from clipping where postnum = ${post})
+	</select>
+	
 </mapper>

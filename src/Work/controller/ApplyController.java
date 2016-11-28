@@ -33,7 +33,7 @@ public class ApplyController {
 	}
 	
 	@RequestMapping("/apply/{num}/OK")
-	public ModelAndView OK(@RequestParam(name="file")MultipartFile file,@PathVariable(name="num")String num, HttpSession hs){
+	public ModelAndView OK(@RequestParam(name="file")MultipartFile file,@PathVariable(name="num")String num, HttpSession hs,String title){
 		
 		ModelAndView mav = new ModelAndView();
 		System.out.println("ÄÁÆ®·Ñ"+num+"/"+hs);
@@ -50,12 +50,14 @@ public class ApplyController {
 		System.out.println(list.size());
 		String fileuuid = as.execute(file);
 		String upload = (String) hs.getAttribute("id");
-		int OK = as.apply(map.get("COMPANY"), num, map.get("TITLE"), file.getOriginalFilename(), fileuuid,upload);
+		int OK = as.apply(map.get("COMPANY"), num, title, file.getOriginalFilename(), fileuuid,upload);
+		as.volup(num);
+		
 		
 		if(OK == 1){
 			mav.setViewName("/apply/OK");
 		}else{
-			mav.setViewName("/apply/Error");
+			mav.setViewName("/work/ApplyError.jsp");
 		}
 		
 		return mav;

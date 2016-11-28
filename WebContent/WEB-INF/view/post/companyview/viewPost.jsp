@@ -14,9 +14,7 @@
 <div class="w3-container">
 <div class="w3-panel w3-card-2">
 	<a href="" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;
-	<c:if test=" ${ confirm == 'work'}">
-	<a href="" class="w3-btn w3-tiny">공고 스크랩</a>
-	</c:if>
+	<button class="w3-btn w3-tiny" id="clip">Clip</button>
 	<div class="w3-container w3-center">
 	<h3>${pd.TITLE}</h3>	
 	</div>
@@ -93,3 +91,48 @@
 <p><a href="/business/post/${pd.NUM }/adj" class="w3-btn w3-large" style="width: 100%;">공고 수정</a></p>
 </c:when>
 </c:choose>
+
+<script>
+
+	$("#clip").click(function(){
+		$.ajax({
+		    "method" : "post",
+			"url" : "/work/post/${pd.NUM}/clipCheck"
+		}).done(function(d){
+			doClip(d);
+		})
+	});
+	
+	function doClip(d){
+		$.ajax({
+		    "method" : "post",
+			"url" : "/work/post/${pd.NUM}/clip/"+d
+		}).done(function(rst){
+			if(rst=="y" && d == "do") {
+				$("#clip").val("clip!");
+				$("#clip").attr("class","w3-btn w3-tiny w3-orange");
+			}else if(rst=="y" && d == "donot") {
+				$("#clip").val("clip");
+				$("#clip").attr("class","w3-btn w3-tiny");
+			}
+		})
+	};
+	
+	$(document).ready(function(){
+		$.ajax({
+		    "method" : "post",
+			"url" : "/work/post/${pd.NUM}/clipCheck"
+		}).done(function(d){
+			if(d == "do") {
+				$("#clip").val("clip!");
+				$("#clip").attr("class","w3-btn w3-tiny");
+			}else {
+				$("#clip").val("clip");
+				$("#clip").attr("class","w3-btn w3-tiny w3-orange");
+			}
+		})
+	});
+	
+
+
+</script>

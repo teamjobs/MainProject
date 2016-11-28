@@ -5,6 +5,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.UUID;
 
+import javax.mail.Session;
 import javax.servlet.ServletContext;
 import javax.servlet.http.HttpSession;
 
@@ -48,6 +49,7 @@ public class ApplyService {
 		map.put("upload", upload);
 		
 		
+		
 		System.out.println(map);
 		
 		int OK = sql.insert("workfile.apply",map);
@@ -77,5 +79,11 @@ public class ApplyService {
 			e.printStackTrace();
 			return null;
 		}
+	}
+	
+	public void volup(String num){
+		SqlSession sql = fac.openSession();
+		sql.update("post.volup", num);
+		sql.close();
 	}
 }

@@ -3,82 +3,92 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<!-- 상세검색 페이지 -->
+<style type="text/css">
+table {
+	font-family: "Lato", "sans-serif";
+}
 
-<h2 align="center">상세 검색</h2>
+table.one {
+	margin-bottom: 3em;
+	border-collapse: collapse;
+}
 
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+td {
+	text-align: center;
+	width: 10em;
+	padding: 1em;
+}
 
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<link rel="stylesheet"
-	href="http://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet"
-	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
-<link rel="stylesheet"
-	href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-<script
-	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+th {
+	text-align: center;
+	padding: 1em;
+	background-color: #e8503a;
+	color: white;
+}
 
+tr {
+	height: 1em;
+}
 
-<form  action="/work/post/selectserch">
-	<div align="center" class="container">
-		<h3><p>설정하신 조건에 맞는 게시물 목록 입니다.</p></h3>
-		<hr/>
-		<div class="w3-responsive w3-card-4">
-			<table class="table table-bordered table table-hover"
-				style="max-width:1050; width: auto; height: auto; word-break: break-all; table-layout: fixed;">
-				<thead valign="middle" style="font-size: 10pt;">
-					<tr class="w3-theme">
-						<th style="text-align: center;">NO.<br/></th>
-						<th style="text-align: center">지역<br/></th>
-						<th style="text-align: center">회사명<br/></th>
-						<th style="text-align: center">제목<br/></th>
-						<th style="text-align: center">직무<br/></th>
-						<th style="text-align: center">학력<br/></th>
-						<th style="text-align: center">자격 요건<br/></th>
-						<th style="text-align: center">경력<br/></th>
-						<th style="text-align: center">고용형태<br/>직급,급여</th>
-						<th style="text-align: center">마감일자<br/></th>
-						<th style="text-align: center">등록 일자<br/></th>
-					</tr>
-				</thead>
-				<tbody align="center" style="font-size: 10pt; ">
+table tr:nth-child(even) {
+	background-color: #eee;
+}
+
+table tr:nth-child(odd) {
+	background-color: #fff;
+}
+</style>
+
+<html>
+<body>
+<hr/>
+	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
+		<table class="table table-hover" style="width: 60%; height: 100%; table-layout: fixed;">
+			<thead>
+				<tr>
+					<th style="width: 15%">회사명</th>
+					<th>제목</th>
+					<th style="width: 12%">학력</th>
+					<th style="width: 15%">자격요건</th>
+					<th style="width: 12%">근무조건</th>
+					<th style="width: 12%">마감일</th>
+				</tr>
+			</thead>
+			<tbody>
+			<c:choose>
+				<c:when test="${sslist.size() != 0}">
 						<c:forEach var="sd" items="${sslist}">
-					<tr>
-							<td style="text-align:center;">
-							<div style="width: 30; height: 50">${sd.NUM}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 50">${sd.LOCAL}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 100">${sd.COMPANY}</div></td>
-							<td style="text-align:center;">
-							<div style="width: 180">${sd.TITLE}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 100">${sd.JOB}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 80">${sd.EDUCATION}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 100; word-break: break-all;">${sd.QUALIFICATION}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 60">${sd.CAREER}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 100; word-break: break-all;">${sd.HIRETYPE},&nbsp;${sd.RANK}<br/>${sd.SALARY}</div></td>
-							<td style="text-align: center;">
-							<div style="width: 80"><fmt:formatDate value="${sd.ENDDATE}"
+
+
+							<tr>
+								<td><a href="/company/introduction/${sd.COMPANY }"><b>${sd.COMPANY }</b></a>
+								</td>
+								<td><a href="/work/post/${sd.NUM }"><b>${sd.TITLE }</b></a></td>
+								<td>${sd.EDUCATION }</td>
+								<td>${sd.CAREER }<br />${sd.QUALIFICATION }
+								</td>
+								<td style="text-overflow: ellipsis; overflow: hidden;">
+								<nobr>${sd.HIRETYPE }<br />${sd.LOCAL }<br />${sd.SALARY }</nobr>
+								</td>
+								<td>
+								<fmt:formatDate value="${sd.ENDDATE}"
 									pattern="YYYY-MM-dd" /><br/> 마감<fmt:formatNumber
-									value=" ${sd.MAGAM}" pattern=" " />일 전</div></td>
-							
-							<td style="text-align: center;">
-							<div style="width: 80">${sd.STARTDATE}</div></td>
-					</tr>
+									value=" ${sd.MAGAM}" pattern=" " />일 전
+								</td>
+							</tr>
+
 						</c:forEach>
 
-				</tbody>
-			</table>
-		</div>
+					</c:when>
+					<c:otherwise>
+						<tr>
+							<td colspan="6">검색 결과가 없습니다.</td>
+						</tr>
+					</c:otherwise>
+				</c:choose>
+
+			</tbody>
+		</table>
 	</div>
-</form>
+</body>
+</html>

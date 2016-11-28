@@ -7,6 +7,9 @@ import org.apache.ibatis.session.SqlSessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
+import com.fasterxml.jackson.core.JsonProcessingException;
+import com.fasterxml.jackson.databind.ObjectMapper;
+
 @Component
 public class CdataReadService {
 	@Autowired
@@ -96,11 +99,18 @@ public class CdataReadService {
 				"목재·제지·가구",
 				"식품가공·농축산·어업" };
 		
-	      HashMap<String,String[]> li = new HashMap<>();
-			li.put("cotype1",cotype1);
-			li.put("cotype2",cotype2);
-			li.put("cotype3",cotype3);
-			li.put("cotype4",cotype4);
+	      HashMap<String,String> li = new HashMap<>();
+	      	ObjectMapper om = new ObjectMapper();
+			try {
+				li.put("cotype1", om.writeValueAsString(cotype1));
+				li.put("cotype2", om.writeValueAsString(cotype2));
+				li.put("cotype3",om.writeValueAsString(cotype3));
+				li.put("cotype4",om.writeValueAsString(cotype4));
+			} catch (JsonProcessingException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		
 			return li;
 	}
 }
