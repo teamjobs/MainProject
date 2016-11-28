@@ -13,7 +13,7 @@
 	</definition>
 	
 	<definition name="reviewform" extends="default">
-		<put-attribute name="body" value="/WEB-INF/view/work/review/writeform2.jsp" />
+		<put-attribute name="body" value="/WEB-INF/view/work/review/writeform1.jsp" />
 	</definition>
 	
 	<definition name="info" template="/WEB-INF/view/template2.jsp">
