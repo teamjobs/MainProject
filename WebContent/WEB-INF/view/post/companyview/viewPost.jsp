@@ -85,7 +85,12 @@
 </div>
 <c:choose>
 <c:when test="${ confirm == 'work'}">
-<p><a href="/apply/${pd.NUM }" target="_blank" class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
+<p><a href="javascript:openApply(${pd.NUM })"  class="w3-btn w3-large" style="width: 100%;">입사지원</a></p>
+<script>
+	function openApply(num) {
+		window.open("/apply/"+num,"apply", "height=390,width=510, resizable=no");
+	}
+</script>
 </c:when>
 <c:when test="${ confirm == 'company' && id == com.ID}">
 <p><a href="/business/post/${pd.NUM }/adj" class="w3-btn w3-large" style="width: 100%;">공고 수정</a></p>

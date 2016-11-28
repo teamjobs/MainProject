@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -10,6 +9,7 @@
 <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto'>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css">
  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
  
 <style>
 html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
@@ -21,7 +21,7 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
     <div class="w3-twothird">
     
         <form action="/apply/${t.NUM}/OK" method="post" enctype="multipart/form-data">
-      <div class="w3-container w3-card-2 w3-white w3-margin-bottom">
+      <div class="w3-container w3-card-2 w3-white w3-margin-bottom" style="min-height: 340px;">
         <h2 class="w3-text-grey w3-padding-16"><i class="fa fa-suitcase fa-fw w3-margin-right w3-xxlarge w3-text-teal"></i>${t.COMPANY }</h2>
         <div class="w3-container">
           <h5 class="w3-opacity"><b>입사지원 하기</b></h5> <br/>
@@ -32,14 +32,10 @@ html,body,h1,h2,h3,h4,h5,h6 {font-family: "Roboto", sans-serif}
          <span id="filename" style="width: auto;"></span>
           <hr>
         </div>
-        
       </div>
-          
-      
       <div align="center">
      	<button type="submit" class="w3-btn-block w3-teal">지원하기</button>
       </div>
-
     </form>
     </div>
   <script>

@@ -18,5 +18,9 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from workfile where post = #{post} AND UPLOADER = #{uploader}
 	</select>
 	
+	<delete id="Newresume" parameterType="java.util.HashMap">
+		delete from workfile where post = #{post} and UPLOADER = #{uploader}
+	</delete>
+	
 
 </mapper>
