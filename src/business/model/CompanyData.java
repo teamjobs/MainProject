@@ -57,7 +57,7 @@ public class CompanyData {
 		BOSS = boss;
 		ADDR = addr;
 		WEBSITE = website;
-		EMPLOYEE_NUM = 0;
+		EMPLOYEE_NUM = Integer.parseInt(employee_num);
 		INCO = inco;
 		FORM = form;
 		SALESACCOUNT = salesaccount;

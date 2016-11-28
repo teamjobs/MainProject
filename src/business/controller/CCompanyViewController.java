@@ -1,4 +1,4 @@
-package Work.controller;
+package business.controller;
 
 import java.util.List;
 
@@ -15,14 +15,14 @@ import business.model.CompanyData;
 import qna.model.QnAReadService;
 
 @Controller
-public class WCompanyViewController {
+public class CCompanyViewController {
 	
 	@Autowired
 	CdataReadService crs;
 	@Autowired
 	QnAReadService qrs;
 	
-	@RequestMapping("/companydata/{co}")
+	@RequestMapping("/business/companydata/{co}")
 	public ModelAndView goCompanyView(@PathVariable String co){
 		ModelAndView mav = new ModelAndView("Companydefault_tile");
 		
@@ -35,7 +35,7 @@ public class WCompanyViewController {
 		int qlistsize = li.size()-1;
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);
-		
+		mav.addObject("goAns","go");
 		return mav;
 	}
 }

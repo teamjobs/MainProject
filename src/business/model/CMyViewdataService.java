@@ -30,7 +30,6 @@ public class CMyViewdataService {
 		hm.put("views", views);
 		hm.put("workers", workers);
 		hm.put("clips", clips);
-		hm.put("messages","");
 		hm.put("viewpd",pd);
 		return hm;
 	}

@@ -25,7 +25,7 @@ public class QnAData {
 	public void doAnsw(String ansco, String answ){
 		ANSCO = ansco;
 		ANSW = answ;
-		CHE = "check";
+		CHE = "checked";
 	}
 
 	public QnAData() {
