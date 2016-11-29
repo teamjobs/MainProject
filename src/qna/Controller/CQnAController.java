@@ -39,6 +39,7 @@ public class CQnAController {
 		ModelAndView mav = new ModelAndView("/companyQNA/QnAlist.jsp");
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);
+		System.out.println("qlistsize=="+qlistsize);
 		mav.addObject("myCo",co);
 		return mav;
 	}

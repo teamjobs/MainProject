@@ -3,6 +3,7 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 
+
 <mapper namespace="review">
 
 <!-- 연봉 -->
@@ -29,7 +30,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		]]>
 	</select>
 	
-	<!--  -->
+	<!-- 면접 경험 -->
 	<select id="interAppraisal" resultType="java.util.HashMap">
 	
 		select  appraisal, count(*) cnt from interview where company = #{company} 
@@ -37,6 +38,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
      
 	</select>
 	
+	<!-- 면접결과 -->
 	<select id="interPass" resultType="java.util.HashMap">
 
 		select  pass, count(*) cnt from interview where company = #{company}
@@ -44,14 +46,20 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 
 	</select>
 	
+	<select id="all" parameterType="java.lang.String" resultType="java.util.HashMap">
+		select * from review where company=#{company}
+	</select>
+
+	<select id="avg" parameterType="java.lang.String" resultType="java.util.HashMap">
+		select avg(WELFARE) aWELFARE,avg(WORKLOAD) aWORKLOAD
+		,avg(CULTURE) aCULTURE,
+		avg(CHANCE) aCHANCE,
+		avg(THINK)aTHINK,avg(RECOMAND)aRECOMAND,avg(FUTURE)aFUTURE from review
+	</select>
+
+	<insert id="write" parameterType="java.util.HashMap">
+	 	insert into review values(WORK_SEQ.nextval, #{company}, #{type}, #{employment}, #{career}, #{averagescore},#{onereview}, #{positive},
+	 							#{negative}, #{welfare}, #{workload}, #{culture}, #{chance}, #{think}, #{recomand}, #{future}, sysdate) 
+	</insert>
 	
 </mapper>
-
-
-
-
-
-
-
-
-

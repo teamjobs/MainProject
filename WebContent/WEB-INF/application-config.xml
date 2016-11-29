@@ -22,11 +22,17 @@
 	<context:component-scan base-package="Work" />
 	<context:component-scan base-package="review"/>
 	<context:component-scan base-package="qna" />
+	<context:component-scan base-package="Work" />
+	<context:component-scan base-package="review" />
+	<context:component-scan base-package="qna" />
+
+
 	<!-- File -->
 
-	
-	<bean class="org.springframework.web.multipart.commons.CommonsMultipartResolver" 
-	id="multipartResolver" />
+
+	<bean
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver"
+		id="multipartResolver" />
 	<!-- DB -->
 	<bean class="org.apache.tomcat.jdbc.pool.DataSource" id="ds">
 		<property name="driverClassName" value="oracle.jdbc.driver.OracleDriver" />

@@ -87,4 +87,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getAllSelect" resultType="java.util.HashMap">
 		<![CDATA[select p.* from (select enddate-sysdate magam, pp.* from post pp where enddate-sysdate >= 0) p ORDER BY magam]]>
 	</select>
+	
+	
 </mapper>

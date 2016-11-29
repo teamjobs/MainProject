@@ -21,7 +21,7 @@ td {
 th {
 	text-align: center;
 	padding: 1em;
-	background-color: #e8503a;
+	background-color: #111111;
 	color: white;
 }
 
@@ -47,27 +47,23 @@ table tr:nth-child(odd) {
 		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>
-					<th style="width: 15%">No.</th>
-					<th>회사</th>
-					<th style="width: 12%">제목</th>
-					<th style="width: 12%">지원자수</th>
-					<th style="width: 12%">마감일</th>
-					<th style="width: 12%">지원일</th>
+					<th style="width: 8%">지역</th>
+					<th style="width: 15%">회사</th>
+					<th>제목</th>
+					<th style="width: 10%">지원자</th>
+					<th style="width: 15%">마감일</th>
+					<th style="width: 15%">지원일</th>
 				</tr>
 			</thead>
 			<tbody>
 				<c:forEach var="i" items="${list}">
 					<tr>
-						<td><b>${i.NUM_1 }</b>
-						</td>
-						<td><b>${i.COMPANY }</b></td>
-						<td>${i.TITLE }</td>
-						<td>${i.VOL }<br />
-						</td>
-						<td>${i.ENDDATE }
-						</td>
-						<td>${i.UPDAY } 
-						</td>
+						<td>${i.LOCAL }</td>
+						<td><a href="/company/introduction/${i.COMPANY }"><b>${i.COMPANY }</b></td>
+						<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }</b></td>
+						<td>${i.VOL }<br/></td>
+						<td>${i.ENDDATE }</td>
+						<td>${i.UPDAY }</td>
 					</tr>
 				</c:forEach>
 			</tbody>

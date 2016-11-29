@@ -34,12 +34,12 @@
 	<div class="w3-row-padding w3-center w3-margin-top">
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
-				<h4>지원 이력서 확인하기</h4>
+				<h4>내가 지원한 공고 확인하기</h4>
 				<br> <a href="/my/history/board"><i
 					class="fa fa-desktop w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i></a>
 				<p>
-					지원한 이력서를 <br />확인할 수 있습니다.
+					내가 지원한 이력을 <br />확인할 수 있습니다.
 				</p>
 			</div>
 		</div>
