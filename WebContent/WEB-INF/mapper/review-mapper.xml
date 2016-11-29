@@ -5,7 +5,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="review">
 	<insert id="write" parameterType="java.util.HashMap">
 	 	insert into review values(WORK_SEQ.nextval, #{company}, #{type}, #{employment}, #{career}, #{averagescore},#{onereview}, #{positive},
-	 							#{negative}, #{welfare}, #{workload}, #{culture}, #{chance}, #{think}, #{recomand}, #{future}) 
+	 							#{negative}, #{welfare}, #{workload}, #{culture}, #{chance}, #{think}, #{recomand}, #{future}, sysdate) 
 	</insert>
 
 </mapper>
