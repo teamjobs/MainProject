@@ -17,7 +17,7 @@
 	src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body>
-
+	
 	<div class="container">
 		<h2>Hover Rows</h2>
 		<p>The .table-hover class enables a hover state on table rows:</p>
