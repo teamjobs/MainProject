@@ -86,4 +86,13 @@ public class ApplyService {
 		sql.update("post.volup", num);
 		sql.close();
 	}
+	
+	public void Newresume(String upload, String num){
+		SqlSession sql = fac.openSession();
+		HashMap map = new HashMap<>();
+		map.put("uploader", upload);
+		map.put("post", num);
+		
+		sql.delete("workfile.Newresume",map);
+	}
 }
