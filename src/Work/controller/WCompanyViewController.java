@@ -36,7 +36,7 @@ public class WCompanyViewController {
 		
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);
-		int qlistsize = li.size()-1;
+		int qlistsize = li.size();
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);
 		
