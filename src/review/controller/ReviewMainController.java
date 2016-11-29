@@ -14,9 +14,9 @@ import review.service.IncomeService;
 @Controller
 public class ReviewMainController {
 
-	@Autowired
-	IncomeService ics;
-	
+//	@Autowired
+//	IncomeService ics;
+//	
 //	@RequestMapping("/test/ttt")
 //	public String basic(){
 //		

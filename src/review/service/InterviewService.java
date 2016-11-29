@@ -19,13 +19,13 @@ public class InterviewService {
 	
 	public HashMap InterviewLevel(String company){
 		
-		System.out.println("서비스"+company);
+		System.out.println("인터서비스"+company);
 		
 		SqlSession sql = fac.openSession();
 
 		HashMap interLvmap = sql.selectOne("review.InterviewLevel",company);
 		
-		System.out.println("서비스"+"/"+interLvmap);
+		System.out.println("인터서비스"+"/"+interLvmap);
 		sql.close();
 		
 		return interLvmap;
@@ -34,13 +34,13 @@ public class InterviewService {
 	
 public List InterAppraisal(String company){
 		
-		System.out.println("서비스2"+company);
+		System.out.println("인터서비스2"+company);
 		
 		SqlSession sql = fac.openSession();
 
 		List interlist = sql.selectList("review.interAppraisal",company);
 		
-		System.out.println("서비스2"+"/"+interlist);
+		System.out.println("인터서비스2"+"/"+interlist);
 
 		sql.close();
 		
@@ -54,7 +54,7 @@ public List InterPass(String company){
 	
 	List passlist = sql.selectList("review.interPass",company);
 	
-	System.out.println("pass="+passlist);
+	System.out.println("인터pass="+passlist);
 	sql.close();
 	
 	return passlist;

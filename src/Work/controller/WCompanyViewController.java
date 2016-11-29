@@ -15,6 +15,7 @@ import business.model.CdataReadService;
 import business.model.CompanyData;
 import qna.model.QnAReadService;
 import review.service.IncomeService;
+import review.service.InterviewService;
 
 @Controller
 public class WCompanyViewController {
@@ -25,6 +26,8 @@ public class WCompanyViewController {
 	QnAReadService qrs;
 	@Autowired
 	IncomeService ics;
+	@Autowired
+	InterviewService is;
 	
 	@RequestMapping("/companydata/{co}")
 	public ModelAndView goCompanyView(@PathVariable String co){
@@ -36,9 +39,23 @@ public class WCompanyViewController {
 		CompanyData cd = crs.getIntrodunction(co);
 		mav.addObject("co",cd);
 		
+		
 		//Income
-		HashMap icmap = ics.IncomeService(co);
+		System.out.println("co == > " + co);
+		HashMap icmap = ics.IncomeService(co); //연봉 정보
+		System.out.println(icmap);
 		mav.addObject("icmap", icmap);
+		
+		
+		//Interview
+		HashMap interLvmap = is.InterviewLevel(co); //난이도
+		List aplist = is.InterAppraisal(co);  //면접 경험
+		List passlist = is.InterPass(co);  //면접결과
+		
+		System.out.println("컴퍼니 컨트롤러"+interLvmap+aplist+passlist);
+		mav.addObject("interLvmap",interLvmap);
+		mav.addObject("aplist",aplist);
+		mav.addObject("passlist",passlist);
 		
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);
