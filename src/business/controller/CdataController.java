@@ -2,6 +2,7 @@ package business.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import javax.servlet.http.HttpSession;
 
@@ -16,6 +17,10 @@ import business.model.CdataInputService;
 import business.model.CdataJoinService;
 import business.model.CdataReadService;
 import business.model.CompanyData;
+import file.model.FileData;
+import file.model.FileListService;
+import post.model.CPostReadService;
+import post.model.PostData;
 
 @Controller
 public class CdataController {
@@ -26,20 +31,29 @@ public class CdataController {
 	CdataReadService crs;
 	@Autowired
 	CdataInputService cis;
+	@Autowired
+	FileListService fls;
+	@Autowired
+	CPostReadService prs;
 
 	@RequestMapping("/business/join/")
 	public String CJoin(){
-		return "/companymember/Cjoin.jsp";
+		return "/business/companymember/Cjoin.jsp";
 	}
 	
 	@RequestMapping("/business/join/CJoinAuth")
-	public String CJoinAuth(String id, String pass, String callnum, String email, String conumber, String name, String boss, String addr){
+	public ModelAndView CJoinAuth(String id, String pass, String callnum, String email, String conumber, String name, String boss, String addr){
 		CompanyData cd = new CompanyData(id,pass,callnum,email,conumber,name,boss,addr);
 		boolean b = cjs.joinResult(cd);
+		
+		ModelAndView mav = new ModelAndView("/business/companymember/joinRst.jsp");
 		if(b)
-			return "/companymember/joinSuccess.jsp";
+			mav.addObject("cjoinrst",true);
 		else
-			return "/companymember/joinFalse.jsp";
+			mav.addObject("cjoinrst",false);
+		
+		return mav;
+			
 	}
 	
 	@RequestMapping("/business/join/idcheck/{id}")
@@ -52,21 +66,7 @@ public class CdataController {
 			return "n";
 	}
 	
-	@RequestMapping("/business/my/rev")
-	public ModelAndView goMyUp(HttpSession hs){
-		ModelAndView mav = new ModelAndView("busMy_tile");
-		CompanyData cd = crs.dataRead((String)hs.getAttribute("id"));
-		HashMap li = crs.addCotypeList();
-		ArrayList<String> cotli = new ArrayList<>();
-		cotli.add("제조 통신 화학 건설");
-		cotli.add("미디어·광고·문화·예술");
-		cotli.add("IT·정보통신");
-		cotli.add("서비스·교육·금융·유통");
-		mav.addObject("coli",li);
-		mav.addObject("cd",cd);
-		mav.addObject("cotli",cotli);
-		return mav;
-	}
+
 	
 	@RequestMapping("/business/my/rev/passwordcheck/{id}/{pass}")
 	@ResponseBody
@@ -92,13 +92,21 @@ public class CdataController {
 		cd.setData(callnum, email, boss, addr, website, employee_num, inco, form, salesaccount, industry, introduce);
 		boolean b = cis.dataIn(cd);
 		if(b){
-			System.out.println("됨");
-			return "/";
+			System.out.println("완료");
+			return "redirect:/business/my";
 		}else{
-			System.out.println("망");
-			return "/";
+			return "redirect:/business/my";
 		}
-	}
+	}	
 	
+	@RequestMapping("/business/my/post/allvol")
+	public ModelAndView myVolList(HttpSession hs){
+		String co = crs.getCompanyName((String)hs.getAttribute("id"));
+		ModelAndView mav = new ModelAndView("CompanyAllVol_tile");
+		List<FileData> li = fls.getAllCompanyVol(co);
+		mav.addObject("vollist",li);
+		mav.addObject("volsize",li.size());
+		return mav;
+	}
 	
 }

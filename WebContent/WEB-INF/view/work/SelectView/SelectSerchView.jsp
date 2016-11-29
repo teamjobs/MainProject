@@ -65,10 +65,10 @@ table tr:nth-child(odd) {
 								</td>
 								<td><a href="/work/post/${sd.NUM }"><b>${sd.TITLE }</b></a></td>
 								<td>${sd.EDUCATION }</td>
-								<td>${sd.CAREER }<br />${sd.QUALIFICATION }
+								<td>${sd.CAREER }<br />
 								</td>
-								<td style="text-overflow: ellipsis; overflow: hidden;">
-								<nobr>${sd.HIRETYPE }<br />${sd.LOCAL }<br />${sd.SALARY }</nobr>
+								<td>
+								${sd.HIRETYPE }<br />${sd.LOCAL }<br />${sd.SALARY }
 								</td>
 								<td>
 								<fmt:formatDate value="${sd.ENDDATE}"

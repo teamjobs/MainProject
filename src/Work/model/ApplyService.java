@@ -46,7 +46,7 @@ public class ApplyService {
 		map.put("title", title);
 		map.put("filename", file);
 		map.put("fileuuid", fileuuid);
-		map.put("upload", upload);
+		map.put("uploader", upload);
 		
 		
 		

@@ -6,7 +6,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <mapper namespace="review">
 
 <!-- 연봉 -->
-	<select id="Income" resultType="java.util.HashMap" >
+	<select id="Income"  resultType="java.util.HashMap" >
 		<![CDATA[
 		select * from (
   			select rownum rank, temp.* from

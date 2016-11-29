@@ -3,7 +3,7 @@
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
-<style>
+<%-- <style>
 .flex-container {
 	display: -webkit-flex;
 	display: flex;
@@ -60,7 +60,7 @@ background-color: lightgrey;
 
 
 
-
+ --%>
 
 
 

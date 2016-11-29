@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
@@ -42,7 +43,7 @@
   <td>${i+1 }</td>
   <td><a href = "/business/post/${pd.NUM }/vol/${vollist[i].NUM }/download">${vollist[i].TITLE }</a></td>
   <td>${vollist[i].UPLOADER }</td>
-  <td>${vollist[i].UPDAY }</td>
+  <td><fmt:formatDate value="${vollist[i].UPDAY }" pattern="YYYY-MM-dd" /></td>
 </tr>
 </c:forEach>
 </tbody>

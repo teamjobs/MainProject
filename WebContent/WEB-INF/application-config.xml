@@ -21,6 +21,7 @@
 	<context:component-scan base-package="file" />
 	<context:component-scan base-package="Work" />
 	<context:component-scan base-package="review"/>
+	<context:component-scan base-package="qna" />
 	<!-- File -->
 
 	
@@ -54,6 +55,7 @@
 		<property name="definitions">
 			<list>
 				<value>/WEB-INF/view/tiles/tiles-config.xml</value>
+				<value>/WEB-INF/view/tiles/tiles_companyDataView-config.xml</value>
 			</list>
 		</property>
 	</bean>

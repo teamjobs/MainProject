@@ -18,6 +18,12 @@ public class FileListService {
 	
 	@Autowired
 	ServletContext application;
+	
+	public List<FileData> getAllCompanyVol(String co){
+		SqlSession sql = fac.openSession();
+		List<FileData> li = sql.selectList("workfile.getAllCompanyFile",co);
+		return li;
+	}
 
 	public List<FileData> getSomeCompanyFile(String id){
 		SqlSession sql = fac.openSession();
