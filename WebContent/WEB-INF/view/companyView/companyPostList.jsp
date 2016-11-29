@@ -11,30 +11,25 @@
 <table class="w3-table w3-striped w3-bordered">
 <thead>
 <tr class="w3-red">
-  <th>제목</th>
+  <th>회사</th>
   <th>종료일자</th>
   <th>직무</th>
   <th>조회수</th>
   <th>지원자수</th>
   <th>&nbsp;</th>
-  <th>&nbsp;</th>
 </tr>
 </thead>
 <tbody>
-<c:forEach var="t" items="${ postlist}">
+<c:forEach var="postlist" items="${ postlist}">
 <tr>
-  <td><a href = "/business/my/post/${t.NUM }">${t.TITLE }</a></td>
-  <td>${fn:substringBefore(t.ENDDATE,' ') }</td>
-  <td>${t.JOB }</td>
-  <td>${t.HITS }</td>
-  <td>${t.VOL }</td>
-  <td><a href = "/business/my/post/${t.NUM }/adj">수정</a></td>
-  <td><a href = "/business/my/post/${t.NUM }/vol">확인</a></td>
+  <td><a href = "/work/post/${postlist.NUM }">${postlist.COMPANY }</a></td>
+  <td>${fn:substringBefore(postlist.ENDDATE,' ') }</td>
+  <td>${postlist.JOB }</td>
+  <td>${postlist.HITS }</td>
+  <td>${postlist.VOL }</td>
+  <td><a href = "/business/my/post/${postlist.NUM }/vol">확인</a></td>
 </tr>
 </c:forEach>
 </tbody>
 </table>
-<div class="w3-right">
-<p><a class="w3-btn w3-hover-red" href="/business/my/post/upload" >구인공고 올리기</a>&nbsp;&nbsp;</p>
-</div>
 </div>
