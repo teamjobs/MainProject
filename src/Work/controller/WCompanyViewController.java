@@ -14,7 +14,7 @@ import org.springframework.web.servlet.ModelAndView;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import qna.model.QnAReadService;
-import review.model.ReviewService;
+import review.model.ReviewService2;
 
 @Controller
 public class WCompanyViewController {
@@ -24,7 +24,7 @@ public class WCompanyViewController {
 	@Autowired
 	QnAReadService qrs;
 	@Autowired
-	ReviewService rs;
+	ReviewService2 rs;
 	
 	@RequestMapping("/companydata/{co}")
 	public ModelAndView goCompanyView(@PathVariable String co){
