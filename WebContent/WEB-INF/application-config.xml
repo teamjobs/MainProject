@@ -20,9 +20,12 @@
 	<context:component-scan base-package="message" />
 	<context:component-scan base-package="file" />
 	<context:component-scan base-package="Work" />
-	<context:component-scan base-package="review" />
-
+	<context:component-scan base-package="review"/>
 	<context:component-scan base-package="qna" />
+	<context:component-scan base-package="Work" />
+	<context:component-scan base-package="review" />
+	<context:component-scan base-package="qna" />
+
 
 	<!-- File -->
 

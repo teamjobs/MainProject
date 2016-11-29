@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <!DOCTYPE html>
 <html>
 <title>JOBS - ${id }</title>
@@ -57,7 +57,7 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>기업 찾기</h4>
-				<br><a href="/work/post/serch">
+				<br><a href="/find">
 				 <i class="fa fa-diamond w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i>
 					</a>
@@ -90,7 +90,7 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
-							<b><td><a href="/company/introduction?com=${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }
+							<b><td><a href="/work/post/${t.NUM}">${t.COMPANY }</a> ${t.JOB }
 							</td></b>
 							<td>${t.TITLE }</td>
 							<td>${t.CAREER }/${t.QUALIFICATION}</td>

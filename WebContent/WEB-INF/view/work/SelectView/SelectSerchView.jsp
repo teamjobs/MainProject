@@ -43,7 +43,7 @@ table tr:nth-child(odd) {
 <body>
 <hr/>
 	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
-		<table class="table table-hover" style="width: 60%; height: 100%;">
+		<table class="table table-hover" style="width: 60%; height: 100%; table-layout: fixed;">
 			<thead>
 				<tr>
 					<th style="width: 15%">회사명</th>
@@ -58,18 +58,25 @@ table tr:nth-child(odd) {
 			<c:choose>
 				<c:when test="${sslist.size() != 0}">
 						<c:forEach var="sd" items="${sslist}">
+
+
 							<tr>
 								<td><a href="/companydata/${sd.COMPANY }"><b>${sd.COMPANY }</b></a>
 								</td>
 								<td><a href="/work/post/${sd.NUM }"><b>${sd.TITLE }</b></a></td>
 								<td>${sd.EDUCATION }</td>
-								<td>${sd.CAREER }<br />${sd.QUALIFICATION }
+								<td>${sd.CAREER }<br />
 								</td>
-								<td>${sd.HIRETYPE }<br />${sd.LOCAL }<br />${sd.SALARY }
+								<td>
+								${sd.HIRETYPE }<br />${sd.LOCAL }<br />${sd.SALARY }
 								</td>
-								<td>마감 
+								<td>
+								<fmt:formatDate value="${sd.ENDDATE}"
+									pattern="YYYY-MM-dd" /><br/> 마감<fmt:formatNumber
+									value=" ${sd.MAGAM}" pattern=" " />일 전
 								</td>
 							</tr>
+
 						</c:forEach>
 
 					</c:when>

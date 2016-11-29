@@ -52,11 +52,13 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from MYRESUMEFILE where UPLOADER = #{UPLOADER}
 	</select>
 	<!-- 내 이력서 다운로드 -->
-	<select id="MyresumeDown" resultType="Work.model.ResumeData"
-														 parameterType="java.lang.String">
+	<select id="MyresumeDown" resultType="Work.model.ResumeData" parameterType="java.lang.String">
 		select * from MYRESUMEFILE where FILEUUID = #{FILEUUID}
 	</select>
-	
+	<!-- 내이력서 삭제 -->
+	<delete id="MyresumeDelete" parameterType="java.lang.String">
+		delete from myresumefile where num=#{num} 
+	</delete>
 	
 	<!-- 해당 포스트 파일(지원양식) 로드 -->
 	<select id="getPostCompanyFile" resultType="file.model.FileData" parameterType="java.lang.Integer">
