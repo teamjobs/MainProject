@@ -1,5 +1,7 @@
 package mail.controller;
 
+import java.util.UUID;
+
 import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,14 +22,18 @@ public class JoinMailController {
 	@Autowired
 	JoinMailAuthService mas;
 	
-	@RequestMapping("/join/mail/{mail}")
+	@RequestMapping("/join/mail/{mail:.+}")
 	@ResponseBody
 	public String sendResolve(@PathVariable String mail){
 		System.out.println("gogogo!");
-		boolean b = mas.sendEmail(mail);
+		
+		String uuid = UUID.randomUUID().toString();
+		String uid = uuid.substring(0,23);
+		
+		boolean b = mas.sendEmail(mail,uid);
 		System.out.println("rst?"+b);
 		if(b)
-			return "y";
+			return uid;
 		else
 			return "n";
 	}
