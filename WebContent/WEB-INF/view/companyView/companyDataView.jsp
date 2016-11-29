@@ -88,7 +88,7 @@
 	<div class="w3-third">
 		<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 			<div align="center"><h3>면접 경험</h3></div>
-				<div id="piechart" style="width: 300; height: 280;" ></div>
+				<div id="piechart" style="width: auto; height: auto;"></div>
 		</div>
 	</div>
 
