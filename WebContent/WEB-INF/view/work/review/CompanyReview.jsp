@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
-<script
-	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <!DOCTYPE html>
 <html>
 <title>W3.CSS Template</title>
@@ -165,10 +163,10 @@ div.best {
 			<br />
 			<hr style="border: solid 1px gray;">
 		</c:forEach>
-		
-		<script type="text/javascript"
-			src="https://www.gstatic.com/charts/loader.js"></script>
-		<script type="text/javascript">
+	</div>
+	<script type="text/javascript"
+		src="https://www.gstatic.com/charts/loader.js"></script>
+	<script type="text/javascript">
       google.charts.load("current", {packages:["corechart"]});
       google.charts.setOnLoadCallback(drawChart);
       function drawChart() {

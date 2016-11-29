@@ -26,19 +26,16 @@ public class WCompanyViewController {
 	@Autowired
 	ReviewService2 rs;
 	
-	@RequestMapping("/companydata/{id}")
-	public ModelAndView goCompanyView(@PathVariable String id){
+	@RequestMapping("/companydata/{co}")
+	public ModelAndView goCompanyView(@PathVariable String co){
 		ModelAndView mav = new ModelAndView("Companydefault_tile");
-		
-		String co = crs.getCompanyName(id);
-		
 		// CompanyData Read
 		CompanyData cd = crs.getIntrodunction(co);
 		mav.addObject("co",cd);
 		
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);
-		int qlistsize = li.size()-1;
+		int qlistsize = li.size();
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);
 		
