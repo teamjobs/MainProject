@@ -59,7 +59,7 @@ table tr:nth-child(odd) {
 				<c:when test="${wlist.size() != 0}">
 						<c:forEach var="w" items="${wlist}">
 							<tr>
-								<td><a href="/company/introduction/${w.COMPANY }"><b>${w.COMPANY }</b></a>
+								<td><a href="/companydata/${w.COMPANY }"><b>${w.COMPANY }</b></a>
 								</td>
 								<td><a href="/work/post/${w.NUM }"><b>${w.TITLE }</b></a></td>
 								<td>${w.EDUCATION }</td>

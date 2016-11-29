@@ -59,7 +59,7 @@ table tr:nth-child(odd) {
 				<c:forEach var="i" items="${list}">
 					<tr>
 						<td>${i.LOCAL }</td>
-						<td><a href="/company/introduction/${i.COMPANY }"><b>${i.COMPANY }</b></td>
+						<td><a href="/companydata/${i.COMPANY }"><b>${i.COMPANY }</b></td>
 						<td><a href="/work/post/${i.NUM }"><b>${i.TITLE }</b></td>
 						<td>${i.VOL }<br/></td>
 						<td>${i.ENDDATE }</td>
