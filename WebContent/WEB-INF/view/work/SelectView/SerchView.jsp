@@ -22,7 +22,7 @@ td {
 th {
 	text-align: center;
 	padding: 1em;
-	background-color: #e8503a;
+	background-color: #111111;
 	color: white;
 }
 
@@ -43,7 +43,7 @@ table tr:nth-child(odd) {
 <body>
 <hr/>
 	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
-		<table class="table table-hover" style="width: 60%; height: 100%;">
+		<table class="table table-hover" style="width: 60%; height: 100%; table-layout: fixed;">
 			<thead>
 				<tr>
 					<th style="width: 15%">회사명</th>
@@ -59,15 +59,19 @@ table tr:nth-child(odd) {
 				<c:when test="${wlist.size() != 0}">
 						<c:forEach var="w" items="${wlist}">
 							<tr>
-								<td><a href="/company/introduction/${w.COMPANY }"><b>${w.COMPANY }</b></a>
+								<td><a href="/companydata/${w.COMPANY }"><b>${w.COMPANY }</b></a>
 								</td>
 								<td><a href="/work/post/${w.NUM }"><b>${w.TITLE }</b></a></td>
 								<td>${w.EDUCATION }</td>
-								<td>${w.CAREER }<br />${w.QUALIFICATION }
+								<td>${w.CAREER }<br />
 								</td>
-								<td>${w.HIRETYPE }<br />${w.LOCAL }<br />${w.SALARY }
+								<td>
+								${w.HIRETYPE }<br />${w.LOCAL }<br />${w.SALARY }
 								</td>
-								<td>마감 
+								<td>
+								<fmt:formatDate value="${w.ENDDATE}"
+									pattern="YYYY-MM-dd" /><br/> 마감<fmt:formatNumber
+									value=" ${w.MAGAM}" pattern=" " />일 전 
 								</td>
 							</tr>
 						</c:forEach>

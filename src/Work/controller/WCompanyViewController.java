@@ -14,7 +14,12 @@ import org.springframework.web.servlet.ModelAndView;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import qna.model.QnAReadService;
+
+import review.service.IncomeService;
+import review.service.InterviewService;
+
 import review.model.ReviewService2;
+
 
 @Controller
 public class WCompanyViewController {
@@ -24,14 +29,36 @@ public class WCompanyViewController {
 	@Autowired
 	QnAReadService qrs;
 	@Autowired
+	IncomeService ics;
+	@Autowired
+	InterviewService is;
+	@Autowired
 	ReviewService2 rs;
+
 	
 	@RequestMapping("/companydata/{co}")
 	public ModelAndView goCompanyView(@PathVariable String co){
 		ModelAndView mav = new ModelAndView("Companydefault_tile");
-		// CompanyData Read
 		CompanyData cd = crs.getIntrodunction(co);
 		mav.addObject("co",cd);
+		
+		
+		//Income
+		System.out.println("co == > " + co);
+		HashMap icmap = ics.IncomeService(co); //연봉 정보
+		System.out.println(icmap);
+		mav.addObject("icmap", icmap);
+		
+		
+		//Interview
+		HashMap interLvmap = is.InterviewLevel(co); //난이도
+		List aplist = is.InterAppraisal(co);  //면접 경험
+		List passlist = is.InterPass(co);  //면접결과
+		
+		System.out.println("컴퍼니 컨트롤러"+interLvmap+aplist+passlist);
+		mav.addObject("interLvmap",interLvmap);
+		mav.addObject("aplist",aplist);
+		mav.addObject("passlist",passlist);
 		
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);

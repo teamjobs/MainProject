@@ -35,7 +35,7 @@ public class MysumeController {
 	
 	@RequestMapping("/my/history/board")
 	public ModelAndView myhistory(HttpSession hs){
-		ModelAndView mav = new ModelAndView("work/Resumes/ResumeView.jsp");
+		ModelAndView mav = new ModelAndView("myhistoryboard");
 		String id= (String) hs.getAttribute("id");
 		List<HashMap> list = my.myhistoryPost(id);
 		mav.addObject("list",list);

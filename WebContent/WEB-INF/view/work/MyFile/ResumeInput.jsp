@@ -64,7 +64,7 @@
 		</form>
 	</div>
 </div>
-
+<br/>
 <!-- First Photo Grid-->
 <div class="w3-row-padding"></div>
 </head>
@@ -87,16 +87,18 @@ tr:nth-child(even){background-color: #f2f2f2}
 
 <h2>내 이력서 목록</h2>
 
-<form action="/my/resume/upload">
+<form action="/my/resume/delete" id="listform" method="post">
 <div style="overflow-x:auto;">
-  <table>
+  <table style="min-width:1000px; width: auto;  height: auto;">
     <tr>
       <th>NO.</th>
       <th>파일이름</th>
       <th>용량</th>
       <th>업로드 날짜</th>
+      <th>수정</th>
       <th>마지막 수정 날짜</th>
       <th>업로더</th>
+      <th>삭제</th>
     </tr>
     
     <c:forEach items="${mrlist}" var="mr">
@@ -105,8 +107,10 @@ tr:nth-child(even){background-color: #f2f2f2}
       <td><a href="/my/resume/down/${mr.FILEUUID}">${mr.FILENAME}</a></td>
       <td>${mr.FILESIZE}</td>
       <td>${mr.UPDAY}</td>
+      <td><input type="button" value="수정" class="revise_bt" target="${mr.NUM}"/></td>
       <td>${mr.LISTUPDATE}</td>
       <td>${mr.UPLOADER}</td>
+      <td><input type="button" value="삭제" class="delete_bt" target="${mr.NUM}"/></td>
     </tr>
     </c:forEach>
   </table>
@@ -132,10 +136,23 @@ tr:nth-child(even){background-color: #f2f2f2}
 		});
 	});
 	
+	$(".revise_bt").click(function(){
+		if (window.confirm("파일을 수정 하시겠습니까?")) {
+			location.href = "/my/resume/revise?num="+$(this).attr("target");
+		}
+	});
+	
+	$(".delete_bt").click(function(){
+		if (window.confirm("파일을 삭제 하시겠습니까?")) {
+			location.href = "/my/resume/delete?num="+$(this).attr("target");
+		}
+	});
+
 	 $("#OK").change(function(){
 		
 	}) 
 	
+
 	
 </script>
 

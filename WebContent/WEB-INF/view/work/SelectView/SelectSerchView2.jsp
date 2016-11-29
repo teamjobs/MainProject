@@ -48,6 +48,7 @@
 				</thead>
 				<tbody align="center" style="font-size: 10pt; ">
 						<c:forEach var="sd" items="${sslist}">
+					
 					<tr>
 							<td style="text-align:center;">
 							<div style="width: 30; height: 50">${sd.NUM}</div></td>
@@ -68,10 +69,14 @@
 							<td style="text-align: center;">
 							<div style="width: 100; word-break: break-all;">${sd.HIRETYPE},&nbsp;${sd.RANK}<br/>${sd.SALARY}</div></td>
 							<td style="text-align: center;">
-							<div style="width: 80">${sd.ENDDATE}</div></td>
+							<div style="width: 80"><fmt:formatDate value="${sd.ENDDATE}"
+									pattern="YYYY-MM-dd" /><br/> 마감<fmt:formatNumber
+									value=" ${sd.MAGAM}" pattern=" " />일 전</div></td>
+							
 							<td style="text-align: center;">
 							<div style="width: 80">${sd.STARTDATE}</div></td>
 					</tr>
+
 						</c:forEach>
 
 				</tbody>
