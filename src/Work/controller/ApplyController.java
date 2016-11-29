@@ -50,12 +50,16 @@ public class ApplyController {
 		System.out.println(list.size());
 		String fileuuid = as.execute(file);
 		String upload = (String) hs.getAttribute("id");
+		
+		as.Newresume(upload, num);
+		
+		
 		int OK = as.apply(map.get("COMPANY"), num, title, file.getOriginalFilename(), fileuuid,upload);
 		as.volup(num);
 		
 		
 		if(OK == 1){
-			mav.setViewName("/apply/OK");
+			mav.setViewName("/work/applyOK.jsp");
 		}else{
 			mav.setViewName("/work/ApplyError.jsp");
 		}

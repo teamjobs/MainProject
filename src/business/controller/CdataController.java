@@ -109,4 +109,11 @@ public class CdataController {
 		return mav;
 	}
 	
+	@RequestMapping("/getCompanyName/{id}")
+	@ResponseBody
+	public String getCompanyNameBody(@PathVariable String id){
+		String co = crs.getCompanyName(id);
+		return co;
+	}
+	
 }
