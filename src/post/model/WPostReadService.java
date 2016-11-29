@@ -14,6 +14,13 @@ public class WPostReadService {
 	@Autowired
 	SqlSessionFactory fac;
 	
+	public List CompanyPost(String co){
+		SqlSession sql = fac.openSession();
+		List<PostData> list = sql.selectList("post.getCompanyAllPost",co);
+		sql.close();
+		return list;
+	}
+	
 	public List AllPost(){
 		SqlSession sql = fac.openSession();
 		List<HashMap> list = sql.selectList("post.getAllPost");

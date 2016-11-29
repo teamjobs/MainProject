@@ -22,12 +22,12 @@
 <tbody>
 <c:forEach var="postlist" items="${ postlist}">
 <tr>
-  <td><a href = "/work/post/${postlist.NUM }">${postlist.COMPANY }</a></td>
+  <td>${postlist.COMPANY }</a></td>
   <td>${fn:substringBefore(postlist.ENDDATE,' ') }</td>
   <td>${postlist.JOB }</td>
   <td>${postlist.HITS }</td>
   <td>${postlist.VOL }</td>
-  <td><a href = "/business/my/post/${postlist.NUM }/vol">확인</a></td>
+  <td><a href = "/work/post/${postlist.NUM }">${postlist.TITLE }</a></td>
 </tr>
 </c:forEach>
 </tbody>
