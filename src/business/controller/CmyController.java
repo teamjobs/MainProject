@@ -43,8 +43,9 @@ public class CmyController {
 	
 	@RequestMapping("/business/my/rev")
 	public ModelAndView goMyUp(HttpSession hs){
+		String id = (String)hs.getAttribute("id");
 		ModelAndView mav = new ModelAndView("busMy_tile");
-		CompanyData cd = crs.dataRead((String)hs.getAttribute("id"));
+		CompanyData cd = crs.dataRead(id);
 		HashMap li = crs.addCotypeList();
 		ArrayList<String> cotli = new ArrayList<>();
 		cotli.add("제조 통신 화학 건설");
@@ -110,8 +111,9 @@ public class CmyController {
 	}
 	
 	@RequestMapping("business/my/post/upload")
-	public ModelAndView goPostUpload(){
+	public ModelAndView goPostUpload(HttpSession hs){
 		ModelAndView mav = new ModelAndView("CompanyPostUpload_tile");
+		String id = (String)hs.getAttribute("id");
 		
 		HashMap li = cps.addList();
 		mav.addObject("li",li);

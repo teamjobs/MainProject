@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+	pageEncoding="UTF-8"%>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet"
@@ -8,25 +8,33 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+	
+	
+	
+	
 <div class="w3-panel w3-card-4" style="width:100%;">
  	<header class="w3-container w3-red">
+ 	<div class="w3-container-right">
 	<p><b>${co.NAME }</b></p>
+	</div>
 	</header>
 	<div class="w3-third">
-	<p>´ëÇ¥ : ${co.BOSS }</p>
-	<p>¸ÅÃâ¾× : ${co.SALESACCOUNT }</p>
+	<p>ëŒ€í‘œ : ${co.BOSS }</p>
+	<p>ë§¤ì¶œì•¡ : ${co.SALESACCOUNT }</p>
 	</div>
 	<div class="w3-third">
-	<p>±â¾÷ÇüÅÂ : ${co.FORM }</p>
-	<p>»ê¾÷±º : ${co.INDUSTRY }</p>
+	<p>ê¸°ì—…í˜•íƒœ : ${co.FORM }</p>
+	<p>ì‚°ì—…êµ° : ${co.INDUSTRY }</p>
 	</div>
 	<div class="w3-third">
-	<p>Á÷¿ø¼ö : ${co.EMPLOYEE_NUM }</p>
-	<p>È¨ÆäÀÌÁö : ${co.WEBSITE }</p>
+	<p>ì§ì›ìˆ˜ : ${co.EMPLOYEE_NUM }</p>
+	<p>í™ˆíŽ˜ì´ì§€ : ${co.WEBSITE }</p>
 	</div>
 	<hr/>
 	<div class="w3-left">
-	<p>ÁÖ¼Ò : ${co.ADDR }</p>
-	<p>´ëÇ¥¹øÈ£ : ${co.CALLNUM }</p>
+	<p>ì£¼ì†Œ : ${co.ADDR }</p>
+	<p>ëŒ€í‘œë²ˆí˜¸ : ${co.CALLNUM }</p>
 	</div>
 </div>
+

@@ -70,12 +70,16 @@
 			</div>
 		</form>
 	</div>
+	<div class="w3-container">
+	<p><a href="/join/mail" target="_blank" class="w3-btn w3-large" style="width: 100%;">메일 인증하기</a></p>
+	</div>
+	
 	<script>
 
 		
 		$("#check").click(function() {
 			$.ajax({
-				"method" : "get",
+				"method" : "post",
 				"url" : "/business/join/idcheck/"+$("#id").val()
 			}).done(function(rst){
 				if(rst=="y") {
@@ -88,7 +92,6 @@
 					$("#checkFail").fadeIn(1000);
 				}
 			});
-			
 		});
 		
 	</script>

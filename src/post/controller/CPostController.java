@@ -45,7 +45,7 @@ public class CPostController {
 	
 	@RequestMapping("business/post/upload")
 	public ModelAndView goPostUpload(){
-		ModelAndView mav = new ModelAndView("/post/companyview/upPost.jsp");
+		ModelAndView mav = new ModelAndView("CompanyPostUpload_tile");
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
 		return mav;
@@ -53,7 +53,7 @@ public class CPostController {
 	
 	@RequestMapping("business/post/{num}")
 	public ModelAndView goPostRead(@PathVariable(name="num") int num){
-		ModelAndView mav = new ModelAndView("/post/companyview/viewPost.jsp");
+		ModelAndView mav = new ModelAndView("post_tile");
 		PostData pd = cpr.readPostData(num);
 		CompanyData cd = crs.getIntrodunction(pd.getCOMPANY());
 		mav.addObject("pd",pd);
@@ -72,7 +72,7 @@ public class CPostController {
 		HashMap li = cps.addList();
 		mav.addObject("li",li);
 		if(co.equals(pd.getCOMPANY())){
-			mav.setViewName("/post/companyview/upPost.jsp");
+			mav.setViewName("CompanyPostUpload_tile");
 			mav.addObject("pd",pd);
 		}else{
 			mav.setViewName("/error.jsp");
@@ -139,7 +139,7 @@ public class CPostController {
 	
 	@RequestMapping("/business/post/{num}/vol")
 	public ModelAndView goPostVol(@PathVariable(name="num") int num, HttpSession hs){
-		ModelAndView mav = new ModelAndView("/post/companyview/volList.jsp");
+		ModelAndView mav = new ModelAndView("CompanyPostVolList_tile");
 		String id = (String)hs.getAttribute("id");
 		PostData pd = cpr.readPostData(num);
 		List<FileData> fi = prs.getPostVolList(num);

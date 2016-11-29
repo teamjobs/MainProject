@@ -69,8 +69,8 @@
 		id="javaMailSender">
 		<property name="host" value="smtp.google.com" />
 		<property name="port" value="587" />
-		<property name="username" value="fincessa" />	<!-- 구글 계정 -->
-		<property name="password" value="js51005023" />
+		<property name="username" value="teamjobs1111" />	<!-- 구글 계정 -->
+		<property name="password" value="oracle1111" />
 		<property name="javaMailProperties">
 			<props>
 				<prop key="mail.smtp.auth">true</prop>
