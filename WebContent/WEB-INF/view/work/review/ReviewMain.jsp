@@ -78,7 +78,6 @@ div.best {
 				<div id="CHANCE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
-				
 				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
 			</div>
 
