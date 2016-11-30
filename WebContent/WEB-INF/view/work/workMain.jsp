@@ -91,15 +91,14 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
-							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }
-							</td></b>
-
+							<td><b><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }</b>
+							</td>
 							<td>${t.TITLE }</td>
-							<td style="text-overflow: ellipsis; overflow: hidden; word-break:break-all;" >
+							<td width="40%" style="text-overflow: ellipsis; overflow: hidden; word-break:break-all;" >
 							<nobr><span class="tooltip">${t.CAREER }/${t.QUALIFICATION}</span></nobr>
 							</td>
-							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
-							<td>${t.CAREER }/${t.QUALIFICATION}</td>
+							
+							
 							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
 								${t.PAY }
 							</td>
