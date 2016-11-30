@@ -25,11 +25,30 @@ public class StartController {
 
 	@RequestMapping("/")
 	public ModelAndView start(HttpSession hs, String error) {
+		
 		hs.removeAttribute("error");
-		ModelAndView mav = new ModelAndView("/start/index.jsp");
-		mav.addObject("error", error);
-		int img = (int) (Math.random() * 7);
-		mav.addObject("img", img);
+		ModelAndView mav = new ModelAndView("redirect:/errorpage");
+		
+		// ======================
+		
+		String conf = (String)hs.getAttribute("confirm");
+		System.out.println(conf);
+		
+		if(conf == null){
+			mav.setViewName("/start/index.jsp");
+			int img = (int) (Math.random() * 7);
+			mav.addObject("img", img);
+			mav.addObject("error", error);
+			return mav;
+		}
+		
+		if(conf.equals("work"))
+			mav.setViewName("redirect:/work/main");
+		else if(conf.equals("company"))
+			mav.setViewName("redirect:/business/main");
+		
+		// =======================
+		
 		return mav;
 	}
 

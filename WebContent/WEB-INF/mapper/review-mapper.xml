@@ -79,11 +79,11 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	
 	<insert id="income" parameterType="java.util.HashMap">
-		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{PAY}, #{BONUS}, #{PERIOD})
+		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{employment}, #{career}, #{pay}, #{bonus}, #{period})
 	</insert>
 	
 	<insert id="interview" parameterType="java.util.HashMap">
-		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{APPRAISAL}, #{INTERVIEWLEVEL}, #{PASS})
+		insert into interview values(INTERVIEW_SEQ.nextval, #{company}, #{type}, #{employment}, #{career}, #{appraisal}, #{interviewlevel}, #{pass})
 	</insert>
 	
 </mapper>

@@ -31,7 +31,7 @@ public class CmainController {
 		ModelAndView mav = new ModelAndView();
 		
 		String OK = (String) hs.getAttribute("confirm");
-		if(OK == "company"){
+		if(OK.equals("company")){
 			mav.setViewName("business_tile");
 			String id = (String)hs.getAttribute("id");
 			String co = (String)crs.getCompanyName(id);
