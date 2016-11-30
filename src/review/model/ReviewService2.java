@@ -40,7 +40,7 @@ public class ReviewService2 {
 		sql.close();
 		
 	}
-	
+	 
 	public void interview(){
 		SqlSession sql = fac.openSession();
 		HashMap map = new HashMap<>();
