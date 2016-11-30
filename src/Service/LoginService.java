@@ -23,7 +23,7 @@ public class LoginService {
 		map.put("pass", pass);
 
 		List list = sql.selectList("member.loginW", map);
-
+		sql.close();
 		if (list.size() != 0) {
 			return true;
 		} else {
@@ -39,7 +39,7 @@ public class LoginService {
 		map.put("pass", pass);
 
 		List list = sql.selectList("member.loginC", map);
-
+		sql.close();
 		if (list.size() != 0) {
 			return true;
 		} else {
