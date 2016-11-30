@@ -46,8 +46,8 @@
 		</div>
 		<div class="w3-third w3-container" align="center"
 			style="height: auto; margin-top: 5px">
-			<b>${t.NAME } <br />
-				<p>${t.INDUSTRY }</p>
+			<b><a href="/companydata/${t.NAME }">${t.NAME }</a> <br />
+				<p><font style="color: gray">${t.INDUSTRY }</font></p>
 		</div>
 		<div class="w3-third w3-container">
 			<dl class="content_col2_4">

@@ -1,6 +1,5 @@
 package review.model;
 
-import java.util.HashMap;
 import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
@@ -9,44 +8,40 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 @Component
-public class ReviewService2 {
- 
+public class ReviewMainService {
+	
 	@Autowired
 	SqlSessionFactory fac;
 	
-	public List allreivew(String co){
+	public List WELFARE(){
 		SqlSession sql = fac.openSession();
-		List list = sql.selectList("review.all", co);
-		System.out.println("¸®ºä ¼­ºñ½º"+list);
+		List WELFARE = sql.selectList("review.WELFARE");
 		sql.close();
 		
-		return list;
+		return WELFARE;
 	}
 	
-	public HashMap avg(String co){
+	public List WORKLOAD(){
 		SqlSession sql = fac.openSession();
-		HashMap map = sql.selectOne("review.avg", co);
-		System.out.println("¸®ºä Æò±Õ"+map);
+		List WORKLOAD = sql.selectList("review.WORKLOAD");
 		sql.close();
 		
-		return map;
+		return WORKLOAD;
 	}
 	
-	public void income(){
+	public List CULTURE(){
 		SqlSession sql = fac.openSession();
-		HashMap map = new HashMap<>();
-		
-		sql.insert("review.income",map);
+		List CULTURE = sql.selectList("review.CULTURE");
 		sql.close();
 		
+		return CULTURE;
 	}
-	 
-	public void interview(){
+	
+	public List CHANCE(){
 		SqlSession sql = fac.openSession();
-		HashMap map = new HashMap<>();
-		
-		sql.insert("review.interview",map);
+		List CHANCE = sql.selectList("review.CHANCE");
 		sql.close();
 		
+		return CHANCE;
 	}
 }

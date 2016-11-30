@@ -158,6 +158,10 @@
 	<definition name="CompanyPostVolList_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/post/companyview/volList.jsp" />
 	</definition>
+	
+	<definition name="RankMain_tile" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/review/ReviewMain.jsp"/>
+	</definition>
 
 	
 </tiles-definitions>

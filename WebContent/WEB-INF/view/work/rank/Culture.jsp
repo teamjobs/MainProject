@@ -46,7 +46,7 @@
 		</div>
 		<div class="w3-third w3-container" align="center"
 			style="height: auto; margin-top: 5px">
-			<b>${t.NAME } <br />
+			<b><a href="/companydata/${t.NAME }">${t.NAME }</a> <br />
 				<p>${t.INDUSTRY }</p>
 		</div>
 		<div class="w3-third w3-container">

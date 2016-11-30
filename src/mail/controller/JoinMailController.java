@@ -26,12 +26,9 @@ public class JoinMailController {
 	@ResponseBody
 	public String sendResolve(@PathVariable String mail){
 		System.out.println("gogogo!");
-		
 		String uuid = UUID.randomUUID().toString();
-		String uid = uuid.substring(0,23);
-		
+		String uid = uuid.substring(0,8);
 		boolean b = mas.sendEmail(mail,uid);
-		System.out.println("rst?"+b);
 		if(b)
 			return uid;
 		else
