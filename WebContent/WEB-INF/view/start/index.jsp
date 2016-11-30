@@ -63,7 +63,7 @@ body, html {
 			</div>
 
 			<!-- login -->
-			<form action="/index/login" method="get">
+			<form action="/index/login" method="post">
 				<div class="container" hidden="hidden" id="loginForm">
 					ID <br /> <input type="text" name="id" style="color: black;" required="required"/> <br />
 					<br /> PassWord <br /> <input type="password" name="pass"
@@ -80,7 +80,7 @@ body, html {
 
 				<button type="button" class="btn btn-primary"
 					style="padding: 10px 55px;" id="login"
-					onclick="location.href='/business/join/'">기업 회원</button>
+					onclick="location.href='/index/businessAgree'">기업 회원</button>
 			</div>
 
 

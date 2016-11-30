@@ -171,7 +171,7 @@
 
 
 $(".local").change(function() {
-	if ($(".local:checked").val() != "전국") {
+	if ($(".local:checked").val() != "전체") {
 		if ($(".local:checked").length > 2) {
 			window.alert("지역 선택은 최대 2곳입니다.");
 			$(this).prop("checked", false);
@@ -183,9 +183,9 @@ $(".local").change(function() {
 			$("#local_rst").html(inner);
 		}
 	} else {
-		if ($(".local:checked").val() == "전국") {
+		if ($(".local:checked").val() == "전체") {
 			$(".local").each(function() {
-				if ($(this).val() != "전국") {
+				if ($(this).val() != "전체") {
 					$(this).prop("checked", false);
 				}
 			})

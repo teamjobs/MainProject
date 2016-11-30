@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from (
   			select rownum rank, temp.* from
     			(select company, avg(pay) average 
-      			from income group by company order by average desc) 
+      			from income group by company order by average desc)
   			temp) 
 		where company = #{COMPANY}
   		]]>
@@ -60,6 +60,30 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<insert id="write" parameterType="java.util.HashMap">
 	 	insert into review values(WORK_SEQ.nextval, #{company}, #{type}, #{employment}, #{career}, #{averagescore},#{onereview}, #{positive},
 	 							#{negative}, #{welfare}, #{workload}, #{culture}, #{chance}, #{think}, #{recomand}, #{future}, sysdate) 
+	</insert>
+	
+	<select id="WELFARE" resultType="java.util.HashMap">
+		select company, avg(WELFARE) WELFARE from review r group by company ORDER by WELFARE desc
+	</select>
+	
+	<select id="WORKLOAD" resultType="java.util.HashMap">
+		select company, avg(WORKLOAD) WORKLOAD from review r group by company ORDER by WORKLOAD desc
+	</select>
+	
+	<select id="CULTURE" resultType="java.util.HashMap">
+		select company, avg(CULTURE) CULTURE from review r group by company ORDER by CULTURE desc
+	</select>
+	
+	<select id="CHANCE" resultType="java.util.HashMap">
+		select company, avg(CHANCE) CHANCE from review r group by company ORDER by CHANCE desc
+	</select>
+	
+	<insert id="income" parameterType="java.util.HashMap">
+		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{PAY}, #{BONUS}, #{PERIOD})
+	</insert>
+	
+	<insert id="interview" parameterType="java.util.HashMap">
+		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{APPRAISAL}, #{INTERVIEWLEVEL}, #{PASS})
 	</insert>
 	
 </mapper>

@@ -236,7 +236,7 @@
 				min : 1,
 				max : 5,
 				title : {
-					text : '<span style="font-size:20px;color:green">면접 난이도</span>'
+					text : '<span style="font-size:23px; font-weight: lighter; color:black">면접 난이도</span>'
 				}
 			},
 
@@ -245,8 +245,8 @@
 				data : [ <fmt:formatNumber  value="${interLvmap.AVERAGE}" pattern=".#"/> ],
 				dataLabels : {
 					format : '<div style="text-align:center"><span style="font-size:25px;color:' +
-						((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'green') + '">{y:.1f}</span><br/>' +
-						'<span style="font-size:12px;color:green"> < 쉬움 / 어려움 ></span></div>'
+						((Highcharts.theme && Highcharts.theme.contrastTextColor) || 'black') + '">{y:.1f}</span><br/>' +
+						'<span style="font-size:12px;color:black"> < 쉬움 / 어려움 ></span></div>'
 				},
 				tooltip : {
 					valueSuffix : ' revolutions/min'

@@ -54,9 +54,7 @@ address, caption, cite, code, dfn, em, var {
 	font-weight: normal
 }
 
-header, main, aside, article, footer {
-	display: block
-}
+
 
 .JobUI_Wizard {
 	position: relative;
@@ -297,7 +295,7 @@ header, main, aside, article, footer {
 .us_titb_mr {
 	font-size: 14px;
 	font-weight: bold;
-	color: #ffffff
+	color: #fd4a12
 }
 
 .us_titb_m4 {
@@ -5917,7 +5915,7 @@ div.pshcont .typo_wrap .seunghojob {
 	padding: 10px 0;
 	border-style: solid;
 	border-width: 1px 1px 1px 0;
-	border-color: #ffffff;
+	border-color: #d9d9d9;
 	border-bottom-color: #adbdcc;
 	background-color: #f4f4f4;
 	font-size: 14px;

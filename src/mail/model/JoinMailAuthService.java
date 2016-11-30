@@ -22,24 +22,17 @@ public class JoinMailAuthService {
 	@Autowired
 	SqlSessionFactory fac;
 	
-	public boolean sendEmail(String to){
+	public boolean sendEmail(String to, String uid){
 		try{
 			MimeMessage message = sender.createMimeMessage();
-			message.setRecipients
-			(RecipientType.TO, to);
+			message.setRecipients(RecipientType.TO, to);
 			message.setFrom(new InternetAddress("teamjobs1111@gmail.com"));
-			
-			String uuid = UUID.randomUUID().toString();
-			String uid = uuid.substring(0,23);
-			
-
-			message.setSubject("환영합니다!");
+			message.setSubject("[JOBS]환영합니다!");
 			String text = "<h3>어서오세요!</h3>";
 			text += "가입 감사합니다.<br/>";
-			text += "아래 링크를 눌러주세요.<br/>";
-			text += "<a href='http://192.168.10.11/mail/"+uid+"' target='_blank'>인증하기</a>";
+			text += "귀하의 인증번호는 "+uid+"입니다.<br/>";
+			text += "환영합니다!";
 			message.setText(text,"utf-8","html");
-			
 			sender.send(message);
 			return true;
 			

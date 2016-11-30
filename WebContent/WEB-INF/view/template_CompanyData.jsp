@@ -66,7 +66,8 @@
 		<ul class="w3-navbar w3-Lightgray">
 			<li><a href="javascript:void(0)" onclick="openCity('tab-1')">기업정보</a></li>
 			<li><a href="javascript:void(0)" onclick="openCity('tab-2')">리뷰</a></li>
-			<li><a href="javascript:void(0)" onclick="openCity('tab-3')">Q&A</a></li>
+			<li><a href="javascript:void(0)" onclick="openCity('tab-3')">구인공고</a></li>
+			<li><a href="javascript:void(0)" onclick="openCity('tab-4')">Q&A</a></li>
 		</ul>
 		<div id="tab-1" class="w3-container city">
 			<div class="w3-container">
@@ -79,6 +80,11 @@
 			</div>
 		</div>
 		<div id="tab-3" class="w3-container city">
+			<div class="w3-container">
+				<tiles:insertAttribute name="CVPost" />
+			</div>
+		</div>
+		<div id="tab-4" class="w3-container city">
 			<div class="w3-container">
 				<tiles:insertAttribute name="CVQnA" />
 			</div>
