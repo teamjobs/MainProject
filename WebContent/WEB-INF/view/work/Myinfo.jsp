@@ -15,9 +15,7 @@
 
 <!-- Header -->
 <div class="" id="portfolio">
-	
-	
-	<br/>
+
 	<div class="w3-section w3-bottombar w3-padding-5">
 		<h3>내 정보 수정</h3>
 	</div>
