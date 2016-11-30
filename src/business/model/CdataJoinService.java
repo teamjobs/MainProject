@@ -1,6 +1,6 @@
 package business.model;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -35,12 +35,17 @@ public class CdataJoinService {
 	public boolean idCheck(String id){
 		SqlSession sql = fac.openSession();
 		boolean r = true;
-		CompanyData rst = (CompanyData)sql.selectOne("business.idCheck",id);
+		List list = sql.selectList("member.check", id);
+		List list2 = sql.selectList("member.check2", id);
 		sql.close();
-		if(rst == null){
+		if(list.isEmpty() && list2.isEmpty()){
+			System.out.println("중복체크?"+r);
 			return r;
 		}else{
 			r = false;
+			System.out.println("중복체크?"+r);
+			System.out.println(list);
+			System.out.println(list2);
 			return r;
 		}
 	}

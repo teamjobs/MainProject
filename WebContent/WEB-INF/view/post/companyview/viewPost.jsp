@@ -10,7 +10,9 @@
 	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
 <script
 	src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-
+<div class="w3-container w3-margin">
+<br>
+</div>
 <div class="w3-container">
 <div class="w3-panel w3-card-2">
 	<a href="/companydata/${com.NAME }" class="w3-btn w3-tiny">${com.NAME }</a>&nbsp;

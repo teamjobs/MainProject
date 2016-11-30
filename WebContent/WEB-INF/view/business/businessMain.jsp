@@ -37,7 +37,7 @@
 <div class="w3-third">
   <div class="w3-card-2 w3-padding-top" style="min-height:300px">
   <h4>회사 리뷰 확인하기</h4><br>
-  <a href="/business/companydata/testCompany"><i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <a href="/business/companydata/${myCo }"><i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
   <p>회사에 올라온 리뷰를 <br/>확인할 수 있습니다.</p>
   </div>
 </div>
@@ -103,31 +103,17 @@
 <thead>
 <tr class="w3-red">
   <th>&nbsp;</th>
-  <c:choose>
-  <c:when test="${ confirm == 'work'}">
-    <th>회사명</th>
-  </c:when>
-  <c:otherwise>
     <th>작성자</th>
-  </c:otherwise>
-  </c:choose>
-  <th>제목</th>
-  <th>작성일자</th>
-  <th>답변여부</th>
+    <th>제목</th>
+    <th>작성일자</th>
+    <th>답변여부</th>
 </tr>
 </thead>
 <tbody>
 			<c:forEach var="i" begin="0" end="${qlistsize -1 }" step="1">
 				<tr>
 					<td>${i+1 }</td>
-					<c:choose>
-						<c:when test="${ confirm == 'work'}">
-							<td>${qlist[i].ANSCO }</td>
-						</c:when>
-						<c:otherwise>
-							<td>${qlist[i].QUEID }</td>
-						</c:otherwise>
-					</c:choose>
+					<td>${qlist[i].QUEID }</td>
 					<td><a href="/work/qna/${qlist[i].NUM }" target="_blank">${qlist[i].QTITLE }</a></td>
 					<td>${qlist[i].UPDAY }</td>
 					<c:choose>
