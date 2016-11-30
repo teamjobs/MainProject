@@ -74,16 +74,21 @@
 								<h4 class="modal-title">E-mail 인증</h4>
 							</div>
 							<div class="modal-body">
-								<p>귀하의 이메일로 인증번호를 보냈습니다.</p>
-								<input type="text" id="num" />
+								<p>귀하의 이메일로 인증코드를 보냈습니다.</p>
+								<input type="text" id="mailAuth" /> 
+								<button type="button" class="btn btn-default" id="mailcheck">인증하기</button>
 								<div id="no" hidden="hidden">
-									<a>일치하지 않는 인증번호 입니다.</a> <br />
+									<a>일치하지 않는 인증코드입니다.</a> <br />
 								</div>
-								<p>인증번호를 입력해 주세요</p>
+								<div id="mailyes" hidden="hidden">
+									<a>코드가 일치합니다.</a> <br />
+								</div>
+								<p>인증코드를 입력해 주세요</p>
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
-									data-dismiss="modal" id="mailcheck">인증완료</button>
+									data-dismiss="modal" >인증완료</button>
 							</div>
 						</div>
 
@@ -142,49 +147,34 @@
 			$("#submit").fadeOut(1000);
 		});
 
+		
 		//이메일 양식 확인
-		$("#email")
-				.keyup(
-						function() {
-							var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
-							var tt = regExp.test($("#email").val());
-							/* if(tt){
-								$("#confirm").prop("disabled", false);
-							}else{
-								$("#confirm").prop("disabled", true);
-							} */
-							consol.log(tt);
-						})
+	
+		$("#email").keyup(function() {
+			var regExp = /[0-9a-zA-Z][_0-9a-zA-Z-]*@[_0-9a-zA-Z-]+(\.[_0-9a-zA-Z-]+){1,2}$/;
+			var tt = regExp.test($("#email").val());
+			consol.log(tt);
+		})
 
+		var mailAuth = 'no';
 		// 이메일 인증번호 전송
-		$("#confirm").click(
-				function() {
-					$.ajax(
-							{
-								"method" : "get",
-								"url" : "/member/mail?email="
-										+ $("#email").val() + "&id="
-										+ $("#id").val()
-							}).done(function(rst) {
 
-					});
-
-				});
+		$("#confirm").click(function() {
+			$.ajax({
+				"method" : "post",
+				"url" : "/join/mail/" + $("#email").val()
+			}).done(function(rst) {
+				mailAuth = rst;
+				console.log(auth);
+			});
+		});
 
 		$("#mailcheck").click(function() {
-			$.ajax({
-				"method" : "get",
-				"url" : "/member/mailcheck?num=" + $("#num").val()
-
-			}).done(function(rst) {
-				if (rst == "Y") {
-
-				} else {
-					$("#no").fadein(100);
-				}
-
-			});
-
+			if (mailAuth == $("#mailAuth").val()) {
+				$("#mailyes").fadeIn(100);
+			} else {
+				$("#no").fadeIn(100);
+			}
 		});
 	</script>
 

@@ -86,20 +86,22 @@
 							<div class="modal-body">
 								<p>인증받을 이메일을 입력해주세요.</p>
 								<input type="text" id="joinmail"/>
-								<button type="button" class="btn btn-info" id="mailsend">메일 발송</button>
-								<div id="sendcheck" hidden="hidden">
-									<a>해당 계정으로 이메일을 발송했습니다.</a> <br />
-								</div>
+								<button type="button" class="btn btn-info" id="mailsend">메일 발송</button><br/>
+								<br/><p>인증번호를 입력해 주세요</p>
 								<input type="text" id="mailauth" />
+								<button type="button" class="btn btn-default" id="mailcheck">인증하기</button>
+								<br/>
+								<div id="sendcheck" hidden="hidden">
+									<a>해당 계정으로 이메일을 발송했습니다.</a> <br/>
+								</div>
+								
 								<div id="mailno" hidden="hidden">
-									<a>일치하지 않는 인증번호 입니다.</a> <br />
+									<a>일치하지 않는 인증번호 입니다.</a> <br/>
 								</div>
 								<div id="mailyes" hidden="hidden">
-									<a>일치하지 않는 인증번호 입니다.</a> <br />
+									<a>인증번호가 일치합니다.</a> <br/>
 								</div>
-								<p>인증번호를 입력해 주세요</p>
-								<button type="button" class="btn btn-default"
-								id="mailcheck">인증하기</button>
+								
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
