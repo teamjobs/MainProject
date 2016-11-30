@@ -89,7 +89,7 @@ public class CfileController {
 	public ModelAndView upCompanyFile(@RequestParam(name="file") MultipartFile file, 
 							 String title, String type, HttpSession hs){
 		String id = (String)hs.getAttribute("id");
-		ModelAndView mav = new ModelAndView("business/file/uploadrst.jsp");
+		ModelAndView mav = new ModelAndView("/business/file/uploadrst.jsp");
 		FileData fd = fus.uploadFile(file);
 		fd.setFILETYPE(type);
 		fd.setTITLE(title);
@@ -112,7 +112,7 @@ public class CfileController {
 							 HttpSession hs){
 		String id = (String)hs.getAttribute("id");
 		String co = (String)crs.getCompanyName(id);
-		ModelAndView mav = new ModelAndView("business/file/QnArst.jsp");
+		ModelAndView mav = new ModelAndView("redirect:/goclose");
 		FileData fd = fus.uploadLogo(file,id);
 		fd.setFILETYPE("logofile");
 		fd.setTITLE(co+"_logo");
@@ -186,6 +186,12 @@ public class CfileController {
 		hm.put("cNewMassage", newmassage);
 		hm.put("vpd",ma);
 		return hm;
+	}
+	
+	@RequestMapping("/goclose")
+	public String close(){
+		System.out.println("?");
+		return "/companyQNA/QnArst.jsp";
 	}
 
 }

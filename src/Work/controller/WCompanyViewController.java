@@ -61,6 +61,7 @@ public class WCompanyViewController {
 
 		// PostList
 		List postli = prs.CompanyPost(co);
+		System.out.println(postli);
 		mav.addObject("postlist", postli);
 
 		// QnAList Read
