@@ -101,9 +101,7 @@
 									${t.JOB }</td></b>
 							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
 
-							<td style="text-overflow: ellipsis; overflow: hidden; word-break: break-all;">
-										<nobr>${t.CAREER }/${t.QUALIFICATION}</nobr>	
-							</td>
+							<td>${t.CAREER }/${t.EDUCATION }</td>
 
 							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
 								${t.PAY }
@@ -121,23 +119,6 @@
 	</div>
 	<hr>
 
-
-
-	<div class="w3-container">
-		<div class="w3-border">
-			<ul class="w3-navbar w3-light-grey">
-				<li><a class="w3-btn testbtn"
-					onclick="openCity(event, 'London')">답변</a></li>
-			</ul>
-
-			<div id="question" class="w3-container w3-animate-opacity">
-				<h2>기업 문의 답변</h2>
-				<p>찍어주세요</p>
-			</div>
-
-			<hr>
-		</div>
-	</div>
 
 
 

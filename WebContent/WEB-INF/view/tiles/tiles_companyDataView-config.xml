@@ -6,7 +6,6 @@
 		<put-attribute name="menubar" value="/WEB-INF/view/tiles/setting/menubar.jsp"/>
 		<put-attribute name="CVData" value="/WEB-INF/view/companyView/companyDataView.jsp" />
 		<put-attribute name="CVReview" value="/WEB-INF/view/work/review/CompanyReview.jsp" />
-		<put-attribute name="CVReview" value="/WEB-INF/view/work/review/CompanyReview.jsp" />
 		<put-attribute name="CVPost" value="/WEB-INF/view/companyView/companyPostList.jsp" />
 		<put-attribute name="CVQnA" value="/WEB-INF/view/companyQNA/QnAlist.jsp" />
 		<put-attribute name="foot" value="/WEB-INF/view/tiles/setting/foot.jsp" />
