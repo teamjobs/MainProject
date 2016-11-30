@@ -27,22 +27,21 @@ body {
 				class="w3-padding-large" href="javascript:void(0)"
 				onclick="myFunction()" title="Toggle Navigation Menu"><i
 					class="fa fa-bars"></i></a></li>
+				<li>&nbsp;&nbsp;&nbsp;&nbsp;<img src="/img/jobsWtop.png" style="height:32px;">&nbsp;&nbsp;&nbsp;&nbsp;</li>
 			<c:choose>
 				<c:when test="${ confirm == 'company' }">
 					<li><a href="/business/main"
-						class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+						class="w3-hover-none w3-hover-text-red w3-padding-large">HOME</a></li>
 				</c:when>
 				<c:when test="${ confirm == 'work'}">
 					<li><a href="/work/main"
-						class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+						class="w3-hover-none w3-hover-text-red w3-padding-large">HOME</a></li>
 				</c:when>
 				<c:otherwise>
 					<li><a href="#"
-						class="w3-hover-none w3-hover-text-red w3-padding-large">Home</a></li>
+						class="w3-hover-none w3-hover-text-red w3-padding-large">HOME</a></li>
 				</c:otherwise>
 			</c:choose>
-			<li class="w3-hide-small"><a href="#band"
-				class="w3-padding-large">구인</a></li>
 			<li class="w3-hide-small"><a href="/find"
 				class="w3-padding-large">구직</a></li>
 			<li class="w3-hide-small"><a href="#contact"
