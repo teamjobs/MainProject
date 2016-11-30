@@ -105,7 +105,7 @@
 							<nobr><span class="tooltip">${t.CAREER }/${t.QUALIFICATION}</span></nobr>
 							</td>
 							
-							
+							 
 
 							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a>
 									${t.JOB }</td></b>
