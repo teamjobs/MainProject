@@ -18,7 +18,7 @@
 		<b>${UPLOAD}</b>
 	</h1>
 	<div class="w3-section w3-bottombar w3-padding-5">
-		<h3>내 스크랩 공고</h3>
+		<h3>내 스크랩</h3>
 	</div>
 
 </div>

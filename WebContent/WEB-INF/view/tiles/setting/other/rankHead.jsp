@@ -8,5 +8,6 @@ img {
 </style>
 
 <div id="myHead">
-	<img src="/img/thankyouw.jpg" width="1920">
+	<img src="/img/chart.jpg" width="1920">
 </div>
+<br/>

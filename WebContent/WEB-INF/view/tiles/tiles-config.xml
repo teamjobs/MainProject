@@ -54,7 +54,7 @@
 	</definition>
 	
 	<definition name="myclipping" extends="info">
-		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/infoHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/clipping.jsp"/>
 	</definition>
 	
@@ -74,7 +74,7 @@
 	</definition>
 	
 	<definition name="myinfo" extends="info">
-		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/infoHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/Myinfo.jsp"/>
 
 	</definition>
@@ -159,7 +159,8 @@
 		<put-attribute name="body" value="/WEB-INF/view/post/companyview/volList.jsp" />
 	</definition>
 	
-	<definition name="RankMain_tile" extends="default">
+	<definition name="RankMain_tile" extends="searchall">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/rankHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/review/ReviewMain.jsp"/>
 	</definition>
 

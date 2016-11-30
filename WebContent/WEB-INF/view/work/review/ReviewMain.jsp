@@ -15,98 +15,76 @@
 <meta name="msvalidate.01" content="C6731F07D45F619A26195CF4D3182432" />
 
 <link data-turbolinks-track="true" href="/css/gf_bar.css" media="all" rel="stylesheet" />
-     
-
-
-
+    
 
 <style>
 
 
 div.best {
 	width: 1200px;
-	height: 400px;
+	height: 280px;
 	margin: auto;
-	border: 3px solid #73AD21;
+	border: 3px solid #111111;
 }
-
-
 
 </style>
 <body>
-	<br />
-	<div align="center" style=" margin-top: 20px">
-		<img src="/img/logoB.png" style="height: 80px" /> &nbsp;<img
-			src="/img/top5.png" style="height: 100px" />
-	</div>
-
 	<!-- Sidenav (hidden by default) -->
 	<nav class="w3-sidenav w3-card-2 w3-top w3-xlarge w3-animate-left"
 		style="display: none; z-index: 2; width: 40%; min-width: 300px"
 		id="mySidenav">
 		<a href="javascript:void(0)" onclick="w3_close()" class="w3-closenav">Close
 			Menu</a>
-
 	</nav>
-
 
 	<!-- !PAGE CONTENT! -->
 	<div class="w3-main w3-content w3-padding"
-		style="max-width: 1200px; margin-top: 100px">
+		style="max-width: 1200px;">
 		<!-- 차트 -->
 		<div class="w3-row-padding w3-padding-16 w3-center" id="food">
-
 			<div class="w3-quarter" align="center">
-				<h3>복지및 급여</h3>
+				<h3><b>복지 및 급여</b></h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
 				<div id="pay" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/Welfare'">전체보기</button>
+				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/Welfare'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
-				<h3>업무와 삶의 균형</h3>
+				<h3><b>업무와 삶의 균형</b></h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
 				<div id="work" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/WorkLoad'">전체보기</button>
+				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/WorkLoad'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
-				<h3>사내문화</h3>
+				<h3><b>사내문화</b></h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
 				<div id="CULTURE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/Culture'">전체보기</button>
+				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/Culture'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
-				<h3>승진 기회 및 창출</h3>
+				<h3><b>승진 기회 및 창출</b></h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
 				<div id="CHANCE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
+				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
 			</div>
 
 		</div>
-
+<br/><br/>
 	</div>
-	<br />
-	<br />
-	<br />
-	<br />
-	<br />
-	
-
-
 	<div style="margin-left: 200px"> 
 		<h1>
 			<b>베스트 기업 연봉</b>
@@ -182,15 +160,8 @@ div.best {
 				</div>
 			</li>
 		</div>
-
 	</div>
-	
-	
 
-
-
-	<br />
-	<hr />
 	<!-- Pagination -->
 	<!-- <div class="w3-center w3-padding-32">
 		<ul class="w3-pagination">
@@ -202,8 +173,6 @@ div.best {
 		</ul>
 	</div> -->
 
-	<hr id="about">
-	
 
 	<script>
 		// Script to open and close sidenav
