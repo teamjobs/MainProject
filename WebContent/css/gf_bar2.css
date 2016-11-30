@@ -54,9 +54,7 @@ address, caption, cite, code, dfn, em, var {
 	font-weight: normal
 }
 
-header, main, aside, article, footer {
-	display: block
-}
+
 
 .JobUI_Wizard {
 	position: relative;

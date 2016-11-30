@@ -35,9 +35,9 @@ div.best {
 </style>
 <body>
 	<br />
-	<div align="center">
-		<img src="/img/logoB.png" style="height: 80" /> &nbsp;<img
-			src="/img/top5.png" style="height: 100" />
+	<div align="center" style=" margin-top: 20px">
+		<img src="/img/logoB.png" style="height: 80px" /> &nbsp;<img
+			src="/img/top5.png" style="height: 100px" />
 	</div>
 
 	<!-- Sidenav (hidden by default) -->
@@ -107,7 +107,7 @@ div.best {
 	
 
 
-	<div style="margin-left: 200">
+	<div style="margin-left: 200px"> 
 		<h1>
 			<b>베스트 기업 연봉</b>
 		</h1>
