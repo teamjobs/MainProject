@@ -4,6 +4,7 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
@@ -15,26 +16,27 @@ public class RankController {
 	@Autowired
 	RankService rs;
 	
-	@RequestMapping("/rank")
-	public ModelAndView rank(@RequestParam(defaultValue="복지 및 급여 순") String option){
-		System.out.println(option);
+	@RequestMapping("/rank/{option}")
+	public ModelAndView rank(@PathVariable(name="option") String option){
+		System.out.println("컨트롤러"+option);
 		
 		ModelAndView mav = new ModelAndView();
 		
 		List list =rs.RankSelect(option);
 		int size = list.size();
 		
-		if(option.equals("복지 및 급여 순")){
-			mav.setViewName("work/rank/welfare.jsp");
-		}else if(option.equals("승진 기회 및 가능성 순")){
-			mav.setViewName("work/rank/RankUp.jsp");
-		}else if(option.equals("업무와 삶의 균형 순")){
-			mav.setViewName("work/rank/WorkLoad.jsp");
-		}else if(option.equals("사내문화 순")){
-			mav.setViewName("work/rank/Culture.jsp");	
+		if(option.equals("Welfare")){
+			mav.setViewName("welfare");
+		}else if(option.equals("RankUp")){
+			mav.setViewName("rankup");
+		}else if(option.equals("WorkLoad")){
+			mav.setViewName("workload");
+		}else if(option.equals("Culture")){
+			mav.setViewName("culture");	
 		}
 		
 		
+		mav.addObject("option",option);
 		
 		
 		System.out.println(list);

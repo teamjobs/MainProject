@@ -93,7 +93,9 @@
 							<b><td><a href="/work/post/${t.NUM}">${t.COMPANY }</a> ${t.JOB }
 							</td></b>
 							<td>${t.TITLE }</td>
-							<td>${t.CAREER }/${t.QUALIFICATION}</td>
+							<td style="text-overflow: ellipsis; overflow: hidden; word-break:break-all;" >
+							<nobr><span class="tooltip">${t.CAREER }/${t.QUALIFICATION}</span></nobr>
+							</td>
 							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
 								${t.PAY }
 							</td>
@@ -219,6 +221,25 @@ function move() {
     }
   }
 }
+
+//툴팁
+$(function(){
+	$("span.tooltip").css({
+	    opacity:"0.9",
+	    position:"absolute",
+	    display:"none"
+	}); 
+	$("a").mouseover(function(){
+	    $("span.tooltip").fadeIn();
+	}).mouseout(function(){
+	    $("span.tooltip").fadeOut();
+	}).mousemove(function(e){
+	    $("span.tooltip").css({
+		"top":e.pageY+10+"px",
+		"left":e.pageX+10+"px"
+	    });
+	});
+});
 </script>
 
 </body>
