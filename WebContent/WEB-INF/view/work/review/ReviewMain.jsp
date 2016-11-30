@@ -79,7 +79,7 @@ div.best {
 			<div class="w3-quarter">
 				<h3>사내문화</h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
-				<div id="pay" align="center" style="width: 250px; height: 100px;">
+				<div id="CULTURE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
@@ -89,7 +89,7 @@ div.best {
 			<div class="w3-quarter">
 				<h3>승진 기회 및 창출</h3>
 				<!-- <img src="/img/logoB.png" alt="Sandwich" style="width:100%"> -->
-				<div id="pay" align="center" style="width: 250px; height: 100px;">
+				<div id="CHANCE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
 				
@@ -104,10 +104,7 @@ div.best {
 	<br />
 	<br />
 	<br />
-	<br />
-	<br />
-	<br />
-	<br />
+	
 
 
 	<div style="margin-left: 200">
@@ -129,24 +126,58 @@ div.best {
 					<span class="min_txt">최소</span> <span class="min_num"><strong>1,000</strong></span>
 					<span class="gf_left"></span> <span class="gf_center"
 						style="left: 71.16727272727273%;"></span> <span class="gf_right"></span>
-					<span class="max_txt">최대</span> <span class="max_num"><strong>4,300</strong></span>
+					<span class="max_txt">최대</span> <span class="max_num"><strong>7,300</strong></span>
 					<span class="gf_bg"></span>
 				</div>
 			</li>
 		</div>
 		
 		<div class="w3-quarter" align="center">
-			<br /> <img src="/img/logoB.png" style="height: 50px" /> <br />
+			<br /> <img src="/img/lg.jpg" style="height: 50px" /> <br />
 
-			<h2>JOBs</h2>
-			취업 컨설팅 / 커넥션<br /> <br /> 평균 &nbsp; <b style="font-size: 40">5,850</b>
+			<h2>LG 상사</h2>
+			자원개발 <br /> <br /> 평균 &nbsp; <b style="font-size: 40">4,500</b>
 			만원 <br /> <br />
 			<li class="content_col_4">
 				<div class="gf_bar">
-					<span class="min_txt">최소</span> <span class="min_num"><strong>1,000</strong></span>
+					<span class="min_txt">최소</span> <span class="min_num"><strong>1,800</strong></span>
 					<span class="gf_left"></span> <span class="gf_center"
-						style="left: 71.16727272727273%;"></span> <span class="gf_right"></span>
-					<span class="max_txt">최대</span> <span class="max_num"><strong>4,300</strong></span>
+						style="left: 61.16727272727273%;"></span> <span class="gf_right"></span>
+					<span class="max_txt">최대</span> <span class="max_num"><strong>6,300</strong></span>
+					<span class="gf_bg"></span>
+				</div>
+			</li>
+		</div>
+		
+		<div class="w3-quarter" align="center">
+			<br /> <img src="/img/samsung.jpg" style="height: 50px" /> <br />
+
+			<h2>JOBs</h2>
+			휴대폰 / 반도체<br /> <br /> 평균 &nbsp; <b style="font-size: 40">6,350</b>
+			만원 <br /> <br />
+			<li class="content_col_4">
+				<div class="gf_bar">
+					<span class="min_txt">최소</span> <span class="min_num"><strong>3,000</strong></span>
+					<span class="gf_left"></span> <span class="gf_center"
+						style="left: 58.16727272727273%;"></span> <span class="gf_right"></span>
+					<span class="max_txt">최대</span> <span class="max_num"><strong>11,300</strong></span>
+					<span class="gf_bg"></span>
+				</div>
+			</li>
+		</div>
+		
+		<div class="w3-quarter" align="center">
+			<br /> <img src="/img/hd.jpg" style="height: 50px" /> <br />
+
+			<h2>현대 자동차</h2>
+			자동차 개발<br /> <br /> 평균 &nbsp; <b style="font-size: 40">6,850</b>
+			만원 <br /> <br />
+			<li class="content_col_4">
+				<div class="gf_bar">
+					<span class="min_txt">최소</span> <span class="min_num"><strong>3,200</strong></span>
+					<span class="gf_left"></span> <span class="gf_center"
+						style="left: 83%;"></span> <span class="gf_right"></span>
+					<span class="max_txt">최대</span> <span class="max_num"><strong>10,500</strong></span>
 					<span class="gf_bg"></span>
 				</div>
 			</li>
@@ -161,7 +192,7 @@ div.best {
 	<br />
 	<hr />
 	<!-- Pagination -->
-	<div class="w3-center w3-padding-32">
+	<!-- <div class="w3-center w3-padding-32">
 		<ul class="w3-pagination">
 			<li><a class="w3-black" href="#">1</a></li>
 			<li><a class="w3-hover-black" href="#">2</a></li>
@@ -169,11 +200,10 @@ div.best {
 			<li><a class="w3-hover-black" href="#">4</a></li>
 			<li><a class="w3-hover-black" href="#">»</a></li>
 		</ul>
-	</div>
+	</div> -->
 
 	<hr id="about">
-
-
+	
 
 	<script>
 		// Script to open and close sidenav
@@ -197,10 +227,10 @@ div.best {
 				[ "Element", "Density", {
 					role : "style"
 				} ],
-				[ "JOBs", 8.94, "gray" ],
-				[ "삼성", 6, "gray" ],
-				[ "현대", 5.30, "gray" ],
-				[ "lg", 4, "gray" ]
+				<c:forEach var="i" begin="0" end="3">
+				[ "${WELFARE[i].COMPANY}", ${WELFARE[i].WELFARE}, "gray" ],
+				
+				</c:forEach>
 	
 			]);
 	
@@ -209,10 +239,34 @@ div.best {
 				[ "Element", "Density", {
 					role : "style"
 				} ],
-				[ "Copper", 1, "gray" ],
-				[ "Silver", 2, "gray" ],
-				[ "Gold", 3, "gray" ],
-				[ "Platinum", 4, "gray" ]
+				<c:forEach var="i" begin="0" end="3">
+				[ "${WORKLOAD[i].COMPANY}", ${WORKLOAD[i].WORKLOAD}, "gray" ],
+				
+				</c:forEach>
+			]);
+			
+			// 사내문화
+			
+			var culturedata = google.visualization.arrayToDataTable([
+				[ "Element", "Density", {
+					role : "style"
+				} ],
+				<c:forEach var="i" begin="0" end="3">
+				[ "${CULTURE[i].COMPANY}", ${CULTURE[i].CULTURE}, "gray" ],
+				
+				</c:forEach>
+			]);
+			
+			// 승진및 기회 창출
+			
+			var CHANCEdata = google.visualization.arrayToDataTable([
+				[ "Element", "Density", {
+					role : "style"
+				} ],
+				<c:forEach var="i" begin="0" end="3">
+				[ "${CHANCE[i].COMPANY}", ${CHANCE[i].CHANCE}, "gray" ],
+				
+				</c:forEach>
 			]);
 	
 	
@@ -235,12 +289,33 @@ div.best {
 					role : "annotation"
 				},
 				2 ]);
+			
+			var cultureview = new google.visualization.DataView(culturedata);
+			workview.setColumns([ 0, 1,
+				{
+					calc : "stringify",
+					sourceColumn : 1,
+					type : "string",
+					role : "annotation"
+				},
+				2 ]);
+			
+			
+			var CHANCEview = new google.visualization.DataView(CHANCEdata);
+			workview.setColumns([ 0, 1,
+				{
+					calc : "stringify",
+					sourceColumn : 1,
+					type : "string",
+					role : "annotation"
+				},
+				2 ]);
 	
 			var options = {
 				width : 300,
 				height : 200,
 				bar : {
-					groupWidth : "90%"
+					groupWidth : "70%"
 				},
 				legend : {
 					position : "none"
@@ -251,8 +326,15 @@ div.best {
 	
 			var chart2 = new google.visualization.BarChart(document.getElementById("work"));
 			chart2.draw(workview, options);
+			
+			var chart3 = new google.visualization.BarChart(document.getElementById("CULTURE"));
+			chart3.draw(cultureview, options);
+			
+			var chart4 = new google.visualization.BarChart(document.getElementById("CHANCE"));
+			chart4.draw(CHANCEview, options);
 	
 		}
+		
 	</script>
 
 

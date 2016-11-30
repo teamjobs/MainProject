@@ -101,7 +101,8 @@ div.best {
 		<hr style="border: solid 1px gray;">
 
 		<c:forEach var="t" items="${list }">
-	&nbsp; ${t.TYPE } | ${t.EMPLOYMENT } |${t.UPDAY}
+	&nbsp; ${t.TYPE } | ${t.EMPLOYMENT } | <fmt:formatDate value="${t.UPDAY}" pattern="YYYY-MM-dd" />
+	
 	<br />
 			<br />
 
