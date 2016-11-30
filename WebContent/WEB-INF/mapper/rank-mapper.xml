@@ -3,7 +3,70 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="rank">
-	<select id="pay" resultType="java.util.HashMap">
-		select * from COMPANY
+	<!-- 복지 및 급여순 -->
+	<select id="welfare" resultType="java.util.HashMap">
+		<![CDATA[
+		select rownum rank, temp.* from
+		(select name,INDUSTRY,count(DISTINCT WELFARE)wcount ,avg(WELFARE) wfavg, avg(pay) pyavg from
+		(select com.*, re.company, re.WELFARE, inc.company, inc.pay
+		from company com, review re, income inc
+		where com.name = re.company and com.name = inc.company)
+		group by name,INDUSTRY order by wfavg desc, pyavg desc,wcount desc)temp
+		]]>
+	</select>
+	
+	<!-- 승진기회 및 가능성 -->
+	<select id="rankUp" resultType="java.util.HashMap">
+	<![CDATA[
+		select rownum rank, temp.* from
+		(select name,INDUSTRY,count(DISTINCT CHANCE)ccount ,avg(CHANCE) chavg,
+	    avg(FUTURE) fuavg, avg(pay) pyavg from
+		(select com.*, re.company, re.CHANCE,re.FUTURE,inc.company, inc.pay
+		from company com, review re, income inc
+		where com.name = re.company and com.name = inc.company)
+		group by name,INDUSTRY order by chavg desc, fuavg desc, ccount desc)temp
+	]]>
+	</select>
+	
+	<!-- 업무량 및 삶의 균형 -->
+	<select id="workLoad" resultType="java.util.HashMap">
+	<![CDATA[
+		select rownum rank, temp.* from
+		(select name,INDUSTRY,count(DISTINCT WORKLOAD)wlcount ,avg(WORKLOAD) wlavg, avg(pay) pyavg from
+		(select com.*, re.company, re.WORKLOAD, inc.company, inc.pay
+		from company com, review re, income inc
+		where com.name = re.company and com.name = inc.company)
+		group by name,INDUSTRY order by wlavg desc, wlcount desc)temp
+		]]>
+	</select>
+	
+	<!-- 사내문화 -->
+	<select id="culture" resultType="java.util.HashMap">
+	<![CDATA[
+		select rownum rank, temp.* from
+		(select name,INDUSTRY,count(DISTINCT CULTURE)ctcount ,avg(CULTURE) ctavg, avg(pay) pyavg from
+		(select com.*, re.company, re.CULTURE, inc.company, inc.pay
+		from company com, review re, income inc
+		where com.name = re.company and com.name = inc.company)
+		group by name,INDUSTRY order by ctavg desc, ctcount desc)temp
+		]]>
 	</select>
 </mapper>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
