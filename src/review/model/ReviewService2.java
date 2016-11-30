@@ -17,6 +17,7 @@ public class ReviewService2 {
 	public List allreivew(String co){
 		SqlSession sql = fac.openSession();
 		List list = sql.selectList("review.all", co);
+		System.out.println("¸®ºä ¼­ºñ½º"+list);
 		sql.close();
 		
 		return list;
@@ -25,6 +26,7 @@ public class ReviewService2 {
 	public HashMap avg(String co){
 		SqlSession sql = fac.openSession();
 		HashMap map = sql.selectOne("review.avg", co);
+		System.out.println("¸®ºä Æò±Õ"+map);
 		sql.close();
 		
 		return map;

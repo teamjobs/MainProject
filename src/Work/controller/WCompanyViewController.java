@@ -76,6 +76,8 @@ public class WCompanyViewController {
 		
 		List list = rs.allreivew(co);
 		int all = list.size();
+		
+		System.out.println("컨트롤러"+list+"/"+all);
 		mav.addObject("list",list);
 		mav.addObject("all",all);
 		

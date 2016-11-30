@@ -12,7 +12,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select * from (
   			select rownum rank, temp.* from
     			(select company, avg(pay) average 
-      			from income group by company order by average desc) 
+      			from income group by company order by average desc)
   			temp) 
 		where company = #{COMPANY}
   		]]>
