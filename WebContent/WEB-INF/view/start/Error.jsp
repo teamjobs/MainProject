@@ -39,41 +39,16 @@ body, html {
 		class="bgimg w3-display-container w3-animate-opacity w3-text-white">
 		<div class="w3-display-topleft w3-padding-large w3-xlarge">
 		</div>
-		<img src="/img/logoW.png"/>
 		<div class="w3-display-middle" align="center">
-			<h3>잘못된 접근입니다.</h3> <br/>
-			<h1 class="w3-jumbo w3-animate-top">다시 시도해 주세요!
-			<hr class="w3-border-grey" style="margin: auto; width: 40%"> <br/>
+		<img src="/img/logoW.png"/>
+			<h1 class="w3-jumbo w3-animate-top">잘못된 접근입니다.</h1> <br/>
+			<hr class="w3-border-grey" style="margin: auto; width: 40%"> 
+			<h3>다시 시도해 주세요!</h3>
+			<br/><br/><br/><br/>
 			<button type="button" class="btn btn-default"
 					style="padding: 10px 60px;" id="login" 
 					onclick="location.href='/'">홈으로</button>
-			
 			<br />
-			
-
-			
-
-
-			<div class="container" hidden="hidden" id="loginForm">
-				<h2>Form control: input</h2>
-				<p>The form below contains two input elements; one of type text
-					and one of type password:</p>
-				<form>
-					<div class="form-group">
-						<label for="usr">Name:</label> <input type="text"
-							class="form-control" id="usr">
-					</div>
-					<div class="form-group">
-						<label for="pwd">Password:</label> <input type="password"
-							class="form-control" id="pwd">
-					</div>
-				</form>
-			</div>
-		</div>
-		<div class="w3-display-bottomleft w3-padding-large">
-			Powered by <a href="http://www.w3schools.com/w3css/default.asp"
-				target="_blank">w3.css</a>
-		</div>
 	</div>
 	<script>
 		$("#login").click(function() {

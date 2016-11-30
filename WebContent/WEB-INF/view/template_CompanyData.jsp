@@ -48,20 +48,30 @@
 		<tiles:insertAttribute name="menubar" />
 	</nav>
 	<article>
-		<div class="w3-container w3-margin"></div>
+		<div class="w3-container w3-margin">
 		<div class="w3-display-container w3-margin-top">
 			<img src="/img/company_header.jpg" alt="Lights" style="width: 100%">
 			<div class="w3-padding w3-display-bottomleft w3-text-white">
 				<h2>${co.NAME}</h2>
-				<p>${co.INTRODUCE }</p>
+				<p>${co.INTRODUCE }</p><br>
 			</div>
 			  <c:if test="${confirm == 'work' }">
-			  <div class="w3-padding w3-display-bottomright w3-margin-bottom" >
-				<button class="w3-btn w3-round-xxlarge w3-light-grey w3-hover-red" 
-						onclick="document.getElementById('id07').style.display='block'"><b>+</b>&nbsp;리뷰 작성</button>
+			  <br>
+			  <div class="w3-padding w3-display-bottomright 
+			  w3-light-grey w3-hover-red w3-dropdown-hover w3-margin-bottom" >
+			      <b>이 회사 어때요?</b>
+				    <div class="w3-dropdown-content w3-light-grey w3-card-4">
+				      <a class="w3-hover-red"
+						onclick="document.getElementById('id07').style.display='block'">리뷰 작성</a>
+				      <a class="w3-hover-red"
+						onclick="document.getElementById('incomeM').style.display='block'">연봉정보 작성</a>
+				      <a class="w3-hover-red"
+						onclick="document.getElementById('interviewM').style.display='block'">면접경험 작성</a>
+				    </div>
 			  	<br>
 			  </div>
 			  </c:if>
+			  </div>
 		</div>
 		<ul class="w3-navbar w3-Lightgray">
 			<li><a href="javascript:void(0)" onclick="openCity('tab-1')">기업정보</a></li>
@@ -109,6 +119,130 @@
 	</script>
 </body>
 </html>
+
+
+
+ <%-- =======================  Income  ======================= --%>
+ 
+<form action="/incomeinput" method="post" id="incomeinput">
+	<div id="incomeM" class="w3-modal" style="z-index: 4; min-height: 500px;">
+		<div class="w3-modal-content">
+			<div class="w3-container w3-padding w3-black">
+				<span onclick="document.getElementById('incomeM').style.display='none'"
+					class="w3-right w3-xxlarge w3-closebtn"><i
+					class="fa fa-remove"></i></span>
+				<h2>
+					<b>Write Income</b>
+				</h2>
+			</div>
+			<div class="w3-panel">
+				<!-- value="기업명" -> ${company } -->
+				<label><b>기업명</b></label> <input type="text"
+					class="w3-input w3-margin-bottom"
+					style="width: 500px; padding: 10px;" name="company" value="${co.NAME }"
+					readonly> <label for="type"><b>직종</b></label><br /> <select
+					name="type"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>직종 선택</option>
+					<option value="IT_컴퓨터">IT/컴퓨터</option>
+					<option value="사무직">사무직</option>
+					<option value="미디어">미디어</option>
+					<option value="디자인">디자인</option>
+					<option value="교육_강사">교육/강사</option>
+					<option value="고객상담_리서치_영업">고객상담/리서치/영업</option>
+					<option value="무역_유통_판매">무역/유통/판매</option>
+					<option value="서비스">서비스</option>
+					<option value="기타">기타</option>
+				</select><br /> <label for="employment"><b>고용 형태</b></label><br /> <select
+					name="employment"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>고용 형태 선택</option>
+					<option value="정규직">정규직</option>
+					<option value="계약직">계약직</option>
+					<option value="인턴">인턴</option>
+					<option value="파견직">파견직</option>
+					<option value="프리랜서">프리랜서</option>
+					<option value="아르바이트">아르바이트</option>
+					<option value="연수생_교육생">연수생/교육생</option>
+					<option value="개인사업자">개인 사업자</option>
+					<option value="기타">기타</option>
+				</select><br /> <label for="career"><b>총 경력</b></label><br /> <select
+					name="career"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>총 경력 선택</option>
+					<option value="1년이상">1년 이상</option>
+					<option value="2년이상">2년 이상</option>
+					<option value="3년이상">3년 이상</option>
+					<option value="4년이상">4년 이상</option>
+					<option value="5년이상">5년 이상</option>
+					<option value="6년이상">6년 이상</option>
+					<option value="7년이상">7년 이상</option>
+					<option value="8년이상">8년 이상</option>
+					<option value="9년이상">9년 이상</option>
+					<option value="10년이상">10년 이상</option>
+				</select><br />
+				<div class="w3-section">
+					<a class="w3-btn w3-light-grey"
+						onclick="document.getElementById('incomeM').style.display='none'">Cancel
+						 <i class="fa fa-remove"></i>
+					</a> <i class="w3-btn w3-right w3-black"
+						onclick="document.getElementById('incomeM2').style.display='block'; document.getElementById('incomeM').style.display='none'">Next
+						≫ </i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- id값 받아서 뜨는 팝업창 (리뷰 두번째 페이지) -->
+	<div id="incomeM2" class="w3-modal" style="z-index: 4; min-height: 500px;">
+		<div class="w3-modal-content">
+			<div class="w3-container w3-padding w3-black">
+				<span onclick="document.getElementById('incomeM2').style.display='none'"
+					class="w3-right w3-xxlarge w3-closebtn"><i
+					class="fa fa-remove"></i></span>
+				<h2>
+					<b>Write Income</b>
+				</h2>
+			</div>
+			<div class="w3-panel">
+				<label><b>기업명</b></label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					value="${co.NAME }" readonly> 
+					<b>급여(연봉)</b>&nbsp;&nbsp;&nbsp;<input type="number" style="width: 500px;" class="w3-input" id="pay" name="pay"/><br/>
+					<b>성과급 및 인센티브</b>&nbsp;&nbsp;&nbsp;<input type="number" style="width: 500px;" class="w3-input" id="bonus" name="bonus"/><br/>
+					<b>총 경력</b><br /> 
+					<select name="period" style="width: 500px; padding: 10px;
+					margin-bottom: 20px;" required="required">
+					<option value="" selected>근무기간 선택</option>
+					<option value="1">1년차</option>
+					<option value="2">2년차</option>
+					<option value="3">3년차</option>
+					<option value="4">4년차</option>
+					<option value="5">5년차</option>
+					<option value="6">6년차</option>
+					<option value="7">7년차</option>
+					<option value="8">8년차</option>
+					<option value="9">9년차</option>
+					<option value="10">10년 이상</option>
+					</select>
+					<br/>
+				<hr />
+				<div class="w3-section">
+					<a class="w3-btn w3-light-grey" id="previous"
+						onclick="document.getElementById('incomeM').style.display='block'; document.getElementById('incomeM2').style.display='none'">
+						≪ Previous</a> <button class="w3-btn w3-right w3-black" id="incomesubmit">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+ <%-- =======================  Review  ======================= --%>
+ 
 
 <form action="/review" method="post" id="review">
 	<div id="id07" class="w3-modal" style="z-index: 4; min-height: 500px;">
@@ -392,16 +526,178 @@
 				<hr />
 				<div class="w3-section">
 					<a class="w3-btn w3-light-grey" id="previous"
-						onclick="document.getElementById('id07').style.display='block'; document.getElementById('id08').style.display='none'">
+						onclick="document.getElementById('interviewM').style.display='block'; document.getElementById('id08').style.display='none'">
 						≪ Previous</a> <button class="w3-btn w3-right w3-black" id="submit">Submit</button>
 				</div>
 			</div>
 		</div>
 	</div>
 </form>
+
+ <%-- =======================  Interview  ======================= --%>
+
+<form action="/interviewinput" method="post" id="interview">
+	<div id="interviewM" class="w3-modal" style="z-index: 4; min-height: 500px;">
+		<div class="w3-modal-content">
+			<div class="w3-container w3-padding w3-black">
+				<span onclick="document.getElementById('interviewM').style.display='none'"
+					class="w3-right w3-xxlarge w3-closebtn"><i
+					class="fa fa-remove"></i></span>
+				<h2>
+					<b>Write Interview</b>
+				</h2>
+			</div>
+			<div class="w3-panel">
+				<!-- value="기업명" -> ${company } -->
+				<label><b>기업명</b></label> <input type="text"
+					class="w3-input w3-margin-bottom"
+					style="width: 500px; padding: 10px;" name="company" value="${co.NAME }"
+					readonly> <label for="type"><b>직종</b></label><br /> <select
+					name="type"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>직종 선택</option>
+					<option value="IT_컴퓨터">IT/컴퓨터</option>
+					<option value="사무직">사무직</option>
+					<option value="미디어">미디어</option>
+					<option value="디자인">디자인</option>
+					<option value="교육_강사">교육/강사</option>
+					<option value="고객상담_리서치_영업">고객상담/리서치/영업</option>
+					<option value="무역_유통_판매">무역/유통/판매</option>
+					<option value="서비스">서비스</option>
+					<option value="기타">기타</option>
+				</select><br /> <label for="employment"><b>고용 형태</b></label><br /> <select
+					name="employment"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>고용 형태 선택</option>
+					<option value="정규직">정규직</option>
+					<option value="계약직">계약직</option>
+					<option value="인턴">인턴</option>
+					<option value="파견직">파견직</option>
+					<option value="프리랜서">프리랜서</option>
+					<option value="아르바이트">아르바이트</option>
+					<option value="연수생_교육생">연수생/교육생</option>
+					<option value="개인사업자">개인 사업자</option>
+					<option value="기타">기타</option>
+				</select><br /> <label for="career"><b>총 경력</b></label><br /> <select
+					name="career"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					required="required">
+					<option value="" selected>총 경력 선택</option>
+					<option value="1년이상">1년 이상</option>
+					<option value="2년이상">2년 이상</option>
+					<option value="3년이상">3년 이상</option>
+					<option value="4년이상">4년 이상</option>
+					<option value="5년이상">5년 이상</option>
+					<option value="6년이상">6년 이상</option>
+					<option value="7년이상">7년 이상</option>
+					<option value="8년이상">8년 이상</option>
+					<option value="9년이상">9년 이상</option>
+					<option value="10년이상">10년 이상</option>
+				</select><br />
+				<div class="w3-section">
+					<a class="w3-btn w3-light-grey"
+						onclick="document.getElementById('interviewM').style.display='none'">Cancel
+						 <i class="fa fa-remove"></i>
+					</a> <i class="w3-btn w3-right w3-black"
+						onclick="document.getElementById('interviewM2').style.display='block'; document.getElementById('interviewM').style.display='none'">Next
+						≫ </i>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- id값 받아서 뜨는 팝업창 (리뷰 두번째 페이지) -->
+	<div id="interviewM2" class="w3-modal" style="z-index: 4; min-height: 500px;">
+		<div class="w3-modal-content">
+			<div class="w3-container w3-padding w3-black">
+				<span onclick="document.getElementById('interviewM2').style.display='none'"
+					class="w3-right w3-xxlarge w3-closebtn"><i
+					class="fa fa-remove"></i></span>
+				<h2>
+					<b>Write Interview</b>
+				</h2>
+			</div>
+			<div class="w3-panel">
+				<label><b>기업명</b></label> <input
+					class="w3-input w3-border w3-hover-border-black"
+					style="width: 500px; padding: 10px; margin-bottom: 20px;"
+					value="${co.NAME }" readonly> 
+					<b>면접 평가</b>&nbsp;&nbsp;&nbsp;<br /> 
+					<select name="appraisal" style="width: 500px; padding: 10px;
+					margin-bottom: 20px;" required="required">
+					<option value="" selected>면접경험 선택</option>
+					<option>긍정적</option>
+					<option>보통</option>
+					<option>부정적</option>
+					</select>
+					<br /> 
+					<b>난이도</b>
+						<br /> 
+				<input type="hidden" name="interviewlevel" value="" id="interviewlevel"/>
+				<button class="button interviewlevel" type="button" value="1">
+					<i class="fa fa-star"></i>
+				</button>
+				<button class="button interviewlevel" type="button" value="2">
+					<i class="fa fa-star"></i>
+				</button>
+				<button class="button interviewlevel" type="button" value="3">
+					<i class="fa fa-star"></i>
+				</button>
+				<button class="button interviewlevel" type="button" value="4">
+					<i class="fa fa-star"></i>
+				</button>
+				<button class="button interviewlevel" type="button" value="5" style="margin-bottom: 15px;">
+					<i class="fa fa-star"></i>
+				</button>
+						<script>
+					$(".interviewlevel").click(function(){
+						var score = $(this).val();
+						$("#interviewlevel").val(score);
+						$(".interviewlevel").each(function(){
+							$(this).css("color", "#e7e7e7");
+							if($(this).val() <=score) {
+								$(this).css("color", "#f44336");	
+							}
+						});
+					});
+				</script>
+				<br /> 
+				<b>합격여부</b>&nbsp;&nbsp;&nbsp;
+				
+				<br /> 
+					<select name="pass" style="width: 500px; padding: 10px;
+					margin-bottom: 20px;" required="required">
+					<option value="" selected>합격여부 선택</option>
+					<option>합격</option>
+					<option>불합격</option>
+					<option>대기중</option>
+					</select>
+					<br/>
+				<hr />
+
+				<div class="w3-section">
+					<a class="w3-btn w3-light-grey" id="previous"
+						onclick="document.getElementById('interviewM').style.display='block'; document.getElementById('interviewM2').style.display='none'">
+						≪ Previous</a> <button class="w3-btn w3-right w3-black" id="interviewsubmit">Submit</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</form>
+
+
+
+
 <script>
 	$("#submit").click(function() {
 		$("#review").submit();
+	});
+	$("#incomesubmit").click(function() {
+		$("#income").submit();
+	});
+	$("#interviewsubmit").click(function() {
+		$("#interview").submit();
 	});
 </script>
 

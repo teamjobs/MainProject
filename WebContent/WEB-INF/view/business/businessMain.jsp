@@ -30,7 +30,7 @@
   <div class="w3-card-2 w3-padding-top" style="min-height:300px">
   <h4>지원 이력서 확인하기</h4><br>
   <a href="/business/my/post/allvol"><i class="fa fa-desktop w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
-  <p>우리 회사에 지원한 이력서를 <br/>확인할 수 있습니다.</p>
+  <p>${myCo }에 지원한 이력서를<br> 확인할 수 있습니다.</p>
   </div>
 </div>
 
@@ -38,15 +38,15 @@
   <div class="w3-card-2 w3-padding-top" style="min-height:300px">
   <h4>회사 리뷰 확인하기</h4><br>
   <a href="/business/companydata/${myCo }"><i class="fa fa-css3 w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
-  <p>회사에 올라온 리뷰를 <br/>확인할 수 있습니다.</p>
+  <p>사람들은 ${myCo }를 어떻게 생각할까요? <br> 올라온 리뷰를 확인할 수 있습니다.</p>
   </div>
 </div>
 
 <div class="w3-third">
   <div class="w3-card-2 w3-padding-top" style="min-height:300px">
-  <h4>직접 지원자 찾기</h4><br>
-  <i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i>
-  <p>공개된 구직자 이력서를 <br/>열람할 수 있습니다.</p>
+  <h4>파일 관리하기</h4><br>
+  <a href="/business/file/list"><i class="fa fa-diamond w3-margin-bottom w3-text-theme" style="font-size:120px"></i></a>
+  <p>이력서를 포함해 ${myCo }에서 <br> 업로드한 파일들을 열어볼 수 있습니다.</p>
   </div>
 </div>
 </div>
