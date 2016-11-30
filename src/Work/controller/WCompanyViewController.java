@@ -13,6 +13,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 import business.model.CdataReadService;
 import business.model.CompanyData;
+import post.model.WPostReadService;
 import qna.model.QnAReadService;
 
 import review.service.IncomeService;
@@ -32,16 +33,15 @@ public class WCompanyViewController {
 	IncomeService ics;
 	@Autowired
 	InterviewService is;
+	@Autowired
 	ReviewService2 rs;
+	@Autowired
+	WPostReadService prs;
 
 	
 	@RequestMapping("/companydata/{co}")
 	public ModelAndView goCompanyView(@PathVariable String co){
 		ModelAndView mav = new ModelAndView("Companydefault_tile");
-		
-		
-		
-		// CompanyData Read
 		CompanyData cd = crs.getIntrodunction(co);
 		mav.addObject("co",cd);
 		
@@ -63,6 +63,11 @@ public class WCompanyViewController {
 		mav.addObject("aplist",aplist);
 		mav.addObject("passlist",passlist);
 		
+		
+		// PostList
+		List postli = prs.CompanyPost(co);
+		mav.addObject("postlist",postli);
+		
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);
 		int qlistsize = li.size();
@@ -71,6 +76,8 @@ public class WCompanyViewController {
 		
 		List list = rs.allreivew(co);
 		int all = list.size();
+		
+		System.out.println("컨트롤러"+list+"/"+all);
 		mav.addObject("list",list);
 		mav.addObject("all",all);
 		

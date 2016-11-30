@@ -47,8 +47,6 @@ public class CfileController {
 	@Autowired
 	QnAReadService qrs;
 	
-	CompanyData cd;
-	String id;
 	
 	
 	
@@ -56,7 +54,7 @@ public class CfileController {
 	@RequestMapping("/business/file")
 	public ModelAndView goFile(HttpSession hs){
 		ModelAndView mav = new ModelAndView("redirect:/business/file/list");
-		this.id = (String)hs.getAttribute("id");
+		String id = (String)hs.getAttribute("id");
 		// =====================
 		
 		HashMap viewdata = initView(id);
@@ -167,7 +165,7 @@ public class CfileController {
 	
 	public HashMap initView(String id){
 		HashMap<String,Object> hm = new HashMap<>();
-		cd = cds.dataRead(id);
+		CompanyData cd = cds.dataRead(id);
 		
 		// ============== ¸Þ¼¼Áö
 		List li = qrs.getCompanyQnA(cd.getNAME());

@@ -80,7 +80,7 @@ body, html {
 
 				<button type="button" class="btn btn-primary"
 					style="padding: 10px 55px;" id="login"
-					onclick="location.href='/business/join/'">기업 회원</button>
+					onclick="location.href='/index/businessAgree'">기업 회원</button>
 			</div>
 
 

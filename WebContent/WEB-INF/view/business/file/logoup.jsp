@@ -23,9 +23,10 @@
 					첨부</button>
 				&nbsp;<span id="filename" style="width: auto;"></span> <br /> <br />
 				<input type="submit" class="w3-btn w3-left" value="올리기" /> <br>
+				<br>
 			</div>
 			<div class="w3-half">
-			
+			<br>
 			</div>
 		</div>
 	</form>

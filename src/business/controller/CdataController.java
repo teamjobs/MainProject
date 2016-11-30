@@ -59,6 +59,7 @@ public class CdataController {
 	@RequestMapping("/business/join/idcheck/{id}")
 	@ResponseBody
 	public String CIdCheck(@PathVariable(name="id")String id){
+		System.out.println("?");
 		boolean b = cjs.idCheck(id);
 		if(b)
 			return "y";
@@ -109,4 +110,20 @@ public class CdataController {
 		return mav;
 	}
 	
+	@RequestMapping("/getCompanyName/{id}")
+	@ResponseBody
+	public String getCompanyNameBody(@PathVariable String id){
+		String co = crs.getCompanyName(id);
+		return co;
+	}
+	
+	@RequestMapping("/index/businessAgree")
+	public String agree(){
+		return "/business/companymember/Cagree.jsp";
+	}
+	
+	@RequestMapping("/index/businessAgreeOK")
+	public String agreeOK(){
+		return "/business/companymember/Cjoin.jsp";
+	} 
 }
