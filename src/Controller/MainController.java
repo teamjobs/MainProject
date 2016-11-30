@@ -20,7 +20,7 @@ public class MainController {
 	public ModelAndView goUserMaintest(HttpSession hs){
 		ModelAndView mav = new ModelAndView();
 		String OK = (String) hs.getAttribute("confirm");
-		if(OK == "work"){
+		if(OK.equals("work")){
 			mav.setViewName("user_tile");
 			List list = wss.WSservice();
 			

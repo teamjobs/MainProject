@@ -63,7 +63,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<a href="">전체 보기</a>
+				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/Welfare'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -73,7 +73,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<a href="">전체 보기</a>
+				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/WorkLoad'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -83,7 +83,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<a href="">전체 보기</a>
+				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/Culture'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -93,7 +93,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<a href="">전체 보기</a>
+				<button class="w3-btn w3-white w3-border w3-border-blue w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
 			</div>
 
 		</div>

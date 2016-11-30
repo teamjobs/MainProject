@@ -44,10 +44,10 @@
 	</definition>
 	
 	<definition name="myhistory" extends="info">
-		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/blank.jsp"/>
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/infoHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/history.jsp"/>
 	</definition>
-	
+
 	<definition name="myhistoryboard" extends="searchall">
 		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/historyHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/Resumes/ResumeView.jsp"/>
