@@ -1,33 +1,38 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt"%>
 <!DOCTYPE html>
 <html>
 <title>JOBS - ${id }</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-<link rel="stylesheet" href="http://www.w3schools.com/lib/w3-theme-black.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+<link rel="stylesheet"
+	href="http://www.w3schools.com/lib/w3-theme-black.css">
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css">
+
+
 <body>
 
 
-<!-- 비주얼 부분입니다 -->
-		
+	<!-- 비주얼 부분입니다 -->
+
 	<header class="w3-display-container w3-wide" id="home">
-    <img class="w3-image" src="/img/businessMain/main1.jpg" alt="Fashion Blog" width="1600" height="300">
-    <div class="w3-display-middle w3-text-white w3-center">
-      <h3 class="w3-text-white">JOBS</h3>
-      <h1 class="w3-jumbo w3-text-white w3-hide-small"><img src="/img/businessMain/logo_white2.png"></h1>
-      
-      <a href="/my/history">
+		<img class="w3-image" src="/img/businessMain/main1.jpg"
+			alt="Fashion Blog" width="1600" height="300">
+		<div class="w3-display-middle w3-text-white w3-center">
+			<h3 class="w3-text-white">JOBS</h3>
+			<h1 class="w3-jumbo w3-text-white w3-hide-small">
+				<img src="/img/businessMain/logo_white2.png">
+			</h1>
+
+			<a href="/my/history">
 				<button
-					
 					class="w3-btn w3-white w3-padding-large w3-large w3-opacity w3-hover-opacity-off"
 					onclick="document.getElementById('subscribe').style.display='block'">
-					마이페이지
-				</button>
-				</a>
+					마이페이지</button>
+			</a>
 			</h6>
 		</div>
 	</header>
@@ -46,32 +51,33 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>회사 리뷰 확인하기</h4>
-				<br> 	<a href="/rank/main">
-				<i class="fa fa-css3 w3-margin-bottom w3-text-theme"
+				<br> <a href="/rank/main"> <i
+					class="fa fa-css3 w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i>
-				<p>
-					직원이 작성한 리뷰를 <br />확인할 수 있습니다.
-				</p>
+					<p>
+						직원이 작성한 리뷰를 <br />확인할 수 있습니다.
+					</p>
 			</div>
 		</div>
 
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>기업 찾기</h4>
-				<br><a href="/find">
-				 <i class="fa fa-diamond w3-margin-bottom w3-text-theme"
+				<br>
+				<a href="/find"> <i
+					class="fa fa-diamond w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i>
-					</a>
+				</a>
 				<p>
 					입사지원 가능한 기업을 <br />열람할 수 있습니다.
 				</p>
 			</div>
 		</div>
 	</div>
-     
 
 
-<div class="w3-container">
+
+	<div class="w3-container">
 		<hr>
 		<div class="w3-center">
 			<h2>회사</h2>
@@ -91,6 +97,7 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
+
 							<td><b><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }</b>
 							</td>
 							<td>${t.TITLE }</td>
@@ -99,6 +106,16 @@
 							</td>
 							
 							
+
+							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a>
+									${t.JOB }</td></b>
+							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
+
+							<td style="text-overflow: ellipsis; overflow: hidden; word-break: break-all;">
+										<nobr>${t.CAREER }/${t.QUALIFICATION}</nobr>	
+							</td>
+
+
 							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
 								${t.PAY }
 							</td>
@@ -117,34 +134,35 @@
 
 
 
-<div class="w3-container">
-<div class="w3-border">
-<ul class="w3-navbar w3-light-grey">
-  <li><a class="w3-btn testbtn" onclick="openCity(event, 'London')">답변</a></li>
-</ul>
+	<div class="w3-container">
+		<div class="w3-border">
+			<ul class="w3-navbar w3-light-grey">
+				<li><a class="w3-btn testbtn"
+					onclick="openCity(event, 'London')">답변</a></li>
+			</ul>
 
-<div id="question" class="w3-container w3-animate-opacity">
-  <h2>기업 문의 답변</h2>
-  <p>찍어주세요</p>
-</div>
+			<div id="question" class="w3-container w3-animate-opacity">
+				<h2>기업 문의 답변</h2>
+				<p>찍어주세요</p>
+			</div>
 
-<hr>
-</div>
-</div>
-
-
-
-<br/>
-<br/>
-<br/>
+			<hr>
+		</div>
+	</div>
 
 
 
+	<br />
+	<br />
+	<br />
 
 
 
-<!-- Script for Sidenav, Tabs, Accordions, Progress bars and slideshows -->
-<script>
+
+
+
+	<!-- Script for Sidenav, Tabs, Accordions, Progress bars and slideshows -->
+	<script>
 // Side navigation
 function w3_open() {
     var x = document.getElementById("mySidenav");
@@ -225,24 +243,7 @@ function move() {
   }
 }
 
-//툴팁
-$(function(){
-	$("span.tooltip").css({
-	    opacity:"0.9",
-	    position:"absolute",
-	    display:"none"
-	}); 
-	$("a").mouseover(function(){
-	    $("span.tooltip").fadeIn();
-	}).mouseout(function(){
-	    $("span.tooltip").fadeOut();
-	}).mousemove(function(e){
-	    $("span.tooltip").css({
-		"top":e.pageY+10+"px",
-		"left":e.pageX+10+"px"
-	    });
-	});
-});
+ 
 </script>
 
 </body>

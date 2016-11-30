@@ -54,7 +54,7 @@
 				<dt>총 만족도</dt>총 리뷰 : ${t.CTCOUNT }
 				<dd class="gf_row">
 					<div class="us_star_m">
-						<div class="star_score" style="width: ${t.CTAVG*20} ">평점</div>
+						<div class="star_score" style="width: ${t.CTAVG*20}%">평점</div>
 					</div>
 					<span class="gfvalue">${t.CTAVG}</span>
 				</dd>
