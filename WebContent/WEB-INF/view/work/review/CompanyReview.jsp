@@ -191,7 +191,7 @@ div.best {
         
         var data2 = google.visualization.arrayToDataTable([
             ['Task', 'Hours per Day'],
-            ['긍정',     ${avg.AFUTURE*100}],
+            ['긍정',     ${(avg.AFUTURE*100)}],
             ['부정',     ${100-(avg.AFUTURE*100)}],
           
           ]);

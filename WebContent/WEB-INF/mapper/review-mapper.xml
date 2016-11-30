@@ -78,4 +78,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		select company, avg(CHANCE) CHANCE from review r group by company ORDER by CHANCE desc
 	</select>
 	
+	<insert id="income" parameterType="java.util.HashMap">
+		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{PAY}, #{BONUS}, #{PERIOD})
+	</insert>
+	
+	<insert id="interview" parameterType="java.util.HashMap">
+		insert into income values(INCOME_SEQ.nextval, #{company}, #{type}, #{EMPLOYMENT}, #{CAREER}, #{APPRAISAL}, #{INTERVIEWLEVEL}, #{PASS})
+	</insert>
+	
 </mapper>

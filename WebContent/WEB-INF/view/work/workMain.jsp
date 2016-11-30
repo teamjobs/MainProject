@@ -46,7 +46,8 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>회사 리뷰 확인하기</h4>
-				<br> <i class="fa fa-css3 w3-margin-bottom w3-text-theme"
+				<br> 	<a href="/rank/main">
+				<i class="fa fa-css3 w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i>
 				<p>
 					직원이 작성한 리뷰를 <br />확인할 수 있습니다.
@@ -90,9 +91,9 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
-							<b><td><a href="/work/post/${t.NUM}">${t.COMPANY }</a> ${t.JOB }
+							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }
 							</td></b>
-							<td>${t.TITLE }</td>
+							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
 							<td>${t.CAREER }/${t.QUALIFICATION}</td>
 							<td>${t.HIRETYPE }<br /> ${t.LOCAL } <br /> ${t.SALARY }
 								${t.PAY }

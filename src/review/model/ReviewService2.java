@@ -31,4 +31,22 @@ public class ReviewService2 {
 		
 		return map;
 	}
+	
+	public void income(){
+		SqlSession sql = fac.openSession();
+		HashMap map = new HashMap<>();
+		
+		sql.insert("review.income",map);
+		sql.close();
+		
+	}
+	
+	public void interview(){
+		SqlSession sql = fac.openSession();
+		HashMap map = new HashMap<>();
+		
+		sql.insert("review.interview",map);
+		sql.close();
+		
+	}
 }
