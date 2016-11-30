@@ -88,11 +88,7 @@
 	<div class="w3-third">
 		<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 			<div align="center"><h3>면접 경험</h3></div>
-<<<<<<< HEAD
-				<div id="piechart" style="width: auto; height: auto;" ></div>
-=======
 				<div id="piechart" style="width: auto; height: auto;"></div>
->>>>>>> branch 'master' of https://github.com/teamjobs/MainProject.git
 		</div>
 	</div>
 

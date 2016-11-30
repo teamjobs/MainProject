@@ -101,6 +101,21 @@
 	<definition name="post_tile" extends="default">
 		<put-attribute name="body" value="/WEB-INF/view/post/companyview/viewPost.jsp" />
 	</definition>
+	
+	
+	<!-- Select Rank -->
+	<definition name="welfare" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/rank/welfare.jsp"/>
+	</definition>
+	<definition name="rankup" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/rank/RankUp.jsp"/>
+	</definition>
+	<definition name="workload" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/rank/WorkLoad.jsp"/>
+	</definition>
+	<definition name="culture" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/rank/Culture.jsp"/>
+	</definition>
 
 	
 	<!-- Business쪽에서 연결되는 타일입니다. -->
@@ -142,6 +157,10 @@
 	</definition>
 	<definition name="CompanyPostVolList_tile" extends="businfo">
 		<put-attribute name="body" value="/WEB-INF/view/post/companyview/volList.jsp" />
+	</definition>
+	
+	<definition name="RankMain_tile" extends="default">
+		<put-attribute name="body" value="/WEB-INF/view/work/review/ReviewMain.jsp"/>
 	</definition>
 
 	

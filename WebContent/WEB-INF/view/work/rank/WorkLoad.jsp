@@ -21,10 +21,10 @@
 <div align="right">
 	<form action="/rank">
 		<select id="ListSelect">
-			<option ${param.option == '복지 및 급여 순' ? 'selected' : '' }>복지 및 급여 순</option>
-			<option ${param.option == '승진 기회 및 가능성 순' ? 'selected' : '' }>승진 기회 및 가능성 순</option>
-			<option ${param.option == '업무와 삶의 균형 순' ? 'selected' : '' }>업무와 삶의 균형 순</option>
-			<option ${param.option == '사내문화 순' ? 'selected' : '' }>사내문화 순</option>
+			<option ${option == 'Welfare' ? 'selected' : '' } value="Welfare">복지 및 급여 순</option>
+			<option ${option == 'RankUp' ? 'selected' : '' } value="RankUp">승진 기회 및 가능성 순</option>
+			<option ${option == 'WorkLoad' ? 'selected' : '' } value="WorkLoad">업무와 삶의 균형 순</option>
+			<option ${option == 'Culture' ? 'selected' : '' } value="Culture">사내문화 순</option>
 		</select>
 	</form>
 </div>
@@ -46,15 +46,15 @@
 		</div>
 		<div class="w3-third w3-container" align="center"
 			style="height: auto; margin-top: 5px">
-			<b>${t.NAME } <br />
-				<p>${t.INDUSTRY }</p>
+			<b><a href="/companydata/${t.NAME }">${t.NAME }</a> <br />
+				<p><font style="color: gray">${t.INDUSTRY }</font></p>
 		</div>
 		<div class="w3-third w3-container">
 			<dl class="content_col2_4">
 				<dt>총 만족도</dt>총 리뷰 : ${t.WLCOUNT }
 				<dd class="gf_row">
 					<div class="us_star_m">
-						<div class="star_score" style="width: ${t.WLAVG*20} ">평점</div>
+						<div class="star_score" style="width: ${t.WLAVG*20}% ">평점</div>
 					</div>
 					<span class="gfvalue">${t.WLAVG}</span>
 				</dd>
@@ -82,7 +82,8 @@
 
 
 $("#ListSelect").change(function(){
-	location.href = "/rank?option="+$("#ListSelect option:selected").text();
+	var option = $("#ListSelect option:selected").val();
+	location.href = "/rank/"+option
 });
 
 

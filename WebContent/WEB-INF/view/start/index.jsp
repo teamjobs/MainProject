@@ -63,7 +63,7 @@ body, html {
 			</div>
 
 			<!-- login -->
-			<form action="/index/login" method="get">
+			<form action="/index/login" method="post">
 				<div class="container" hidden="hidden" id="loginForm">
 					ID <br /> <input type="text" name="id" style="color: black;" required="required"/> <br />
 					<br /> PassWord <br /> <input type="password" name="pass"

@@ -21,10 +21,9 @@ import review.service.InterviewService;
 
 import review.model.ReviewService2;
 
-
 @Controller
 public class WCompanyViewController {
-	
+
 	@Autowired
 	CdataReadService crs;
 	@Autowired
@@ -38,55 +37,50 @@ public class WCompanyViewController {
 	@Autowired
 	WPostReadService prs;
 
-	
 	@RequestMapping("/companydata/{co}")
-	public ModelAndView goCompanyView(@PathVariable String co){
+	public ModelAndView goCompanyView(@PathVariable String co) {
 		ModelAndView mav = new ModelAndView("Companydefault_tile");
 		CompanyData cd = crs.getIntrodunction(co);
-		mav.addObject("co",cd);
-		
-		
-		//Income
+		mav.addObject("co", cd);
+
+		// Income
 		System.out.println("co == > " + co);
-		HashMap icmap = ics.IncomeService(co); //연봉 정보
+		HashMap icmap = ics.IncomeService(co); // 연봉 정보
 		System.out.println(icmap);
 		mav.addObject("icmap", icmap);
-		
-		
-		//Interview
-		HashMap interLvmap = is.InterviewLevel(co); //난이도
-		List aplist = is.InterAppraisal(co);  //면접 경험
-		List passlist = is.InterPass(co);  //면접결과
-		
-		System.out.println("컴퍼니 컨트롤러"+interLvmap+aplist+passlist);
-		mav.addObject("interLvmap",interLvmap);
-		mav.addObject("aplist",aplist);
-		mav.addObject("passlist",passlist);
-		
-		
+
+		// Interview
+		HashMap interLvmap = is.InterviewLevel(co); // 난이도
+		List aplist = is.InterAppraisal(co); // 면접 경험
+		List passlist = is.InterPass(co); // 면접결과
+
+		System.out.println("컴퍼니 컨트롤러" + interLvmap + aplist + passlist);
+		mav.addObject("interLvmap", interLvmap);
+		mav.addObject("aplist", aplist);
+		mav.addObject("passlist", passlist);
+
 		// PostList
 		List postli = prs.CompanyPost(co);
-		mav.addObject("postlist",postli);
-		
+		mav.addObject("postlist", postli);
+
 		// QnAList Read
 		List li = qrs.getCompanyQnA(co);
 		int qlistsize = li.size();
-		mav.addObject("qlist",li);
-		mav.addObject("qlistsize",qlistsize);
-		
+		mav.addObject("qlist", li);
+		mav.addObject("qlistsize", qlistsize);
+
 		List list = rs.allreivew(co);
 		int all = list.size();
-		
-		System.out.println("컨트롤러"+list+"/"+all);
-		mav.addObject("list",list);
-		mav.addObject("all",all);
-		
-		//오늘은 여기까지했습니다
+
+		System.out.println("컨트롤러" + list + "/" + all);
+		mav.addObject("list", list);
+		mav.addObject("all", all);
+
+		// 오늘은 여기까지했습니다
 		HashMap map = rs.avg(co);
-		mav.addObject("avg",map);
+		mav.addObject("avg", map);
 		System.out.println(map);
-		
-		
+
 		return mav;
 	}
 }

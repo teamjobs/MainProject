@@ -45,7 +45,7 @@ body {
 				class="w3-padding-large">구인</a></li>
 			<li class="w3-hide-small"><a href="/find"
 				class="w3-padding-large">구직</a></li>
-			<li class="w3-hide-small"><a href="#contact"
+			<li class="w3-hide-small"><a href="/rank/main"
 				class="w3-padding-large">리뷰</a></li>
 			<li class="w3-hide-small w3-dropdown-hover"><a
 				href="javascript:void(0)" class="w3-hover-none w3-padding-large"

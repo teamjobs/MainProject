@@ -18,13 +18,13 @@ public class RankService {
 
 		System.out.println(option);
 		List ranklist = null;
-		if(option.equals("복지 및 급여 순")){
+		if(option.equals("Welfare")){
 			 ranklist = sql.selectList("rank.welfare");
-		}else if(option.equals("승진 기회 및 가능성 순")){
+		}else if(option.equals("RankUp")){
 			 ranklist = sql.selectList("rank.rankUp");	
-		}else if(option.equals("업무와 삶의 균형 순")){
+		}else if(option.equals("WorkLoad")){
 			 ranklist = sql.selectList("rank.workLoad");	
-		}else if(option.equals("사내문화 순")){
+		}else if(option.equals("Culture")){
 			ranklist = sql.selectList("rank.culture");	
 		}
 					
