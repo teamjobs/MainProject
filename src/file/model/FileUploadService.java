@@ -67,7 +67,7 @@ public class FileUploadService {
 		}
 	}
 	
-	public FileData uploadLogo(MultipartFile f, String id){
+	public FileData uploadLogo(MultipartFile f, String co){
 		if(f.isEmpty())
 			return null;
 		FileData fd = new FileData(); 
@@ -75,7 +75,7 @@ public class FileUploadService {
 			String uid = UUID.randomUUID().toString();
 			String fileuid = uid.substring(0,23);
 			String fileDir=application.getRealPath("/files");
-			String filename = id+".jpg";
+			String filename = co+".jpg";
 			int filesize = (int)f.getSize();
 
 			File dest = new File(fileDir,filename);

@@ -10,6 +10,8 @@
 <br><br>
 <br>
 <div class="w3-container">
+<c:choose>
+<c:when test="${volsize != 0 }">
 <table class="w3-table w3-striped w3-bordered">
 <thead>
 <tr class="w3-red">
@@ -32,6 +34,11 @@
 </c:forEach>
 </tbody>
 </table>
+</c:when>
+<c:otherwise>
+<label>올라온 이력서가 없습니다.</label>
+</c:otherwise>
+</c:choose>
 <div class="w3-right">
 <p><a class="w3-btn w3-hover-red" href="/business/my/post/upload" >구인공고 올리기</a>&nbsp;&nbsp;</p>
 </div>

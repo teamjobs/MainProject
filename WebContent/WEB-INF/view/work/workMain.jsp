@@ -97,7 +97,7 @@
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
 							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a>
-									${t.JOB }</td></b>
+									<br>${t.JOB }</td></b>
 							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
 
 							<td>${t.CAREER }/${t.EDUCATION }</td>
@@ -108,7 +108,7 @@
 							</td>
 
 							<td><fmt:formatDate value="${t.ENDDATE}"
-									pattern="YYYY-MM-dd" /> 마감<fmt:formatNumber
+									pattern="YYYY-MM-dd" /><br> 마감<fmt:formatNumber
 									value=" ${t.MAGAM}" pattern=".#" />일 전</td>
 						</tr>
 					</c:forEach>

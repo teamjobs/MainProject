@@ -113,7 +113,7 @@ public class CfileController {
 		String id = (String)hs.getAttribute("id");
 		String co = (String)crs.getCompanyName(id);
 		ModelAndView mav = new ModelAndView("redirect:/goclose");
-		FileData fd = fus.uploadLogo(file,id);
+		FileData fd = fus.uploadLogo(file,co);
 		fd.setFILETYPE("logofile");
 		fd.setTITLE(co+"_logo");
 		fd.setUPLOADER(id);
