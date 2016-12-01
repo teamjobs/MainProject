@@ -14,7 +14,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 
-<div style="margin: 30px">
+<div style="text-align: center; margin: 30px;">
 	<h3>${size } 개의 검색 결과</h3>
 </div>
 
@@ -30,7 +30,7 @@
 </div>
 
 <div class="w3-container">
-	<h2>업무와 삶의 균형 순</h2>
+	<h2><b>업무와 삶의 균형</b></h2>
 </div>
 
 <div class="w3-row w3-border">

@@ -13,11 +13,9 @@
 <title>Welfare</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
-
-<div style="margin: 30px">
+<div style="text-align: center; margin: 30px;">
 	<h3>${size } 개의 검색 결과</h3>
 </div>
-
 <div align="right">
 	<form action="/rank/{option}">
 		<select id="ListSelect">
@@ -28,11 +26,9 @@
 		</select>
 	</form>
 </div>
-
 <div class="w3-container">
-	<h2>복지 및 급여 순</h2>
+	<h2><b>복지 및 급여</b></h2>
 </div>
-
 <div class="w3-row w3-border">
 	<c:forEach var="t" items="${list }">
 
