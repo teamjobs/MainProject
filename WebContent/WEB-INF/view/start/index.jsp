@@ -68,7 +68,8 @@ body, html {
 					ID <br /> <input type="text" name="id" style="color: black;" required="required"/> <br />
 					<br /> PassWord <br /> <input type="password" name="pass"
 						style="color: black;" required="required"/><br /> <br /> <input type="submit"
-						class="btn btn-info" value="Login">
+						class="btn btn-info" value="Login"> <br/><br/>
+						<p><button class="w3-btn w3-red w3-round-large" onclick="location='/'" >이전으로</button></p>
 				</div>
 			</form>
 
@@ -80,7 +81,8 @@ body, html {
 
 				<button type="button" class="btn btn-primary"
 					style="padding: 10px 55px;" id="login"
-					onclick="location.href='/index/businessAgree'">기업 회원</button>
+					onclick="location.href='/index/businessAgree'">기업 회원</button> <br/> <br/>
+				<p><button class="w3-btn w3-red w3-round-large" onclick="location='/'" >이전으로</button></p>
 			</div>
 
 

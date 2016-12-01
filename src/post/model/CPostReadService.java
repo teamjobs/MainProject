@@ -95,5 +95,11 @@ public class CPostReadService {
 		return fd;
 	}
 	
+	public void hitup(int num){
+		SqlSession sql = fac.openSession();
+		sql.update("post.hitsup",num);
+		sql.close();
+	}
+	
 	
 }
