@@ -39,11 +39,11 @@ table tr:nth-child(odd) {
 </style>
 
 
-
 <html>
 <body>
 	<div class="w3-row section"
-		style="min-height: 500px; margin-top: 30px;" align="center">
+		style="min-height: 500px; margin-top: 20px;" align="center">
+		<h2><b>내가 지원한 공고</b></h2><br/>
 		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>

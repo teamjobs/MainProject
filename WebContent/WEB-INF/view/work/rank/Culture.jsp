@@ -69,8 +69,7 @@
 					</a>
 				</dd>
 			</dl>
-		</div> 
-		<hr style="border: solid 0.5px #EAEAEA;">
+		</div>
 	</c:forEach>
 </div>
 
