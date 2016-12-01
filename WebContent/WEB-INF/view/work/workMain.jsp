@@ -53,10 +53,8 @@
 				<h4>회사 리뷰 확인하기</h4>
 				<br> <a href="/rank/main"> <i
 					class="fa fa-css3 w3-margin-bottom w3-text-theme"
-					style="font-size: 120px"></i>
-					<p>
-						직원이 작성한 리뷰를 <br />확인할 수 있습니다.
-					</p>
+					style="font-size: 120px"></i></a>
+					<p> 직원이 작성한 리뷰를 <br />확인할 수 있습니다.</p>
 			</div>
 		</div>
 
@@ -97,18 +95,8 @@
 				<tbody>
 					<c:forEach var="t" items="${list}" begin="1" end="5" step="1">
 						<tr>
-
-							<td><b><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a> ${t.JOB }</b>
-							</td>
-							<td>${t.TITLE }</td>
-							<td width="40%" style="text-overflow: ellipsis; overflow: hidden; word-break:break-all;" >
-							<nobr><span class="tooltip">${t.CAREER }/${t.QUALIFICATION}</span></nobr>
-							</td>
-							
-							 
-
 							<b><td><a href="/companydata/${t.COMPANY }">${t.COMPANY }</a>
-									${t.JOB }</td></b>
+									<br>${t.JOB }</td></b>
 							<td><a href="/work/post/${t.NUM}">${t.TITLE }</a></td>
 
 							<td>${t.CAREER }/${t.EDUCATION }</td>
@@ -119,7 +107,7 @@
 							</td>
 
 							<td><fmt:formatDate value="${t.ENDDATE}"
-									pattern="YYYY-MM-dd" /> 마감<fmt:formatNumber
+									pattern="YYYY-MM-dd" /><br> 마감<fmt:formatNumber
 									value=" ${t.MAGAM}" pattern=".#" />일 전</td>
 						</tr>
 					</c:forEach>

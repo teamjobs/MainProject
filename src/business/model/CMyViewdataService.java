@@ -1,6 +1,7 @@
 package business.model;
 
 import java.util.HashMap;
+import java.util.List;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -22,11 +23,19 @@ public class CMyViewdataService {
 		SqlSession sql = fac.openSession();
 		HashMap<String,Object> hm = new HashMap<>();
 		System.out.println(co);
+		
+		int postCheck = sql.selectList("post.getCompanyAllPost",co).size();
+		if(postCheck == 0){
+			hm.put("postSort", "no");
+			return hm;
+		}
+		
 		int postnumber = sql.selectOne("business.getCompanyNewPost",co);
 		PostData pd = cps.readPostData(postnumber);
 		int views = sql.selectOne("business.getCompanyPosthits",postnumber);
 		int workers = sql.selectOne("business.getCompanyPostVol",postnumber);
 		int clips = sql.selectOne("business.getCompanyPostClip",postnumber);
+		hm.put("postSort", "ok");
 		hm.put("views", views);
 		hm.put("workers", workers);
 		hm.put("clips", clips);
