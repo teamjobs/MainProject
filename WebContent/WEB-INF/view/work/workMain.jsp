@@ -40,7 +40,7 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>내가 지원한 공고 확인하기</h4>
-				<br> <a href="/my/history/board"><i
+				<br/> <a href="/my/history/board"><i
 					class="fa fa-desktop w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i></a>
 				<p>
@@ -51,21 +51,22 @@
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>회사 리뷰 확인하기</h4>
-				<br> <a href="/rank/main"> <i
+				<br/> <a href="/rank/main"> <i
 					class="fa fa-css3 w3-margin-bottom w3-text-theme"
 					style="font-size: 120px"></i></a>
-					<p> 직원이 작성한 리뷰를 <br />확인할 수 있습니다.</p>
+					<p>
+						직원이 작성한 리뷰를 <br />확인할 수 있습니다.
+					</p>
 			</div>
 		</div>
 
 		<div class="w3-third">
 			<div class="w3-card-2 w3-padding-top" style="min-height: 300px">
 				<h4>기업 찾기</h4>
-				<br>
+				<br/>
 				<a href="/find"> <i
 					class="fa fa-diamond w3-margin-bottom w3-text-theme"
-					style="font-size: 120px"></i>
-				</a>
+					style="font-size: 120px"></i></a>
 				<p>
 					입사지원 가능한 기업을 <br />열람할 수 있습니다.
 				</p>

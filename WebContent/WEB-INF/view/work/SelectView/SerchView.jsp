@@ -46,12 +46,12 @@ table tr:nth-child(odd) {
 		<table class="table table-hover" style="width: 60%; height: 100%; table-layout: fixed;">
 			<thead>
 				<tr>
-					<th style="width: 15%">회사명</th>
+					<th style="width: 20%">회사명</th>
 					<th>제목</th>
-					<th style="width: 12%">학력</th>
-					<th style="width: 15%">자격요건</th>
-					<th style="width: 12%">근무조건</th>
-					<th style="width: 12%">마감일</th>
+					<th style="width: 10%">학력</th>
+					<th style="width: 10%">자격요건</th>
+					<th style="width: 10%">근무조건</th>
+					<th style="width: 15%">마감일</th>
 				</tr>
 			</thead>
 			<tbody>
@@ -69,9 +69,10 @@ table tr:nth-child(odd) {
 								${w.HIRETYPE }<br />${w.LOCAL }<br />${w.SALARY }
 								</td>
 								<td>
+								마감<b><fmt:formatNumber
+									value=" ${w.MAGAM}" pattern=" " />일</b> 전<br/>
 								<fmt:formatDate value="${w.ENDDATE}"
-									pattern="YYYY-MM-dd" /><br/> 마감<fmt:formatNumber
-									value=" ${w.MAGAM}" pattern=" " />일 전 
+									pattern="YYYY-MM-dd" /> 
 								</td>
 							</tr>
 						</c:forEach>

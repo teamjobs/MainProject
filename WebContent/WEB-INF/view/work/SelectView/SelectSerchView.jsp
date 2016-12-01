@@ -43,15 +43,15 @@ table tr:nth-child(odd) {
 <body>
 <hr/>
 	<div class="w3-row section"  style="min-height: 500px; margin-top: 30px;" align="center">
-		<table class="table table-hover" style="width: 60%; height: 100%; table-layout: fixed;">
+		<table class="table table-hover" style="width: 60%; height: 100%;">
 			<thead>
 				<tr>
-					<th style="width: 15%">회사명</th>
+					<th style="width: 20%">회사명</th>
 					<th>제목</th>
-					<th style="width: 12%">학력</th>
-					<th style="width: 15%">자격요건</th>
-					<th style="width: 12%">근무조건</th>
-					<th style="width: 12%">마감일</th>
+					<th style="width: 10%">학력</th>
+					<th style="width: 10%">자격요건</th>
+					<th style="width: 10%">근무조건</th>
+					<th style="width: 15%">마감일</th>
 				</tr>
 			</thead>
 			<tbody>

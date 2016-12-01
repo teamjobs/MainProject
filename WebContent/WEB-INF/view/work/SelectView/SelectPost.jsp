@@ -9,7 +9,7 @@
 
 <center>
 	<form name="zn" method="get" action="/find/result">
-	<button type="button" class="w3-btn-block w3-padding-large w3-black w3-margin-bottom" style="width: 150px;" id="hidebt"><b>상세 검색</b></button>
+	<button type="button" class="w3-btn-block w3-padding-large w3-red w3-margin-bottom" style="width: 150px;" id="hidebt"><b>상세 검색</b></button>
 		<div id="box" style="display: none;">
 		<!-- 지역 -->
 		<br/>

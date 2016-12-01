@@ -48,7 +48,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 			  where temp.rn >= #{start} and temp.rn <=#{end}
 		  ]]>
 	</select>
-	
+
 	<!--지원 취소 -->
 	<delete id="cancel" parameterType="java.lang.String">
 		delete from workfile where num=#{num}
@@ -76,8 +76,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="postClipOff" parameterType="java.util.HashMap">
 		delete from clipping where id=#{id} and postnum=#{postnum}
 	</delete>
-	
-	
-	
-	
 </mapper>
