@@ -16,7 +16,8 @@
 
 
 <div class="w3-container">
-<form action="/business/my/post/uploadrst" method="post" enctype="multipart/form-data">
+<form action="/business/my/post/uploadrst" method="post" enctype="multipart/form-data"
+	onsubmit="return existCheck()">
 <c:choose>
 	<c:when test="${pd.TITLE != null }">
 	<input class="w3-input" type="text" name="title" style="size:10px;"required value="${pd.TITLE }">
@@ -186,6 +187,10 @@
 		<label class="w3-label">연락처</label>
 	</div>
 	</div>
+	<br>
+	<div class="alert alert-danger" hidden="hidden" id="checkFail">
+		<strong>잠깐!</strong> 이력서 양식을 업로드해주세요.
+	</div>
 	<hr/>
 	<c:if test="${pd.TITLE != null }">
 		<label class="w3-label" id="adjlabel">&nbsp;이력서 첨부파일을 다시 올려주세요.</label>&nbsp;
@@ -193,7 +198,7 @@
 	<span id="filename" style="width: auto;"></span>&nbsp;
 	<input type="file" name="file" id="fileup" style="display: none;" />
 	<button class="w3-btn w3-left" type="button" id="fileup_bt">이력서 양식 첨부</button>
-	<input class="w3-btn w3-theme" type="submit" value="올리기"/>
+	<input class="w3-btn w3-theme" type="submit" id="subbutton" value="올리기"/>
 	<c:choose>
 		<c:when test="${pd.TITLE != null }">
 			<input type="hidden" name="adjSort" value="${pd.NUM }"/>
@@ -215,4 +220,12 @@
 		$("#filename").html(t+"&nbsp;");
 		$("#adjlabel").html(""+"&nbsp;");
 	});
+	
+	function existCheck(){
+		if($("#filename").text()==""){
+			$("#checkFail").fadeIn(1000).delay(1000).fadeOut(1000);
+			return false;
+		}
+	}
+	
 </script>

@@ -4,7 +4,7 @@
 <html>
 <header class="w3-container" style="padding-top:22px" id="myHead">
 	<c:choose>
-		<c:when test="${postSort == 'ok' }">
+		<c:when test="${initviewCdata.vpd.postSort == 'ok' }">
 			<h5>
 				<b><i class="fa fa-home"></i> 최신 공고 :
 					${initviewCdata.vpd.viewpd.TITLE }</b>
