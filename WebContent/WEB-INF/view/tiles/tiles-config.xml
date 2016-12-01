@@ -104,16 +104,20 @@
 	
 	
 	<!-- Select Rank -->
-	<definition name="welfare" extends="default">
+	<definition name="welfare" extends="searchall">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/selectRankHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/rank/welfare.jsp"/>
 	</definition>
-	<definition name="rankup" extends="default">
+	<definition name="rankup" extends="searchall">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/selectRankHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/rank/RankUp.jsp"/>
 	</definition>
-	<definition name="workload" extends="default">
+	<definition name="workload" extends="searchall">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/selectRankHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/rank/WorkLoad.jsp"/>
 	</definition>
-	<definition name="culture" extends="default">
+	<definition name="culture" extends="searchall">
+		<put-attribute name="head" value="/WEB-INF/view/tiles/setting/other/selectRankHead.jsp"/>
 		<put-attribute name="body" value="/WEB-INF/view/work/rank/Culture.jsp"/>
 	</definition>
 
