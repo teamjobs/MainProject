@@ -38,6 +38,8 @@ public class WPostController {
 	@Autowired
 	WorkSerchService ws;
 
+	
+	
 	@RequestMapping("company/introduction/{com}")
 	public ModelAndView getintrodunction(@PathVariable(name = "com") String com) {
 		ModelAndView mav = new ModelAndView("/work/CompanyIntro.jsp");
@@ -47,11 +49,12 @@ public class WPostController {
 	}
 
 	@RequestMapping("work/post/{num}")
-
 	public ModelAndView goPostRead(@PathVariable(name = "num") int num) {
 		ModelAndView mav = new ModelAndView("/post/companyview/viewPost.jsp");
 		PostData pd = wpr.readPostData(num);
 		CompanyData cd = cds.getIntrodunction(pd.getCOMPANY());
+		
+		cpr.hitup(num);
 		mav.addObject("pd", pd);
 		mav.addObject("com", cd);
 		mav.addObject("sort", true);

@@ -62,7 +62,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		UPDATE post SET vol = vol+1 WHERE num = #{num}
 	</update>
 	
-	<update id="hitsup" parameterType="java.lang.String">
+	<update id="hitsup" parameterType="java.lang.Integer">
 		UPDATE post SET hits = hits+1 WHERE num = #{num}
 	</update>
 	
