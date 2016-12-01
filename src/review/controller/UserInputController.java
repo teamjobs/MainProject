@@ -29,7 +29,7 @@ public class UserInputController {
 			map.put("period",period);
 		
 		uis.inputIncome(map);
-		return "/";
+		return "redirect:/companydata/"+company;
 	} 
 	
 	@RequestMapping("/interviewinput")
@@ -45,7 +45,7 @@ public class UserInputController {
 			map.put("pass",pass);
 		
 		uis.inputInterview(map);
-		return "/";
+		return "redirect:/companydata/"+company;
 	} 
 
 }

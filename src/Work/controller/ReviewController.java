@@ -44,6 +44,6 @@ public class ReviewController {
 			map.put("future", future);
 		
 		boolean b = rs.addreview(map);
-		return "/work/main";
+		return "redirect:/companydata/"+company;
 	} 
 }
