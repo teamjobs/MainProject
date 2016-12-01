@@ -76,8 +76,4 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<delete id="postClipOff" parameterType="java.util.HashMap">
 		delete from clipping where id=#{id} and postnum=#{postnum}
 	</delete>
-	
-	
-	
-	
 </mapper>
