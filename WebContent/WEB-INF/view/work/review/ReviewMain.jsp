@@ -49,7 +49,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/Welfare'">전체보기</button>
+				<button class="w3-btn w3-red w3-round-xlarge" onclick="location='/rank/Welfare'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -59,7 +59,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/WorkLoad'">전체보기</button>
+				<button class="w3-btn w3-red w3-round-xlarge" onclick="location='/rank/WorkLoad'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -69,7 +69,7 @@ div.best {
 				</div>
 				<br/><br/><br/><br/><br/>
 				
-				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/Culture'">전체보기</button>
+				<button class="w3-btn w3-red w3-round-xlarge" onclick="location='/rank/Culture'">전체보기</button>
 			</div>
 
 			<div class="w3-quarter">
@@ -78,7 +78,7 @@ div.best {
 				<div id="CHANCE" align="center" style="width: 250px; height: 100px;">
 				</div>
 				<br/><br/><br/><br/><br/>
-				<button class="w3-btn w3-black w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
+				<button class="w3-btn w3-red w3-round-xlarge" onclick="location='/rank/RankUp'">전체보기</button>
 			</div>
 
 		</div>
