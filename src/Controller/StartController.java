@@ -32,7 +32,6 @@ public class StartController {
 		// ======================
 		
 		String conf = (String)hs.getAttribute("confirm");
-		System.out.println(conf);
 		
 		if(conf == null){
 			mav.setViewName("/start/index.jsp");

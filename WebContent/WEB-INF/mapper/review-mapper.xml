@@ -9,12 +9,12 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 <!-- 연봉 -->
 	<select id="Income"  resultType="java.util.HashMap" >
 		<![CDATA[
-		select * from (
-  			select rownum rank, temp.* from
-    			(select company, avg(pay) average 
-      			from income group by company order by average desc)
-  			temp) 
-		where company = #{COMPANY}
+		select rownum rank, temp.* from
+		(select company,SALARY, avg(pay) pyavg from
+		(select po.company co, po.SALARY,inc.company, inc.pay
+		from post po, income inc where po.company = inc.company)
+		group by company,SALARY order by pyavg desc)temp
+   	 where company = #{COMPANY}
   		]]>
 	</select>
 	

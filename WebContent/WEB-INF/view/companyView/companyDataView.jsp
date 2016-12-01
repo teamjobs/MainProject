@@ -56,10 +56,11 @@
 		<div class="w3-card-2 w3-padding-top" style="min-height: 200px">
 			<div align="center"><h4>Æò±Õ¿¬ºÀ</h4></div>
 			<hr />
-			<br />
 			<div align="center" style="font-size: 30px;">
-				<fmt:formatNumber value="${icmap.AVERAGE }" pattern=".#" />
-				<small>Ãµ¸¸¿ø</small>
+				<small>${icmap.SALARY}</small>
+				<br />
+				<fmt:formatNumber value="${icmap.PYAVG }" pattern=".#" />
+				<small>(¸¸)¿ø</small>
 			</div>
 		</div>
 	</div>

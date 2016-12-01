@@ -6,7 +6,7 @@
 <nav class="w3-sidenav w3-collapse w3-white" style=width:300px;" id="mySidenav"><br>
   <div class="w3-container w3-row">
     <div class="w3-center">
-    <img src="/files/${id}.jpg" style="width:80px"><br>
+    <img src="/files/${initviewCdata.myCo}.jpg" style="width:80px"><br>
     <br/>
       <span><strong>${id }</strong>&nbsp;님</span><br>
     </div>

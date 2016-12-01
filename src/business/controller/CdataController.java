@@ -47,6 +47,9 @@ public class CdataController {
 		boolean b = cjs.joinResult(cd);
 		
 		ModelAndView mav = new ModelAndView("/business/companymember/joinRst.jsp");
+		int img = (int) (Math.random() * 7);
+		mav.addObject("img", img);
+		
 		if(b)
 			mav.addObject("cjoinrst",true);
 		else
