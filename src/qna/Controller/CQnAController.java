@@ -32,10 +32,15 @@ public class CQnAController {
 		String id = (String) hs.getAttribute("id");
 		String co = crs.getCompanyName(id);
 		List li = qrs.getCompanyQnA(co);
-		int qlistsize = li.size();
+		int qlistsize;
+		if(li.size() == 0 || li.size() == 1){
+			qlistsize = 0;
+		}else{
+			qlistsize = li.size() -1;
+		}
 		//System.out.println("getli");
 		//System.out.println(li);
-		//System.out.println(qlistsize);
+		System.out.println(qlistsize);
 		ModelAndView mav = new ModelAndView("/companyQNA/QnAlist.jsp");
 		mav.addObject("qlist",li);
 		mav.addObject("qlistsize",qlistsize);

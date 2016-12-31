@@ -103,8 +103,6 @@ body, html {
 			</div>
 		</div>
 		<div class="w3-display-bottomleft w3-padding-large">
-			Powered by <a href="http://www.w3schools.com/w3css/default.asp"
-				target="_blank">w3.css</a>
 		</div>
 	</div>
 	<script>

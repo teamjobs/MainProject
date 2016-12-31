@@ -1,12 +1,20 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <html>
 <br/>
 <nav class="w3-sidenav w3-collapse w3-white" style=width:300px;" id="mySidenav"><br>
   <div class="w3-container w3-row">
     <div class="w3-center">
-    <img src="/files/${initviewCdata.myCo}.jpg" style="width:80px"><br>
+    <c:choose>
+    	<c:when test="${ initviewCdata.cologo}">
+    		<img src="/files/${initviewCdata.myCo}.jpg" style="width:80px">
+    	</c:when>
+    	<c:otherwise>
+    		<span>로고를 업로드해주세요.</span>
+    	</c:otherwise>
+    </c:choose>
+    <br>
     <br/>
       <span><strong>${id }</strong>&nbsp;님</span><br>
     </div>

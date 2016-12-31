@@ -3,7 +3,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html>
-<title>W3.CSS Template</title>
+<title>JOBS</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
@@ -47,6 +47,7 @@ body {font-family: "Lato", sans-serif}
   <img src="/img/logoB.png" >
   </div>
 
+
   <!-- The Band Section -->
   <div class="w3-container w3-content w3-center w3-padding-64" style="max-width:800px" id="band" align="center">
     <!-- <h2 class="w3-wide">THE BAND</h2> -->
@@ -54,23 +55,23 @@ body {font-family: "Lato", sans-serif}
     <p class="w3-opacity"><i>취업, 리뷰, 구인의 모든 것!</i></p>
     
     <p class="w3-justify" align="center">
-    	저희 JOB 인재를 구하고싶은 기업!, 좋은 일자리를 원하시는 구직자 분들! Contect 해주며 직접 기업을 다시신 
-    	구직자 분들의 객관적인 평가
-    	이 3가지 조합이 이루어지는 대한민국을 대표하는 구인, 구직 사이트 입니다. 
+    	저희 JOB는 인재를 구하고싶은 기업과 좋은 일자리를 원하시는 구직자 분들의 연결,
+    	기업에 실제로 근무한 구직자 분들의 객관적인 평가로 이루어진 
+    	대한민국을 대표하는 구인, 구직 사이트 입니다. 
     </p>
     
     <div class="w3-row w3-padding-32">
       <div class="w3-third">
         <p>취업</p>
-        <img src="/img/cnldjq.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        <img src="/img/cnldjq.png" class="w3-circle"">
       </div>
       <div class="w3-third">
         <p>리뷰</p>
-        <img src="/img/flqb.png" class="w3-round w3-margin-bottom" alt="Random Name" style="width:60%">
+        <img src="/img/flqb.png" class="w3-circle"">
       </div>
       <div class="w3-third">
         <p>구인</p>
-        <img src="/img/rndls.png" class="w3-round" alt="Random Name" style="width:60%">
+        <img src="/img/rndls.png" class="w3-circle">
       </div>
     </div>
   </div>

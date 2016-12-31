@@ -14,9 +14,14 @@
 
 <c:if test="${ confirm == 'company' && initviewCdata.myCo != null}">
 	<div class="w3-container">
-		<label>답변을 기다리는 질문이 <b>${ initviewCdata.cNewMassage }개</b>
-			있습니다.
-		</label>
+		<c:choose>
+			<c:when test="${ qlistsize == 0 }">
+				<h3>질문 목록이 없습니다.</h3>
+			</c:when>
+			<c:otherwise>
+				<label>답변을 기다리는 질문이 <b>${ initviewCdata.cNewMassage }개</b>있습니다.</label>
+			</c:otherwise>
+		</c:choose>
 	</div>
 </c:if>
 
@@ -32,7 +37,7 @@
 <div >
 	<h2>QnA</h2>
 	<c:choose>
-		<c:when test="${ qlistsize == 0 }">
+		<c:when test="${ qlist.size() == 0 }">
 			<h3>질문 목록이 없습니다.</h3>
 		</c:when>
 		<c:otherwise>
@@ -54,7 +59,7 @@
 					</tr>
 				</thead>
 				<tbody>
-					<c:forEach var="i" begin="0" end="${qlistsize -1 }" step="1">
+					<c:forEach var="i" begin="0" end="${ qlist.size() -1 }" step="1">
 						<tr>
 							<td>${i+1 }</td>
 							<c:choose>

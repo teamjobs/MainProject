@@ -25,7 +25,7 @@ public class IncomeService {
 		
 		SqlSession sql = fac.openSession();
 
-		HashMap icmap = sql.selectOne("review.Income",company);
+		HashMap icmap = sql.selectOne("review.Income2",company);
 		
 		System.out.println("¼­ºñ½º"+"/"+icmap);
 		sql.close();

@@ -19,6 +19,15 @@ public class FileListService {
 	@Autowired
 	ServletContext application;
 	
+	
+	public boolean checkCompanyLogoData(String co){
+		String fileDir = application.getRealPath("/files");
+		System.out.println(fileDir);
+		File file = new File(fileDir,co+".jpg");
+		return file.exists();
+	}
+	
+	
 	public List<FileData> getAllCompanyVol(String co){
 		SqlSession sql = fac.openSession();
 		List<FileData> li = sql.selectList("workfile.getAllCompanyFile",co);

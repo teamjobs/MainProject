@@ -17,6 +17,7 @@ import business.model.CMyViewdataService;
 import business.model.CdataReadService;
 import business.model.CompanyData;
 import file.model.FileData;
+import file.model.FileListService;
 import post.model.CPostReadService;
 import post.model.PostData;
 import qna.model.QnAData;
@@ -25,6 +26,8 @@ import qna.model.QnAReadService;
 @Controller
 public class CmyController {
 	
+	@Autowired
+	FileListService fls;
 	@Autowired
 	CPostReadService prs;
 	@Autowired
@@ -216,6 +219,9 @@ public class CmyController {
 		// =============== post정보
 		HashMap ma = mvs.setViewData(cd.getNAME());
 		
+		boolean cologo = fls.checkCompanyLogoData(cd.getNAME());
+		System.out.println("로고유무?"+cologo);
+		hm.put("cologo", cologo);
 		
 		hm.put("myCo", cd.getNAME());
 		hm.put("cNewMassage", newmassage);

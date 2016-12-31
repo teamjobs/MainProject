@@ -24,10 +24,19 @@
 	<div class="alert alert-danger" hidden="hidden" id="checkFail">
 		<strong>Fail!</strong> 중복된 아이디 입니다.
 	</div>
+	
+	<div class="alert alert-danger" hidden="hidden" id="noLogcheck">
+		<strong>Fail!</strong> 아이디를 확인해주세요. 
+	</div>
+
+	<div class="alert alert-danger" hidden="hidden" id="nomailcheck">
+		<strong>Fail!</strong> 메일을 인증해주세요. 
+	</div>
+
 	<div class="container">
 		<b><h2>회원가입 (구직자)</h2></b>
 		<p>취업을 위한 구직자 분들의 회원가입 입니다!</p>
-		<form action="/member/joinOK" method="post">
+		<form action="/member/joinOK" method="post" onsubmit="return existCheck()">
 			<div class="form-group">
 				<label for="usr">ID:</label> (5자 이상 입력해주세요) <input type="text"
 					class="form-control" name="id" required="required" id="id">
@@ -88,7 +97,7 @@
 							</div>
 							<div class="modal-footer">
 								<button type="button" class="btn btn-default"
-									data-dismiss="modal" >인증완료</button>
+									data-dismiss="modal">인증완료</button>
 							</div>
 						</div>
 
@@ -111,6 +120,11 @@
 		</form>
 	</div>
 	<script>
+	
+	
+		var authlog = 'no';	
+		var authmail = 'no';	
+	
 		$("#id").keyup(function() {
 			if ($(this).val().length > 4) {
 				$("#check").prop("disabled", false);
@@ -126,25 +140,17 @@
 				"url" : "/member/check?id=" + $("#id").val()
 			}).done(function(rst) {
 				if (rst == "YYYYY") {
-					$("#submit").fadeIn(1000);
-
 					$("#checkOK").fadeIn(1000);
 					$("#checkFail").fadeOut(100);
-
+					authlog = 'yes';
 				} else {
-
-					$("#submit").fadeOut(1000);
-
 					$("#checkOK").fadeOut(100);
 					$("#checkFail").fadeIn(1000);
+					authlog = 'no';
 				}
 
 			});
 
-		});
-
-		$("#id").keyup(function() {
-			$("#submit").fadeOut(1000);
 		});
 
 		
@@ -172,10 +178,31 @@
 		$("#mailcheck").click(function() {
 			if (mailAuth == $("#mailAuth").val()) {
 				$("#mailyes").fadeIn(100);
+				authmail = 'yes';
+				$("#submit").fadeIn(1000);
 			} else {
 				$("#no").fadeIn(100);
+				authmail = 'no';	
 			}
 		});
+
+		
+		function existCheck(){
+			if(authlog == authmail == 'yes'){
+				return true;
+			}else if(authlog == 'no'){
+				$("#noLogcheck").fadeIn(1000);
+				$("#checkOK").fadeOut(100);
+				$("#checkFail").fadeOut(100);
+				return false;
+			}else if(authmail == 'no'){
+				$("#checkOK").fadeOut(100);
+				$("#checkFail").fadeOut(100);
+				$("#nomailcheck").fadeIn(1000);
+				return false;
+			}
+		}
+		
 	</script>
 
 </body>
